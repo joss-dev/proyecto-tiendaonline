@@ -6,7 +6,7 @@ class Home extends BaseController
 {
     public function index()
     {
-        return view('probando');
+        return view('Home');
     }
 
 }
