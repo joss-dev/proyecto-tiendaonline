@@ -1,13 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
-    <link rel="stylesheet" href="./public/css/bootstrap.css">
-  </head>
-  <body>
-    <h1>hello world</h1>
-    <script src="./public/js/bootstrap.bundle.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap demo</title>
+  <link rel="stylesheet" href="./public/css/bootstrap.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <nav class="navbar navbar-dark bg-dark">
+      <!-- Navbar content -->
+    </nav>
+  </div>
+
+  <script src="./public/js/bootstrap.bundle.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
+</body>
+
 </html>
