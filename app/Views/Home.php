@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Bootstrap demo</title>
   <link rel="stylesheet" href="./public/css/bootstrap.css">
+  <link rel="stylesheet" href="./public/css/myStyle.css">
 </head>
 
 <body>
