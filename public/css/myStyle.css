@@ -9,9 +9,14 @@
 
 
 .nav-link {
-	transition: all 0.5s !important;
+	transition: all 0.5s;
 }
 
 .nav-link:hover {
-	border-bottom: 3px solid greenyellow !important;
+	border-bottom: 3px solid greenyellow;
+}
+
+.titulo-footer {
+	padding-bottom: 8px;
+	border-bottom: 2px solid greenyellow;
 }
