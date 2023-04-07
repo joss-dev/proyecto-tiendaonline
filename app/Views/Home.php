@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>TecnoPhone</title>
-  <link rel="stylesheet" href="./public/css/bootstrap.min.css">
   <link rel="stylesheet" href="./public/css/myStyle.css">
+  <link rel="stylesheet" href="./public/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -33,10 +33,10 @@
             <a class="nav-link text-white" href="#">Terminos y Usos</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               La empresa
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
               <li><a class="dropdown-item" href="#">Contacto</a></li>
               <li><a class="dropdown-item" href="#">Comercialización</a></li>
               <li><a class="dropdown-item" href="#">Consultas</a></li>
@@ -71,17 +71,17 @@
 
   <footer class="text-center text-white" style="background-color: #03001c;">
     <ul class="row m-0">
-      <li class="col col-sm-12 m-4">Tecno phone</li>
-      <li class="col col-sm-12 m-4">Contacto
-        <ul>
+      <li class="col">Tecno phone</li>
+      <li class="col">Contacto
+        <ul class="m-3">
           <li><span>tecnophone@gmail.com</span></li>
           <li>3794551245</li>
           <li>Av. Independencia 2345</li>
         </ul>
       </li>
-      <li class="col col-sm-12 m-4">Redes sociales
-      <ul>
-          <li><span>Facebook</span></li>
+      <li class="col">Redes sociales
+      <ul class="m-3">
+          <li>Facebook</li>
           <li>Whatsapp</li>
           <li>Instagram</li>
         </ul>

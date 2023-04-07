@@ -6,3 +6,12 @@
 	border: none;
 	outline: none;
 }
+
+
+.nav-link {
+	transition: all 0.5s !important;
+}
+
+.nav-link:hover {
+	border-bottom: 3px solid greenyellow !important;
+}
