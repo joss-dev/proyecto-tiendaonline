@@ -65,7 +65,7 @@
     </div>
   </nav>
 
-  
+
   <div class="container-fluid">
     <h1>hola</h1>
     <p>
@@ -78,6 +78,20 @@
     <ul class="row m-0">
       <li class="col-sm-12 col-lg-4 mb-5">
         <h4 class="titulo-footer">Tecno Phone</h4>
+        <ul class="m-3">
+          <li class="p-2">
+            <a href="#" class="text-white">Productos</a>
+          </li>
+          <li class="p-2">
+            <a href="#" class="text-white">Quienes somos</a>
+          </li>
+          <li class="p-2">
+            <a href="#" class="text-white">Terminos y usos</a>
+          </li>
+          <li class="p-2">
+            <a href="#" class="text-white">Consultas frecuentes</a>
+          </li>
+        </ul>
       </li>
       <li class="col-sm-12 col-lg-4 mb-5">
         <h4 class="titulo-footer">Contacto</h4>
