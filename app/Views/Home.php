@@ -10,10 +10,12 @@
 </head>
 
 <body>
+  <!-- barra de navegacion -->
   <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand text-white" href="#">
         <img src="./public/img/icon.png" alt="" width="50" height="60">
+        Tecno Phone
       </a>
       <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -62,6 +64,8 @@
       </ul>
     </div>
   </nav>
+
+  
   <div class="container-fluid">
     <h1>hola</h1>
     <p>
@@ -69,6 +73,7 @@
     </p>
   </div>
 
+  <!-- final de pagina -->
   <footer class="text-center text-white pt-3" style="background-color: #03001c;">
     <ul class="row m-0">
       <li class="col-sm-12 col-lg-4 mb-5">
