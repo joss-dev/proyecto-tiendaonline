@@ -7,6 +7,10 @@
 	outline: none;
 }
 
+body {
+    font-family: 'Roboto' !important;
+}
+
 
 .nav-link {
 	transition: all 0.5s;
