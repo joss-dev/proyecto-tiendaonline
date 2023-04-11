@@ -29,6 +29,7 @@ class Home extends BaseController
     public function terminosYcondiciones() {
         echo view('plantillas/encabezado');
         echo view('plantillas/nav');
+        echo view('plantillas/terminos');
         echo view('plantillas/footer');
     }
 
