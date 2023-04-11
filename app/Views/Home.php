@@ -68,6 +68,23 @@
         </div>
     </nav>
 
+    <div class="container bg-light mt-4 d-flex justify-content-center">
+        <div class="card mb-3 " style="max-width: 540px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="..." class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Título de la tarjeta</h5>
+                        <p class="card-text"></p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="container bg-light p-2 my-5 ">
         <h2 class="text-center m-5">Productos Destacados</h2>
