@@ -7,6 +7,8 @@
     <title>TecnoPhone</title>
     <link rel="shortcut icon" href="./public/img/favicon.png">
 
+    
+
     <!-- estilos css -->
     <link rel="stylesheet" href="./public/css/myStyle.css">
     <link rel="stylesheet" href="./public/css/bootstrap.min.css">

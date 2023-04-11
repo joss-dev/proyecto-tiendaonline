@@ -2,7 +2,7 @@
 <!-- barra de navegacion -->
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">
+            <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
                 <img src="./public/img/icon.png" alt="" width="50" height="60">
                 Tecno Phone
             </a>
@@ -18,19 +18,19 @@
                         <a class="nav-link text-white" href="<?php echo base_url('productos'); ?>">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Quienes Somos</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('quienesSomos'); ?>">Quienes Somos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Terminos y Usos</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('terminosYcondiciones'); ?>">Terminos y Usos</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             La empresa
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Contacto</a></li>
-                            <li><a class="dropdown-item" href="#">Comercialización</a></li>
-                            <li><a class="dropdown-item" href="#">Consultas</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('contacto'); ?>">Contacto</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('comercializacion'); ?>">Comercialización</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url('consultas'); ?>">Consultas</a></li>
                         </ul>
                     </li>
                 </ul>

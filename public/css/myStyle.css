@@ -1,22 +1,22 @@
 * {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-	text-decoration: none;
-	border: none;
-	outline: none;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
 }
 
-
 .nav-link {
-	transition: all 0.5s;
+    transition: all 0.5s;
 }
 
 .nav-link:hover {
-	border-bottom: 3px solid greenyellow;
+    border-bottom: 3px solid greenyellow;
 }
 
 .titulo-footer {
-	padding-bottom: 8px;
-	border-bottom: 2px solid greenyellow;
+    padding-bottom: 8px;
+    border-bottom: 2px solid greenyellow;
 }

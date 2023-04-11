@@ -6,16 +6,16 @@
                 <h4 class="titulo-footer">Tecno Phone</h4>
                 <ul class="m-3">
                     <li class="p-2">
-                        <a href="#" class="text-white">Productos</a>
+                        <a href="<?php echo base_url('productos'); ?>" class="text-white">Productos</a>
                     </li>
                     <li class="p-2">
-                        <a href="#" class="text-white">Quienes somos</a>
+                        <a href="<?php echo base_url('quienesSomos'); ?>" class="text-white">Quienes somos</a>
                     </li>
                     <li class="p-2">
-                        <a href="#" class="text-white">Terminos y usos</a>
+                        <a href="<?php echo base_url('terminosYcondiciones'); ?>" class="text-white">Terminos y usos</a>
                     </li>
                     <li class="p-2">
-                        <a href="#" class="text-white">Consultas frecuentes</a>
+                        <a href="<?php echo base_url('consultas'); ?>" class="text-white">Consultas frecuentes</a>
                     </li>
                 </ul>
             </li>
@@ -46,19 +46,19 @@
                 <h4 class="titulo-footer">Redes Sociales</h4>
                 <ul class="m-3">
                     <li class="p-2">
-                        <a href="#" class="text-white">
+                        <a href="https://facebook.com" class="text-white" target="_blank">
                             <img src="./public/img/icons/icon-facebook.png" alt="" width="50" height="50">
                             Facebook
                         </a>
                     </li>
                     <li class="p-2">
-                        <a href="#" class="text-white">
+                        <a href="https://whatsapp.com" class="text-white" target="_blank">
                             <img src="./public/img/icons/icon-whatsapp.png" alt="" width="45" height="45">
                             Whatsapp
                         </a>
                     </li>
                     <li class="p-2">
-                        <a href="#" class="text-white">
+                        <a href="https://instagram.com" class="text-white" target="_blank">
                             <img src="./public/img/icons/icon-instagram.png" alt="" width="45" height="45">
                             Instagram
                         </a>
