@@ -1,5 +1,5 @@
-<div class="container-fluid bg-light mt-4 d-flex justify-content-center">
-        <div class="card mb-3 p-5">
+<div class="container-fluid mt-4 d-flex justify-content-center">
+        <div class="card mb-3 p-5 ">
             <div class="row g-0">
                 <div class="col text-center">
                     <img src="./public/img/icon.png" class="img-fluid" alt="..." height="200px" width="200px">
