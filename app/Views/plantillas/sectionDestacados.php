@@ -1,4 +1,4 @@
-<div class="container bg-light p-2 my-5 ">
+<div class="container bg-propio p-2 my-5 ">
         <h2 class="text-center m-5">Productos Destacados</h2>
         <ul class="row">
             <li class="col d-flex justify-content-center">

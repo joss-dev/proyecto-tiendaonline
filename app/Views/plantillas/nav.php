@@ -42,12 +42,12 @@
             <ul class="navbar-bar d-flex">
                 <li class="nav-item p-4">
                     <a class="" href="#">
-                        <img src="./public/img/icons/carrito.png" alt="" width="30" height="30">
+                        <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
                     </a>
                 </li>
                 <li class="nav-item p-4">
                     <a class="" href="#">
-                        <img src="./public/img/icons/usuario.png" alt="" width="30" height="30">
+                        <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                     </a>
                 </li>
             </ul>

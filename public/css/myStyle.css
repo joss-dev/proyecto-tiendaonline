@@ -5,6 +5,7 @@
     text-decoration: none;
     border: none;
     outline: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-link {
@@ -18,4 +19,14 @@
 .titulo-footer {
     padding-bottom: 8px;
     border-bottom: 2px solid greenyellow;
+}   
+
+.bg-propio {
+    background-color: #f0f6f8;
 }
+
+.efecto-opacidad:hover{
+  opacity: 0.5;
+}
+
+
