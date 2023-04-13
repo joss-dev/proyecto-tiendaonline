@@ -36,6 +36,7 @@ class Home extends BaseController
     public function contacto() {
         echo view('plantillas/encabezado');
         echo view('plantillas/nav');
+        echo view('plantillas/formContacto');
         echo view('plantillas/footer');
     }
 
