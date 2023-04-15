@@ -1,19 +1,22 @@
-<div class="container m-5">
-    <div>
-        <div class="col-md-6 text-center">
-            <img src="./public/img/icon.png" class="img-fluid" alt="..." height="200px" width="200px">
-            <h5 class="fw-bold mt-3 text-center">Tecno Phone</h5>
-        </div>
+<div class="container">
+    <div class="text-center m-5">
+        <img src="./public/img/icon.png" class="img-fluid" alt="..." height="200px" width="200px">
+        <h5 class="fw-bold mt-3 text-center">Tecno Phone</h5>
     </div>
-    <form >
+</div>
+<div class="container">
+    <form class="m-5">
+        <div class="mb-3">
+            <label for="exampleInputText" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
+        </div>
         <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
         </div>
         <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Ejemplo de textarea</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="exampleFormControlTextarea1" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Escriba aquí su mensaje"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
