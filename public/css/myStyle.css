@@ -25,7 +25,9 @@
     background-color: #f0f6f8;
 }
 
-
+textarea {
+    resize: none;
+}
 
 .efecto-opacidad:hover{
   opacity: 0.5;
