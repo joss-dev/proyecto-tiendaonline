@@ -8,7 +8,7 @@
                 <div class="col-md-6 text-center">
                     <div class="card-body">
                         <h3 class="card-title">Bienvenido</h3>
-                        <p class="card-text">Somos una empresa con mas de 10 años de experiencia en la venta de telefonos celulares. Nos enfocamos en brindarle a nuestros clientes una excelente experiencia de compra, con los mejores precios y asesoramiento personalizado. </p>
+                        <p class="card-text">Somos una empresa con mas de <strong>10 años de experiencia en la venta de telefonos celulares.</strong>  Nos enfocamos en brindarle a nuestros clientes una excelente experiencia de compra, con los <strong>mejores precios</strong>  y asesoramiento personalizado. </p>
                         <a href="<?php echo base_url('quienesSomos');?>" class="btn btn-info">Leer mas</a>
                     </div>
                 </div>

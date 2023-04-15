@@ -17,6 +17,7 @@ class Home extends BaseController
     public function quienesSomos() {
         echo view('plantillas/encabezado');
         echo view('plantillas/nav');
+        echo view('plantillas/quienesSomos');
         echo view('plantillas/footer');
     }
 

@@ -33,4 +33,10 @@ textarea {
   opacity: 0.5;
 }
 
+.efecto-circulo {
+    border-radius: 50%;
+}
 
+.color-negro {
+    background-color: aqua;
+}
