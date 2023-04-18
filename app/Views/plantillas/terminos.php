@@ -128,3 +128,35 @@
         </div>
     </div>
 </div>
+<div class="container text-center my-5">
+    <hr>
+    <h4>GARANTÍA Y DEVOLUCIONES</h4>
+    <p>Los motivos por los cuales se puede gestionar el cambio o la devolución de un producto son los siguientes:</p>
+    <p>Producto defectuoso antes de usarse: el producto recibido posee alguna falla o rotura.</p>
+    <p>El producto recibido es diferente al que solicitó.</p>
+    <p>En caso que un cliente reciba un producto en malas condiciones debe dar aviso dentro de las 48h de recibido el producto. Si el embalaje, caja o protector del producto llegase roto a causa del envío, no se debe abrir ni quitar ninguna faja de seguridad para hacer efectivo el cambio; Ya que al probar el producto o abrir su embalaje se considera que el cliente ha aceptado el producto como se lo entrego y no podrá hacer el cambio.</p>
+    <h5>Opciones de Cambios: </h5>
+    <p>-Para cambiar un producto SIN defectos (producto diferente al que se solicitó):
+        Si el producto es nuevo y está sin defectos, el usuario tendrá hasta 10 días consecutivos, a partir de la fecha de recepción, para poder sustituirlo por otro siempre y cuando conserve las mismas condiciones en que fue recibido (en el embalaje original, sin indicios de uso, con la factura / ticket original, manual y todos los accesorios si correspondiera). Los gastos del flete serán gratuitos para el usuario, cuando se trate del primer cambio realizado. En caso de que sea necesario uno nuevamente, los gastos de flete serán a cargo del usuario.
+    </p>
+    <p>-Para cambiar un producto CON defectos:
+        En el caso de que el producto esté con defectos propios de fabricación, tendrá 180 días, a partir de la fecha en que recibió el pedido para hacer uso de la garantía. El plazo y forma de utilización están mencionados en las condiciones de Garantía que acompañan al producto, es indispensable que mantenga intacto el sello de garantía (de tenerlo) y que el producto no presente signos de manipulación por un servicio técnico que no sea el oficial o por el usuario mismo para su reparación o diagnóstico.
+    </p>
+    <h5>Devolución de un producto: </h5>
+    <p>Conforme lo establece el art. 34 de la ley 24.240 de Defensa del Consumidor, en concordancia con el artículo 1.111 y 1.112 del Código Civil y Comercial de la República Argentina el usuario tendrá también 10 días contados a partir de que se entregue el bien o se celebre el contrato para poder revocar la aceptación de la compra. Si así lo decidiera se aplica lo dispuesto por el art. 10 ter de la Ley 24.240 de Defensa del Consumidor. En tal caso, el usuario deberá reintegrar el producto comunicándose con el sitio para solicitar el retiro del producto, el cual deberá estar sin uso y en perfecto estado, con sus etiquetas, envoltorios y todos los accesorios adicionales que pudieren corresponder</p>
+    <h5>Arrepentimiento de compra: </h5>
+    <p>Por el plazo de hasta 10 días corridos, el usuario puede arrepentirse de la compra, dicho plazo corre a partir de la fecha de recepción del producto. El mismo debe encontrarse en las mismas condiciones en que fue recibido (en el embalaje original, sin ser abierto, sin indicios de uso, con la factura / ticket original, manual y todos los accesorios si correspondiera). Tecno Phone se hace cargo del costo de la devolución y se procede a la devolución al cliente del dinero mediante el mismo medio que fue cobrado, emitiendo nota de crédito.</p>
+    <h5>Politica de garantia: </h5>
+    <p>Todos los productos comercializados en Tecno Phone tienen diez (10) días corridos de cambio directo por fallas y/o desperfectos, debiendo presentar la factura de compra original y el producto con su respectivo embalaje etiquetas y accesorios en perfecto estado. </p>
+    <p><strong> Dentro de los 10 días corridos </strong></p>
+    <ul>
+        <li>Verificada la falla del producto se procederá según el caso: </li>
+        <li>Enviar al cliente un nuevo producto </li>
+        <li>Se le devuelve el dinero</li>
+        <li>Se le envía otro producto, abonando o devolviendo la diferencia</li>
+    </ul>
+    <p>Vencido el plazo de diez días, todos los productos cuentan con garantía oficial del fabricante, debiendo ser gestionada por el cliente con la marca correspondiente.
+        Si el producto presenta indicios de golpes o mal uso, la garantía de estos queda anulada. Dicha garantía no cubre los inconvenientes ocasionados por malware o el uso indebido del sistema operativo, programas incompatibles o configuraciones erróneas.
+        Si el producto NO presenta falla, el cliente deberá abonar el costo del envío al domicilio del cliente.
+    </p>
+</div>
