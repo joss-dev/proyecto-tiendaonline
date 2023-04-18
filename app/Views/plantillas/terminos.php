@@ -1,5 +1,5 @@
 <div class="container text-center">
-    <h4 class="my-5">TÉRMINOS Y CONDICIONES — TECNO PHONE</h4>
+    <h4 class="my-5"> <strong>TÉRMINOS Y CONDICIONES — TECNO PHONE</strong></h4>
     <p class="my-5">
         Tecno Phone, persona jurídica de derecho privado describe, a través de este documento, las normas de uso del sitio tecnophone.com y de cualquier otro sitio web, tienda o aplicación operada por el titular.
         Al navegar por este sitio web, consideramos que está de acuerdo con las condiciones de uso que figuran a continuación.

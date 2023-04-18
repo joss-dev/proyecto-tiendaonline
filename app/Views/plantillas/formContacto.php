@@ -1,7 +1,7 @@
 <div class="container">
     <div class="text-center m-5">
         <img src="./public/img/icon.png" class="img-fluid" alt="..." height="200px" width="200px">
-        <h5 class="fw-bold mt-3 text-center">Tecno Phone</h5>
+        <h5 class="mt-3 text-center"><strong>Tecno Phone</strong></h5>
     </div>
 </div>
 <div class="container">
