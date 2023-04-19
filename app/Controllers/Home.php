@@ -42,12 +42,6 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function consultas() {
-        echo view('plantillas/encabezado');
-        echo view('plantillas/nav');
-        echo view('plantillas/footer');
-    }
-
     public function comercializacion() {
         echo view('plantillas/encabezado');
         echo view('plantillas/nav');

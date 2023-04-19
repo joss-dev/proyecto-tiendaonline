@@ -31,7 +31,6 @@
                         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                             <li><a class="dropdown-item" href="<?php echo base_url('quienesSomos'); ?>">Quienes somos</a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url('comercializacion'); ?>">Comercialización</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('consultas'); ?>">Consultas</a></li>
                         </ul>
                     </li>
                 </ul>
