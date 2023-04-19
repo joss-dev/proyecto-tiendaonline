@@ -24,6 +24,7 @@ class Home extends BaseController
     public function productos() {
         echo view('plantillas/encabezado');
         echo view('plantillas/nav');
+        echo view('plantillas/catalogo');
         echo view('plantillas/footer');
     }
 
@@ -50,6 +51,7 @@ class Home extends BaseController
     public function comercializacion() {
         echo view('plantillas/encabezado');
         echo view('plantillas/nav');
+        echo view('plantillas/comercializacion');
         echo view('plantillas/footer');
     }
 }

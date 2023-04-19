@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col text-center m-5">
+        <div class="col align-self-center text-center m-5">
             <img src="./public/img/icon.png" class="img-fluid" alt="..." height="200px" width="200px">
             <h5 class="fw-bold mt-3 text-center">Tecno Phone</h5>
         </div>
