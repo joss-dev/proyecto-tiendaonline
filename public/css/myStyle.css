@@ -33,3 +33,8 @@ textarea {
   opacity: 0.5;
 }
 
+a:link {
+ text-decoration: none;
+}
+
+
