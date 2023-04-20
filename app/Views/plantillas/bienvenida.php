@@ -1,4 +1,4 @@
-<div class="container-fluid mt-4 d-flex justify-content-center">
+<div class=" container-fluid mt-4 d-flex justify-content-center">
         <div class="bg-propio card mb-3 p-5 ">
             <div class="row g-0">
                 <div class="col-md-6 text-center">

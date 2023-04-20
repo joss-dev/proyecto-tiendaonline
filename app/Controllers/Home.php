@@ -11,6 +11,7 @@ class Home extends BaseController
         echo view('plantillas/bienvenida');
         echo view('plantillas/sectionDestacados');
         echo view('plantillas/sectionNuevos');
+        echo view('plantillas/maps');
         echo view('plantillas/footer');
     }
 

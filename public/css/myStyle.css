@@ -8,6 +8,11 @@
     font-family: 'Roboto', sans-serif;
 }
 
+.bg-propio {
+    background-color: #d8e0e2;
+}
+
+
 .nav-link {
     transition: all 0.5s;
 }
@@ -21,9 +26,6 @@
     border-bottom: 2px solid greenyellow;
 }   
 
-.bg-propio {
-    background-color: #020d11;
-}
 
 textarea {
     resize: none;
