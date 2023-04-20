@@ -9,7 +9,7 @@
 }
 
 .bg-propio {
-    background-color: #d8e0e2;
+    background-color: #f0f6f8;
 }
 
 
@@ -32,7 +32,10 @@ textarea {
 }
 
 .efecto-opacidad:hover{
-  opacity: 0.5;
+  opacity: 0.3;
+  cursor: hand;
+  transform: scale(1.15, 1.15);
+  backface-visibility: hidden;
 }
 
 a:link {
