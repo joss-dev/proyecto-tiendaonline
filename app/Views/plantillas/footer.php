@@ -1,7 +1,7 @@
 <!-- final de pagina -->
 <footer class="text-center text-white pt-3" style="background-color: #03001c;">
-    <ul class="row m-0">
-        <li class="col-md-4 mb-5">
+    <ul class="row m-0 g-5">
+        <li class="col-md-4 ">
             <h4 class="titulo-footer">Tecno Phone</h4>
             <ul class="m-3">
                 <li class="p-2">
@@ -18,7 +18,7 @@
                 </li>
             </ul>
         </li>
-        <li class="col-md-4 mb-5">
+        <li class="col-md-4 ">
             <h4 class="titulo-footer">Contacto</h4>
             <ul class="m-3">
                 <li class="p-2">
@@ -41,7 +41,7 @@
                 </li>
             </ul>
         </li>
-        <li class="col-md-4 mb-5">
+        <li class="col-md-4 ">
             <h4 class="titulo-footer">Redes Sociales</h4>
             <ul class="m-3">
                 <li class="p-2">

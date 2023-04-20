@@ -22,7 +22,7 @@
 }   
 
 .bg-propio {
-    background-color: #f0f6f8;
+    background-color: #020d11;
 }
 
 textarea {
@@ -37,4 +37,8 @@ a:link {
  text-decoration: none;
 }
 
+
+ul {
+    padding-left: 0;
+}
 
