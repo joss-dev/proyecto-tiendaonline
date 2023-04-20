@@ -18,35 +18,40 @@ class Home extends BaseController
     }
 
     public function quienesSomos() {
-        echo view('plantillas/encabezado');
+        $data['titulo'] = 'Quiénes Somos';
+        echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/quienesSomos');
         echo view('plantillas/footer');
     }
 
     public function productos() {
-        echo view('plantillas/encabezado');
+        $data['titulo'] = 'Productos';
+        echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/catalogo');
         echo view('plantillas/footer');
     }
 
     public function terminosYcondiciones() {
-        echo view('plantillas/encabezado');
+        $data['titulo'] = 'Terminos y Condiciones';
+        echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/terminos');
         echo view('plantillas/footer');
     }
 
     public function contacto() {
-        echo view('plantillas/encabezado');
+        $data['titulo'] = 'Contacto';
+        echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/formContacto');
         echo view('plantillas/footer');
     }
 
     public function comercializacion() {
-        echo view('plantillas/encabezado');
+        $data['titulo'] = 'Comercialización';
+        echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/comercializacion');
         echo view('plantillas/footer');
