@@ -42,6 +42,20 @@ a:link {
  text-decoration: none;
 }
 
+.efecto-escala {
+    animation-name: escala;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+}
+
+@keyframes escala {
+    0% {
+        transform: scale(0, 0);
+    }
+    100% {
+        transform: scale(1.2, 1.2);  
+      }
+}
 
 ul {
     padding-left: 0;
