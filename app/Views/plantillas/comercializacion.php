@@ -1,8 +1,8 @@
 <div class="container">
-    <h1 class="text-center m-5">Información Comercial</h1>
+    <h1 class="text-center m-5 fw-bold">Información Comercial</h1>
     <div class="row m-5 g-4">
         <div class="col-md-4 text-center">
-            <h3>Tipos de entregas</h3>
+            <h3 class="fw-bold">Tipos de entregas</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"> <strong>Presencial: </strong> Pasando a retirar por nuestro local ubicado en: <a class="text-dark" href="">Av. Independencia 2345</a></li>
                 
@@ -10,7 +10,7 @@
             </ul>
         </div>
         <div class="col-md-4 text-center">
-            <h3>Formas de envio</h3>
+            <h3 class="fw-bold">Formas de envio</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">Correo Argentino</li>
 
@@ -22,7 +22,7 @@
             </ul>
         </div>
         <div class="col-md-4 text-center">
-            <h3>Formas de Pago</h3>
+            <h3 class="fw-bold">Formas de Pago</h3>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item"> <strong> En nuestro local: </strong> </li>
 
