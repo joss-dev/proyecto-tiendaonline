@@ -4,8 +4,8 @@
         <div class="col-md-4 text-center">
             <h3 class="fw-bold">Tipos de entregas</h3>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item"> <strong>Presencial: </strong> Pasando a retirar por nuestro local ubicado en: <a class="text-dark" href="">Av. Independencia 2345</a></li>
-                
+                <li class="list-group-item"> <strong>Presencial: </strong> Pasando a retirar por nuestro local ubicado en: <a class="text-dark" href="">Av. Independencia 2345</a> <p>(Atendemos de lunes a sabados de 8hs a 20hs.)</p></li>
+
                 <li class="list-group-item"><br> <strong>Envios a domicilio: </strong> Realizamos envios a todo el pais</li>
             </ul>
         </div>

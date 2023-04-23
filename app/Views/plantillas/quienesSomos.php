@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row d-flex justify-content-center ">
         <div class="col-12 mt-5  d-flex justify-content-center ">
-            <div id="carouselExampleFade" class="carousel slide carousel-fade border border-dark" data-bs-interval="3000" data-bs-ride="carousel" style="max-width: 600px;">
+            <div id="carouselExampleFade" class="carousel slide carousel-fade border border-dark" data-bs-interval="2000" data-bs-ride="carousel" style="max-width: 600px;">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <img  src="./public/img/empresa/principales.jpg" class="d-block w-100" alt="...">
