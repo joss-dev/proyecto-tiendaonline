@@ -1,9 +1,31 @@
 <div class="container-fluid row">
     <div class="col-md-6 text-center mt-5">
-        <h5 class="mt-3 text-center"><strong>Datos de Contacto</strong></h5>
+        <h4 class="fw-bold">Datos de Contacto</h4>
+        <ul class="mt-3">
+            <li class="mt-4">
+                <h6>Email: <a href="#" class="text-secondary">tecnophone@gmail.com</a></h6>
+            </li>
+            <li class="mt-4">
+                <h6>Telefono: <a href="#" class="text-secondary">3794551245</a></h6>
+            </li>
+            <li class="mt-4">
+                <h6>Nuestro Local: <a href="https://goo.gl/maps/BWHiZUBJtDnHqtoMA" target="_blank" class="text-secondary">Av. Independencia 2345</a></h6>
+                <p>(De lunes a sabados de 8hs a 20hs.)</p>
+            </li>
+            <h6>Nuestras redes sociales:</h6>
+            <li class="mt-4">
+                <h6>Facebook: <a href="https://facebook.com" class="text-secondary" target="_blank">TecnoPhone</a></h6>
+            </li>
+            <li class="mt-4">
+                <h6>Instagram: <a href="https://instagram.com" class="text-secondary" target="_blank">TecnoPhone</a></h6>
+            </li>
+            <li class="mt-4">
+                <h6>Whatsapp: <a href="https://web.whatsapp.com/" class="text-secondary" target="_blank">WhatsappTecnoPhone</a></h6>
+            </li>
+        </ul>
     </div>
     <div class="col-md-6 mt-5">
-        <h4 class="text-center">Formulario de Contacto</h4>
+        <h4 class="text-center fw-bold">Formulario de Contacto</h4>
         <form class="m-5" action="" method="">
             <div class="mb-3">
                 <label for="exampleInputText" for="nombreCompleto" class="form-label">Nombre</label>

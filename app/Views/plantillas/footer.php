@@ -34,8 +34,8 @@
                     </a>
                 </li>
                 <li class="p-2">
-                    <a href="#" class="text-white">
-                        <img src="./public/img/icons/icon-map.png" alt="" width="40" height="40">
+                    <a href="https://goo.gl/maps/BWHiZUBJtDnHqtoMA" class="text-white" target="_blank">
+                        <img src="./public/img/icons/icon-map.png" alt="" width="40" height="40" >
                         Av. Independencia 2345
                     </a>
                 </li>
