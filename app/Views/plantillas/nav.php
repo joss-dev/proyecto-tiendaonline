@@ -9,7 +9,7 @@
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-6 mb-3 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url(''); ?>">Principal</a>
@@ -39,8 +39,8 @@
                     <button class="btn btn-outline-light" type="submit">Buscar</button>
                 </form>
             </div>
-            <ul class="navbar-bar d-flex">
-                <li class="nav-item p-4">
+            <ul class="d-flex ">
+                <li class="nav-item p-4 ">
                     <a class="" href="#">
                         <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
                     </a>
