@@ -44,7 +44,7 @@ a:link {
 
 .efecto-escala {
     animation-name: escala;
-    animation-duration: 2s;
+    animation-duration: 1.5s;
     animation-iteration-count: 1;
 }
 
@@ -53,7 +53,7 @@ a:link {
         transform: scale(0, 0);
     }
     100% {
-        transform: scale(1.2, 1.2);  
+        transform: scale(1, 1);  
       }
 }
 
