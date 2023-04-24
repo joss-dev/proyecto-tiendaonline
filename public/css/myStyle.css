@@ -42,7 +42,7 @@ a:link {
  text-decoration: none;
 }
 
-.efecto-escala {
+/* .efecto-escala {
     animation-name: escala;
     animation-duration: 1.5s;
     animation-iteration-count: 1;
@@ -55,7 +55,7 @@ a:link {
     100% {
         transform: scale(1, 1);  
       }
-}
+} */
 
 ul {
     padding-left: 0;
