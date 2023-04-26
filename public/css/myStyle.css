@@ -41,8 +41,13 @@ textarea {
 a:link {
  text-decoration: none;
 }
+<<<<<<< HEAD
 /* 
 .efecto-escala {
+=======
+
+/* .efecto-escala {
+>>>>>>> 7949296c9766f63b22ea165210d64c361cf1bfcc
     animation-name: escala;
     animation-duration: 1.5s;
     animation-iteration-count: 1;
