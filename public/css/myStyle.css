@@ -41,15 +41,10 @@ textarea {
 a:link {
  text-decoration: none;
 }
-<<<<<<< HEAD
-/* 
-.efecto-escala {
-=======
 
-/* .efecto-escala {
->>>>>>> 7949296c9766f63b22ea165210d64c361cf1bfcc
+.efecto-escala {
     animation-name: escala;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     animation-iteration-count: 1;
 }
 
@@ -60,7 +55,7 @@ a:link {
     100% {
         transform: scale(1, 1);  
       }
-} */
+} 
 
 ul {
     padding-left: 0;

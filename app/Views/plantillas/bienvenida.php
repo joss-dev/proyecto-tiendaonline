@@ -2,7 +2,7 @@
         <div class="bg-propio card mb-3 p-5 ">
             <div class="row g-0">
                 <div class="col-md-6 text-center">
-                    <img src="./public/img/icon.png" class="img-fluid" alt="..." height="200px" width="200px">
+                    <img src="./public/img/icon.png" class="img-fluid efecto-escala" alt="..." height="200px" width="200px">
                     <h5 class="fw-bold mt-3 text-center">Tecno Phone</h5>
                 </div>
                 <div class="col-md-6 text-center">
