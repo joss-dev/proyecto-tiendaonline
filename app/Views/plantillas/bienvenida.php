@@ -5,7 +5,7 @@
                     <img src="./public/img/icon.png" class="img-fluid efecto-escala" alt="..." height="200px" width="200px">
                     <h5 class="fw-bold mt-3 text-center">Tecno Phone</h5>
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 text-center align-self-center">
                     <div class="card-body">
                         <h3 class="card-title">Bienvenido</h3>
                         <p class="card-text">Somos una empresa con mas de <strong>10 años de experiencia en la venta de telefonos celulares.</strong>  Nos enfocamos en brindarle a nuestros clientes una excelente experiencia de compra, con los <strong>mejores precios</strong>  y asesoramiento personalizado. </p>
