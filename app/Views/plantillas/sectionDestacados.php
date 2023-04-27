@@ -23,7 +23,7 @@
         </li>
         <li class="col d-flex justify-content-center">
             <div class="card text-center" style="width: 18rem;">
-                <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
+                <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="300" height="300" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
                     <span class="d-block">$ 250.800</span>
