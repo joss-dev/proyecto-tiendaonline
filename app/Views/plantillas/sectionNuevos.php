@@ -1,6 +1,6 @@
 <div class="container bg-propio p-2 my-5 border border-secondary">
         <h2 class="text-center m-5">Nuevos Ingresos</h2>
-        <ul class="row g-4">
+        <ul class="row gy-5">
             <li class="col d-flex justify-content-center">
                 <div class="card text-center " style="width: 18rem;">
                     <img src="./public/img/ejemplos/iphone14.jpg" class="card-img-top" alt="...">
