@@ -1,5 +1,5 @@
-<div class=" container-fluid mt-4 d-flex justify-content-center">
-        <div class="bg-propio card mb-3 p-5 ">
+<div class="container-fluid mt-4 d-flex justify-content-center ">
+        <div class="bg-propio mb-3 p-5 border border-5">
             <div class="row g-0">
                 <div class="col-md-6 text-center">
                     <img src="./public/img/icon.png" class="img-fluid efecto-escala" alt="..." height="200px" width="200px">
