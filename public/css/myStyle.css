@@ -48,13 +48,6 @@ a:link {
     animation-iteration-count: 1;
 }
 
-.card {
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-.card:hover {
-    transform: scale(1.1);
-}
 
 @keyframes escala {
     0% {
@@ -64,6 +57,15 @@ a:link {
         transform: scale(1, 1);  
       }
 } 
+
+.card {
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
 
 ul {
     padding-left: 0;
