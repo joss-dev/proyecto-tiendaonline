@@ -38,6 +38,7 @@ $routes->get('comercializacion', 'Home::comercializacion');
 
 $routes->get('registrarse', 'User_controller::registrarse');
 
+$routes->post('registro', 'User_controller::registro_cliente');
 
 
 /*

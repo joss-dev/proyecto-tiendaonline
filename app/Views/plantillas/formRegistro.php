@@ -1,3 +1,31 @@
-<div class="container text-center mt-5">
-    <h1>Registrarse</h1>
+<div class="container mt-5 mb-5">
+    <h1 class="text-center">Registrarse</h1>
+    <?php
+    echo form_open('registro');
+    ?>
+    <div class="mb-3">
+        <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>
+        <input type="text" name="nombre" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputText" for="apellido" class="form-label">Apellido</label>
+        <input type="text" name="apellido" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su Apellido">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" for="correo" class="form-label">Correo electrónico</label>
+        <input type="email" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword" for="contraseña" class="form-label">Contraseña</label>
+        <input type="password" name="contraseña" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Ingrese su contraseña">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword" for="recontraseña" class="form-label">Repetir la contraseña</label>
+        <input type="password" name="recontraseña" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Repetir su contraseña">
+    </div>
+    <button type="submit" class="btn btn-primary">Registrarse</button>
+</div>
+<?php
+form_close();
+?>
 </div>

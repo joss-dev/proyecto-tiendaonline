@@ -11,5 +11,13 @@ class User_controller extends BaseController {
         echo view('plantillas/formRegistro');
         echo view('plantillas/footer');
     }
+
+    public function registro_cliente() {
+
+
+
+
+    }
+
 }
 ?>
