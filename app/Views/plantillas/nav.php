@@ -46,7 +46,7 @@
                     </a>
                 </li>
                 <li class="nav-item p-4">
-                    <a class="" href="#">
+                    <a class="" href="<?php echo base_url('registrarse'); ?>">
                         <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                     </a>
                 </li>
