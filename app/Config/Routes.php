@@ -36,6 +36,10 @@ $routes->get('terminosYcondiciones', 'Home::terminosYcondiciones');
 $routes->get('contacto', 'Home::contacto');
 $routes->get('comercializacion', 'Home::comercializacion');
 
+$routes->get('registrarse', 'User_controller::registrarse');
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

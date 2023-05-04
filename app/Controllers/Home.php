@@ -56,4 +56,5 @@ class Home extends BaseController
         echo view('plantillas/comercializacion');
         echo view('plantillas/footer');
     }
+
 }
