@@ -35,11 +35,11 @@ $routes->get('productos', 'Home::productos');
 $routes->get('terminosYcondiciones', 'Home::terminosYcondiciones');
 $routes->get('contacto', 'Home::contacto');
 $routes->get('comercializacion', 'Home::comercializacion');
-
+$routes->get('login', 'User_controller::login_view');
 $routes->get('registrarse', 'User_controller::registrarse');
 
 $routes->post('registro', 'User_controller::registro_cliente');
-
+$routes->post('login', 'User_controller::login');
 
 /*
  * --------------------------------------------------------------------

@@ -12,10 +12,22 @@ class User_controller extends BaseController {
         echo view('plantillas/footer');
     }
 
+    public function login_view() {
+        $data['titulo'] = 'Iniciar Sesión';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/nav');
+        echo view('plantillas/formLogin');
+        echo view('plantillas/footer');
+    }
+
+
+
     public function registro_cliente() {
 
+    }
 
 
+    public function login() {
 
     }
 

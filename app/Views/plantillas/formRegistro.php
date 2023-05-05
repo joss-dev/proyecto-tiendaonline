@@ -1,8 +1,6 @@
 <div class="container mt-5 mb-5">
     <h1 class="text-center">Registrarse</h1>
-    <?php
-    echo form_open('registro');
-    ?>
+    <?php echo form_open('registro'); ?>
     <div class="mb-3">
         <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>
         <input type="text" name="nombre" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
@@ -23,9 +21,7 @@
         <label for="exampleInputPassword" for="recontraseña" class="form-label">Repetir la contraseña</label>
         <input type="password" name="recontraseña" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Repetir su contraseña">
     </div>
-    <button type="submit" class="btn btn-primary">Registrarse</button>
+    <?php echo form_submit('Registrarme', 'Registrarme', "class='btn btn-outline-success'");?>
 </div>
-<?php
-form_close();
-?>
+<?php form_close(); ?>
 </div>
