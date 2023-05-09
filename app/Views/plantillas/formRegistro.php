@@ -14,12 +14,16 @@
         <input type="email" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword" for="contraseña" class="form-label">Contraseña</label>
-        <input type="password" name="contraseña" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Ingrese su contraseña">
+        <label for="exampleInputText" for="correo" class="form-label">Telefono</label>
+        <input type="tel" name="telefono" class="form-control border border-dark" id="exampleInputText" aria-describedby="telHelp" placeholder="Ingrese su telefono">
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword" for="recontraseña" class="form-label">Repetir la contraseña</label>
-        <input type="password" name="recontraseña" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Repetir su contraseña">
+        <label for="exampleInputPassword" for="pass" class="form-label">Contraseña</label>
+        <input type="password" name="pass" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Ingrese su contraseña">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword" for="repass" class="form-label">Repetir la contraseña</label>
+        <input type="password" name="repass" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Repetir su contraseña">
     </div>
     <?php echo form_submit('Registrarme', 'Registrarme', "class='btn btn-outline-success'");?>
 </div>

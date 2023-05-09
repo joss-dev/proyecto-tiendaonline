@@ -26,18 +26,24 @@
     </div>
     <div class="col-md-6 mt-5">
         <h4 class="text-center fw-bold">Formulario de Contacto</h4>
-        <form class="m-5" action="" method="">
+        <?php if(isset($validation)) { ?>
+            <div class="bg-danger">
+                <?= $validation->listErrors(); ?>
+            </div>
+           <?php } ?> 
+
+        <form class="m-5" action="<?php echo base_url('consulta')?>" method="POST">
             <div class="mb-3">
-                <label for="exampleInputText" for="nombreCompleto" class="form-label">Nombre</label>
-                <input type="text" name="nombreCompleto" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
+                <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>
+                <input type="text" name="nombre" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" for="correo" class="form-label">Correo electrónico</label>
                 <input type="email" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" for="consulta" class="form-label">Mensaje</label>
-                <textarea class="form-control border border-dark" name="consulta " id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Escriba aquí su mensaje"></textarea>
+                <label for="exampleFormControlTextarea1" for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control border border-dark" name="mensaje" id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Escriba aquí su mensaje"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
