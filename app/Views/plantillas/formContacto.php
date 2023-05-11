@@ -26,13 +26,12 @@
     </div>
     <div class="col-md-6 mt-5">
         <h4 class="text-center fw-bold">Formulario de Contacto</h4>
-        <?php if(isset($validation)) { ?>
-            <div  class="alert alert-danger d-flex align-items-center" role="alert">
-                <?= $validation->listErrors(); ?>
-            </div>
-           <?php } ?> 
-
-        <form class="m-5" action="<?php echo base_url('consulta')?>" method="POST">
+        <?php if (isset($validation)) { ?>
+                    <div class="alert alert-danger d-flex align-items-center" role="alert">
+                        <? $validation->listErrors(); ?>
+                    </div>
+                <?php } ?>
+        <form class="m-5" action="<?php echo base_url('consulta') ?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>
                 <input type="text" name="nombre" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
