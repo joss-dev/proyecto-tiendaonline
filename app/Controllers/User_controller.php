@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\Consulta_model;
 
 class User_controller extends BaseController {
 
@@ -41,8 +42,16 @@ class User_controller extends BaseController {
             $validations = $this->validate($rules);
 
             if($validations) {
+                $data = [
+                    'consulta_nombre' => $request->getPost('nombre'),
+                    'consulta_correo' => $request->getPost('correo'),
+                    'consulta_mensaje' => $request->getPost('mensaje')
+                ];
+                
+                $registroConsulta = new Consulta_model();
+                $registroConsulta->insert($data);
 
-
+                return redirect()->to('contacto');
             }else {
 
                 $data['validation'] = $this->validator;
