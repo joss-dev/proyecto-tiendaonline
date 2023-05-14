@@ -26,6 +26,7 @@
     </div>
     <div class="col-md-6 mt-5">
         <h4 class="text-center fw-bold">Formulario de Contacto</h4>
+        <?php $validation = \Config\Services::validation(); ?>
         <form class="m-5" action="<?php echo base_url('consulta') ?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>

@@ -29,7 +29,7 @@ class User_controller extends BaseController {
     }
 
     public function registrar_consulta() {
-
+        
         $request = \Config\Services::request();
 
         if($request->is('post')) {
@@ -51,18 +51,16 @@ class User_controller extends BaseController {
                 $registroConsulta = new Consulta_model();
                 $registroConsulta->insert($data);
 
-                return redirect()->to('contacto')->with('Msg', 'Su mensaje fue enviado correctamente, nos pondremos en contacto a la brevedad');
+                return redirect()->to('contacto');
             }else {
-
                 $data['validation'] = $this->validator;
-
+                $data['titulo'] = 'Contacto';
+                echo view('plantillas/encabezado', $data);
+                echo view('plantillas/nav');
+                echo view('plantillas/formContacto');
+                echo view('plantillas/footer');
             }
         }
-        $data['titulo'] = 'Contacto';
-            echo view('plantillas/encabezado', $data);
-            echo view('plantillas/nav');
-            echo view('plantillas/formContacto');
-            echo view('plantillas/footer');
     }    
 
     public function login() {
@@ -70,4 +68,3 @@ class User_controller extends BaseController {
     }
 
 }
-?>
