@@ -51,7 +51,7 @@ class User_controller extends BaseController {
                 $registroConsulta = new Consulta_model();
                 $registroConsulta->insert($data);
 
-                return redirect()->to('contacto');
+                return redirect()->to('contacto')->with('Msg', 'Su mensaje fue enviado correctamente, nos pondremos en contacto a la brevedad');
             }else {
 
                 $data['validation'] = $this->validator;
