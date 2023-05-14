@@ -30,7 +30,7 @@
         <form class="m-5" action="<?php echo base_url('consulta') ?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>
-                <input type="text" name="nombre" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
+                <input type="text" value="<?php echo set_value('nombre'); ?>" name="nombre" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
                 <?php if ($validation->getError('nombre')) { ?>
                     <div class='alert alert-danger mt-2'>
                         <?= $error = $validation->getError('nombre'); ?>
@@ -39,7 +39,7 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" for="correo" class="form-label">Correo electrónico</label>
-                <input type="email" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+                <input type="email" value="<?php echo set_value('correo'); ?>" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
                 <?php if ($validation->getError('correo')) { ?>
                     <div class='alert alert-danger mt-2'>
                         <?= $error = $validation->getError('correo'); ?>
@@ -47,8 +47,8 @@
                 <?php } ?>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" for="mensaje" class="form-label">Mensaje</label>
-                <textarea class="form-control border border-dark" name="mensaje" id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Escriba aquí su mensaje"></textarea>
+                <label for="exampleFormControlTextarea1"  for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control border border-dark" value="<?php echo set_value('mensaje'); ?>" name="mensaje" id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Escriba aquí su mensaje"></textarea>
                 <?php if ($validation->getError('mensaje')) { ?>
                     <div class='alert alert-danger mt-2'>
                         <?= $error = $validation->getError('mensaje'); ?>
