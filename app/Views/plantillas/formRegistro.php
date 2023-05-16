@@ -14,8 +14,12 @@
         <input type="email" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
     </div>
     <div class="mb-3">
-        <label for="exampleInputText" for="correo" class="form-label">Telefono</label>
+        <label for="telefono" class="form-label">Telefono</label>
         <input type="tel" name="telefono" class="form-control border border-dark" id="exampleInputText" aria-describedby="telHelp" placeholder="Ingrese su telefono">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputText" for="dni" class="form-label">Dni</label>
+        <input type="numeric" name="dni" class="form-control border border-dark" id="exampleInputNumeric" aria-describedby="numericHelp" placeholder="Ingrese su dni">
     </div>
     <div class="mb-3">
         <label for="exampleInputPassword" for="pass" class="form-label">Contraseña</label>
