@@ -31,9 +31,10 @@ class User_controller extends BaseController
     public function registrar_usuario()
     {
         $request = \Config\Services::request();
+        $validation = \Config\Services::validation();
 
-        if ($request->is('post')) {
-            $rules = [
+        $validation->setRules(
+            [
                 'nombre' => 'required',
                 'apellido' => 'required',
                 'telefono' => 'required|numeric|is_natural_no_zero',
@@ -41,11 +42,44 @@ class User_controller extends BaseController
                 'correo' => 'required|valid_email|is_unique[usuarios.usuario_correo]',
                 'pass' => 'required|min_length[8]',
                 'repass' => 'required|min_length[8]|matches[pass]'
-            ];
 
-            $validations = $this->validate($rules);
+            ],
+            [
+                "nombre" => [
+                    "required" => "El nombre es obligatorio."
+                ],
+                "apellido" => [
+                    "required" => "El apellido es obligatorio."
+                ],
+                "telefono" => [
+                    "required" => "El telefono es obligatorio.",
+                    "numeric" => "El formato no es correcto.",
+                    "is_natural_no_zero" => "El formato no es correcto."
+                ],
+                "dni" => [
+                    "required" => "El dni es obligatorio.",
+                    "numeric" => "El formato no es correcto.",
+                    "is_natural_no_zero" => "El formato no es correcto."
+                ],
+                "correo" => [
+                    "required" => "El correo es obligatorio.",
+                    "valid_email" => "El formato no es correcto.",
+                    "is_unique" => "El correo ya se encuentra registrado."
+                ],
+                "pass" => [
+                    "required" => "La contraseña es obligatorio.",
+                    "min_length" => "Debe contener al menos 8 caracteres."
+                ],
+                "repass" => [
+                    "required" => "La contraseña es obligatorio.",
+                    "min_length" => "Debe contener al menos 8 caracteres.",
+                    "matches" => "Las contraseñas no coinciden."
+                ],
+            ]
+            );
 
-            if ($validations) {
+
+        if ($validation->withRequest($this->request)->run()) {
                 $data = [
                     'usuario_nombre' => $request->getPost('nombre'),
                     'usuario_apellido' => $request->getPost('apellido'),
@@ -61,7 +95,7 @@ class User_controller extends BaseController
                 $registroUsuario->insert($data);
 
                 return redirect()->to('/');
-            } else {
+             } else {
                 $data['validation'] = $this->validator;
                 $data['titulo'] = 'Registrarse';
                 echo view('plantillas/encabezado', $data);
@@ -70,7 +104,7 @@ class User_controller extends BaseController
                 echo view('plantillas/footer');
             }
         }
-    }
+
 
     public function registrar_consulta()
     {
