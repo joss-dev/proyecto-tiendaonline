@@ -52,19 +52,20 @@ class User_controller extends BaseController
                     'persona_correo' => $request->getPost('correo'),
                     'persona_telefono' => $request->getPost('telefono'),
                     'persona_pass' => password_hash($request->getPost('pass'), PASSWORD_BCRYPT),
-                    'persona_estado' => 1
+                    'persona_estado' => 1, 
+                    'perfil_id'=> 2
                 ];
 
                 $registroConsulta = new Persona_model();
                 $registroConsulta->insert($data);
 
-                return redirect()->to('contacto');
+                return redirect()->to('/');
             } else {
                 $data['validation'] = $this->validator;
-                $data['titulo'] = 'Contacto';
+                $data['titulo'] = 'Registrarse';
                 echo view('plantillas/encabezado', $data);
                 echo view('plantillas/nav');
-                echo view('plantillas/formContacto');
+                echo view('plantillas/formRegistro');
                 echo view('plantillas/footer');
             }
         }
