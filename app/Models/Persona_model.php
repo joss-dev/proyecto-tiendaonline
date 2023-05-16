@@ -4,7 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Consulta_model extends Model
+class Persona_model extends Model
 {
     protected $table      = 'personas';
     protected $primaryKey = 'id_persona';
@@ -14,7 +14,7 @@ class Consulta_model extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = true;
 
-    protected $allowedFields = ['persona_nombre', 'persona_apellido', 'persona_telefono', "persona_correo", "persona_pass", "persona_estado"];
+    protected $allowedFields = ['persona_nombre', 'persona_apellido', 'persona_telefono', 'persona_correo', 'persona_pass', 'persona_estado', 'persona_dni', 'perfil_id'];
 
     // Dates
     protected $useTimestamps = false;// poner en true

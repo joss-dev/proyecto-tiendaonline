@@ -37,6 +37,7 @@ class User_controller extends BaseController
                 'nombre' => 'required',
                 'apellido' => 'required',
                 'telefono' => 'required|numeric|is_natural_no_zero',
+                'dni' => 'required|numeric|is_natural_no_zero',
                 'correo' => 'required|valid_email|is_unique[personas.persona_correo]',
                 'pass' => 'required|min_length[8]',
                 'repass' => 'required|min_length[8]|matches[pass]'
