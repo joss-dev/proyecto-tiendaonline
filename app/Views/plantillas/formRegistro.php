@@ -18,7 +18,7 @@
         <input type="tel" name="telefono" class="form-control border border-dark" id="exampleInputText" aria-describedby="telHelp" placeholder="Ingrese su telefono">
     </div>
     <div class="mb-3">
-        <label for="exampleInputText" for="dni" class="form-label">Dni</label>
+        <label for="exampleInputText" for="dni" class="form-label">Dni (Sin puntos)</label>
         <input type="numeric" name="dni" class="form-control border border-dark" id="exampleInputNumeric" aria-describedby="numericHelp" placeholder="Ingrese su dni">
     </div>
     <div class="mb-3">

@@ -39,7 +39,7 @@ $routes->get('login', 'User_controller::login_view');
 $routes->get('registrarse', 'User_controller::registrarse');
 
 $routes->post('consulta', 'User_controller::registrar_consulta');
-$routes->post('registro', 'User_controller::registro_cliente');
+$routes->post('registro', 'User_controller::registrar_usuario');
 $routes->post('login', 'User_controller::login');
 
 /*

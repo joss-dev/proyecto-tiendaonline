@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Consulta_model;
-use App\Models\Persona_model;
+use App\Models\Usuario_model;
 
 class User_controller extends BaseController
 {
@@ -28,7 +28,7 @@ class User_controller extends BaseController
 
 
 
-    public function registro_persona()
+    public function registrar_usuario()
     {
         $request = \Config\Services::request();
 
@@ -38,7 +38,7 @@ class User_controller extends BaseController
                 'apellido' => 'required',
                 'telefono' => 'required|numeric|is_natural_no_zero',
                 'dni' => 'required|numeric|is_natural_no_zero',
-                'correo' => 'required|valid_email|is_unique[personas.persona_correo]',
+                'correo' => 'required|valid_email|is_unique[usuarios.usuario_correo]',
                 'pass' => 'required|min_length[8]',
                 'repass' => 'required|min_length[8]|matches[pass]'
             ];
@@ -47,17 +47,18 @@ class User_controller extends BaseController
 
             if ($validations) {
                 $data = [
-                    'persona_nombre' => $request->getPost('nombre'),
-                    'persona_apellido' => $request->getPost('apellido'),
-                    'persona_correo' => $request->getPost('correo'),
-                    'persona_telefono' => $request->getPost('telefono'),
-                    'persona_pass' => password_hash($request->getPost('pass'), PASSWORD_BCRYPT),
-                    'persona_estado' => 1, 
+                    'usuario_nombre' => $request->getPost('nombre'),
+                    'usuario_apellido' => $request->getPost('apellido'),
+                    'usuario_correo' => $request->getPost('correo'),
+                    'usuario_telefono' => $request->getPost('telefono'),
+                    'usuario_dni' => $request->getPost('dni'),
+                    'usuario_pass' => password_hash($request->getPost('pass'), PASSWORD_BCRYPT),
+                    'usuario_estado' => 1, 
                     'perfil_id'=> 2
                 ];
 
-                $registroConsulta = new Persona_model();
-                $registroConsulta->insert($data);
+                $registroUsuario = new Usuario_model();
+                $registroUsuario->insert($data);
 
                 return redirect()->to('/');
             } else {
