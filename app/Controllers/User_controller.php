@@ -94,7 +94,7 @@ class User_controller extends BaseController
                 $registroUsuario = new Usuario_model();
                 $registroUsuario->insert($data);
 
-                return redirect()->to('/');
+                return redirect()->to('/')->with('Msg', 'Usuario registrado Exitosamente!.');
              } else {
                 $data['validation'] = $this->validator;
                 $data['titulo'] = 'Registrarse';

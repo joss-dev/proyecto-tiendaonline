@@ -17,7 +17,7 @@
         <?php if ($validation->getError('apellido')) { ?>
             <div class='alert alert-danger mt-2'>
                 <?= $error = $validation->getError('apellido'); ?>
-            </div>
+            </div>session->getFlashdata
         <?php } ?>
     </div>
     <div class="mb-3">
