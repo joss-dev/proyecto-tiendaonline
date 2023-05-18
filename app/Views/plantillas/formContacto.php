@@ -27,6 +27,12 @@
     <div class="col-md-6 mt-5">
         <h4 class="text-center fw-bold">Formulario de Contacto</h4>
         <?php $validation = \Config\Services::validation(); ?>
+        <?php if (session()->getFlashdata('Mensaje')) { ?>
+            <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
+                <?= session()->getFlashdata('Mensaje'); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
         <form class="m-5" action="<?php echo base_url('consulta') ?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>
@@ -47,7 +53,7 @@
                 <?php } ?>
             </div>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1"  for="mensaje" class="form-label">Mensaje</label>
+                <label for="exampleFormControlTextarea1" for="mensaje" class="form-label">Mensaje</label>
                 <textarea class="form-control border border-dark" value="<?php echo set_value('mensaje'); ?>" name="mensaje" id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Escriba aquí su mensaje"></textarea>
                 <?php if ($validation->getError('mensaje')) { ?>
                     <div class='alert alert-danger mt-2'>
