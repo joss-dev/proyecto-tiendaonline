@@ -48,6 +48,11 @@ a:link {
     animation-iteration-count: 1;
 }
 
+.mensaje {
+    animation-duration: 5s;
+    display: none;
+}
+
 
 @keyframes escala {
     0% {

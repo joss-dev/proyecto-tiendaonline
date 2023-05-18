@@ -54,3 +54,9 @@
         </div>
     </nav>
 </header>
+<?php if (session()->getFlashdata('Msg')) { ?>
+    <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
+        <?= session()->getFlashdata('Msg'); ?>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php } ?>

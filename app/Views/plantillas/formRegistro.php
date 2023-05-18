@@ -1,4 +1,5 @@
 <div class="container mt-5 mb-5">
+    
     <h1 class="text-center">Registrarse</h1>
     <?php echo form_open('registro'); ?>
     <?php $validation = \Config\Services::validation(); ?>
@@ -17,7 +18,7 @@
         <?php if ($validation->getError('apellido')) { ?>
             <div class='alert alert-danger mt-2'>
                 <?= $error = $validation->getError('apellido'); ?>
-            </div>session->getFlashdata
+            </div>
         <?php } ?>
     </div>
     <div class="mb-3">

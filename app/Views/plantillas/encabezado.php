@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./public/css/bootstrap.min.css">
     <link rel="stylesheet" href="./public/css/myStyle.css">
     
+    <script src="./public/js/myScript.js"></script>
 
 </head>
 
