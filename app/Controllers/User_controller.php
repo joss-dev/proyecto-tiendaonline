@@ -213,4 +213,9 @@ class User_controller extends BaseController
             echo view('plantillas/footer');
         }
     }
+    public function cerrar_sesion() {
+        $session = \Config\Services::session();
+        $session->destroy();
+        return redirect()->route('login');
+    }
 }
