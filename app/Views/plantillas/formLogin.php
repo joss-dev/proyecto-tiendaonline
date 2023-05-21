@@ -4,7 +4,7 @@
     <?php $validation = \Config\Services::validation(); ?>
     <div class="mb-3">
         <label for="exampleInputEmail1" for="correo" class="form-label">Correo electrónico</label>
-        <input type="email" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
+        <input type="email" name="correo" value="<?php echo set_value('correo'); ?>" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
         <?php if ($validation->getError('correo')) { ?>
             <div class='alert alert-danger mt-2'>
                 <?= $error = $validation->getError('correo'); ?>
