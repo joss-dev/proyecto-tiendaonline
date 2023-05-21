@@ -147,9 +147,42 @@ class User_controller extends BaseController
         $request = \Config\Services::request();
         $session = \Config\Services::session();
 
+        $usuario_model = new Usuario_model();
+
         $email = $request->getPost('correo'); 
         $pass = $request->getPost('pass');
+        $user = $usuario_model->where('usuario_correo', $email)->first();
         
+        if($user) {
+            $pass_user = $user['usuario_pass'];
+            $pass_verif = password_verify($pass, $pass_user);
 
+            if($pass_verif) {
+                $data = [
+                    'id' => $user['id_usuario'],
+                    'nombre' => $user['usuario_nombre'],
+                    'apellido' => $user['usuario_apellido'],
+                    'perfil' => $user['perfil_id'],
+                    'login' =>  TRUE
+                ];
+
+                $session->set($data);
+
+                switch($session->get('perfil')) {
+                    case '1': 
+                        return redirect()->route('user_admin');
+                        break;
+                    case '2':
+                        return redirect()->route('/'); 
+                        break;   
+                }
+
+            }else {
+                $session->setFlashdata('mensajeVerif', 'Correo electronico y/o contraseña incorrectos');
+            }
+
+        }else {
+            $session->setFlashdata('mensajeVerif','Usuario no registrado');
+        } 
     }
 }
