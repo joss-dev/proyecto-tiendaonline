@@ -197,10 +197,12 @@ class User_controller extends BaseController
                             break;
                     }
                 } else {
-                    $session->setFlashdata('mensajeVerif', 'Correo electronico y/o contraseña incorrectos');
+                    $session->setFlashdata('mensajeVerif', 'Correo electronico y/o contraseña incorrectos');       
+                    return redirect()->route('loginUsuario');       
                 }
             } else {
-                $session->setFlashdata('mensajeVerif', 'Usuario no registrado');
+                    $session->setFlashdata('mensajeVerif', 'Usuario no registrado');  
+                    return redirect()->route('loginUsuario');  
             }
         }else {
             $data['validation'] = $this->validator;

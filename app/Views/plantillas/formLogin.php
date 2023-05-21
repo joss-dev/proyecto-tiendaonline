@@ -2,6 +2,12 @@
     <h1 class="text-center">Iniciar Sesión</h1>
     <?php echo form_open('login'); ?>
     <?php $validation = \Config\Services::validation(); ?>
+    <?php if (session()->getFlashdata('mensajeVerif')) { ?>
+            <div class='alert alert-danger alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
+                <?= session()->getFlashdata('mensajeVerif'); ?>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        <?php } ?>
     <div class="mb-3">
         <label for="exampleInputEmail1" for="correo" class="form-label">Correo electrónico</label>
         <input type="email" name="correo" value="<?php echo set_value('correo'); ?>" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
