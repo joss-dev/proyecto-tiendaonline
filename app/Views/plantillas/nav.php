@@ -1,5 +1,6 @@
 <header>
     <!-- barra de navegacion -->
+    
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
@@ -39,6 +40,7 @@
                     <button class="btn btn-outline-light" type="submit">Buscar</button>
                 </form>
             </div>
+            <?php if(session('login')) { ?>
             <ul class="d-flex ">
                 <li class="nav-item p-4 ">
                     <a class="" href="#">
@@ -49,9 +51,10 @@
                     <a class="text-white" href="<?php echo base_url('registrarse'); ?>">
                         <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                     </a>
-                    <p class="pt-3 m-0 text-white">probando</p>
+                    <p class="pt-3 m-0 text-white"><?php $session->get('nombre');?></p>
                 </li>
             </ul>
+            <?php } ?>
         </div>
     </nav>
 </header>
