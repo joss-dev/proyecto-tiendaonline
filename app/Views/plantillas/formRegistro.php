@@ -66,7 +66,11 @@
             </div>
         <?php } ?>
     </div>
-    <?php echo form_submit('Registrarme', 'Registrarme', "class='btn btn-outline-success'"); ?>
+    <?php echo form_submit('Registrarme', 'Registrarme', "class='btn btn-outline-success mb-4'"); ?>
+    <div class="text-center">
+        <h6 class="mb-3">¿ Ya tienes una cuenta ? Inicia sesión aqui.</h6>
+        <a class="btn btn-info" href="<?php echo base_url('login'); ?>">Iniciar Sesión</a>
+    </div>
 </div>
 <?php form_close(); ?>
 </div>

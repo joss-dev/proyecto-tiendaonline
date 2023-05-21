@@ -9,7 +9,11 @@
         <label for="exampleInputPassword" for="contraseña" class="form-label">Contraseña</label>
         <input type="password" name="contraseña" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Ingrese su contraseña">
     </div>
-    <?php echo form_submit('login', 'Iniciar Sesión', "class='btn btn-success'");?>
+    <?php echo form_submit('login', 'Iniciar Sesión', "class='btn btn-success mb-4'"); ?>
+    <div class="text-center">
+        <h6 class="mb-3">¿ No tienes una cuenta ? Regístrate aqui en simples pasos.</h6>
+        <a class="btn btn-info" href="<?php echo base_url('registrarse'); ?>">Registrarse</a>
+    </div>
 </div>
 <?php form_close(); ?>
 </div>
