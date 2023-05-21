@@ -11,6 +11,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <?php $session = session();?>
                 <ul class="navbar-nav mx-6 mb-3 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url(''); ?>">Principal</a>
@@ -51,7 +52,7 @@
                     <a class="text-white" href="<?php echo base_url('registrarse'); ?>">
                         <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                     </a>
-                    <p class="pt-3 m-0 text-white"><?php $session->get('nombre');?></p>
+                    <p class="pt-3 m-0 text-white"><?= $session->get('nombre');?></p>
                 </li>
             </ul>
             <?php } ?>
