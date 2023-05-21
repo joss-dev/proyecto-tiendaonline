@@ -57,4 +57,12 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
+    public function perfil() {
+        $data['titulo'] = 'Perfil';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/nav');
+        echo view('plantillas/perfil');
+        echo view('plantillas/footer');
+    }
+
 }

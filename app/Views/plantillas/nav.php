@@ -49,10 +49,10 @@
                     </a>
                 </li>
                 <li class="nav-item pt-4 text-center">
-                    <a class="text-white" href="<?php echo base_url('registrarse'); ?>">
+                    <a class="text-white" href="<?php echo base_url('perfil'); ?>">
                         <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                     </a>
-                    <a href="" class="d-block pt-3 text-white"><?= $session->get('nombre');?></a>
+                    <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre');?></a>
                 </li>
             </ul>
             <?php } ?>
