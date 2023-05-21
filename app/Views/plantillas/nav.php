@@ -45,10 +45,11 @@
                         <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
                     </a>
                 </li>
-                <li class="nav-item p-4">
-                    <a class="" href="<?php echo base_url('registrarse'); ?>">
+                <li class="nav-item pt-4 text-center">
+                    <a class="text-white" href="<?php echo base_url('registrarse'); ?>">
                         <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                     </a>
+                    <p class="pt-3 m-0 text-white">probando</p>
                 </li>
             </ul>
         </div>
