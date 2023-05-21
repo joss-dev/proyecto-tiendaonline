@@ -156,9 +156,9 @@ class User_controller extends BaseController
             [
                 "correo" => [
                     "required" => "El correo es obligatorio.",
-                    "valid_email" => "El formato del correo no es correcto.",
+                    "valid_email" => "El formato no es correcto.",
                 ],
-                "pass" => [
+                "pass" => [ 
                     "required" => "La contraseña es obligatoria.",
                     "min_length" => "La contraseña contiene al menos 8 caracteres."
                 ],
