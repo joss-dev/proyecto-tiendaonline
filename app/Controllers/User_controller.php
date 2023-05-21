@@ -142,7 +142,14 @@ class User_controller extends BaseController
         }
     }
 
-    public function login()
+    public function login_usuario()
     {
+        $request = \Config\Services::request();
+        $session = \Config\Services::session();
+
+        $email = $request->getPost('correo'); 
+        $pass = $request->getPost('pass');
+        
+
     }
 }

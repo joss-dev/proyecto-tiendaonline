@@ -6,8 +6,8 @@
         <input type="email" name="correo" class="form-control border border-dark" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingrese su correo">
     </div>
     <div class="mb-3">
-        <label for="exampleInputPassword" for="contraseña" class="form-label">Contraseña</label>
-        <input type="password" name="contraseña" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Ingrese su contraseña">
+        <label for="exampleInputPassword" for="pass" class="form-label">Contraseña</label>
+        <input type="password" name="pass" class="form-control border border-dark" id="inputPassword" aria-describedby="emailHelp" placeholder="Ingrese su contraseña">
     </div>
     <?php echo form_submit('login', 'Iniciar Sesión', "class='btn btn-success mb-4'"); ?>
     <div class="text-center">
