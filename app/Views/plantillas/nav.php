@@ -52,7 +52,7 @@
                     <a class="text-white" href="<?php echo base_url('registrarse'); ?>">
                         <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                     </a>
-                    <p class="pt-3 m-0 text-white"><?= $session->get('nombre');?></p>
+                    <a href="" class="d-block pt-3 text-white"><?= $session->get('nombre');?></a>
                 </li>
             </ul>
             <?php } ?>
