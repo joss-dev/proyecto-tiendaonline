@@ -76,34 +76,34 @@ class User_controller extends BaseController
                     "matches" => "Las contraseñas no coinciden."
                 ],
             ]
-            );
+        );
 
 
         if ($validation->withRequest($this->request)->run()) {
-                $data = [
-                    'usuario_nombre' => $request->getPost('nombre'),
-                    'usuario_apellido' => $request->getPost('apellido'),
-                    'usuario_correo' => $request->getPost('correo'),
-                    'usuario_telefono' => $request->getPost('telefono'),
-                    'usuario_dni' => $request->getPost('dni'),
-                    'usuario_pass' => password_hash($request->getPost('pass'), PASSWORD_BCRYPT),
-                    'usuario_estado' => 1, 
-                    'perfil_id'=> 2
-                ];
+            $data = [
+                'usuario_nombre' => $request->getPost('nombre'),
+                'usuario_apellido' => $request->getPost('apellido'),
+                'usuario_correo' => $request->getPost('correo'),
+                'usuario_telefono' => $request->getPost('telefono'),
+                'usuario_dni' => $request->getPost('dni'),
+                'usuario_pass' => password_hash($request->getPost('pass'), PASSWORD_BCRYPT),
+                'usuario_estado' => 1,
+                'perfil_id' => 2
+            ];
 
-                $registroUsuario = new Usuario_model();
-                $registroUsuario->insert($data);
+            $registroUsuario = new Usuario_model();
+            $registroUsuario->insert($data);
 
-                return redirect()->to('/')->with('Msg', 'Usuario registrado exitosamente!');
-             } else {
-                $data['validation'] = $this->validator;
-                $data['titulo'] = 'Registrarse';
-                echo view('plantillas/encabezado', $data);
-                echo view('plantillas/nav');
-                echo view('plantillas/formRegistro');
-                echo view('plantillas/footer');
-            }
+            return redirect()->to('/')->with('Msg', 'Usuario registrado exitosamente!');
+        } else {
+            $data['validation'] = $this->validator;
+            $data['titulo'] = 'Registrarse';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/nav');
+            echo view('plantillas/formRegistro');
+            echo view('plantillas/footer');
         }
+    }
 
 
     public function registrar_consulta()
@@ -146,43 +146,69 @@ class User_controller extends BaseController
     {
         $request = \Config\Services::request();
         $session = \Config\Services::session();
+        $validation = \Config\Services::validation();
 
-        $usuario_model = new Usuario_model();
+        $validation->setRules(
+            [
+                'correo' => 'required|valid_email|',
+                'pass' => 'required|min_length[8]',
+            ],
+            [
+                "correo" => [
+                    "required" => "El correo es obligatorio.",
+                    "valid_email" => "El formato del correo no es correcto.",
+                ],
+                "pass" => [
+                    "required" => "La contraseña es obligatoria.",
+                    "min_length" => "La contraseña contiene al menos 8 caracteres."
+                ],
+            ]
+        );
 
-        $email = $request->getPost('correo'); 
-        $pass = $request->getPost('pass');
-        $user = $usuario_model->where('usuario_correo', $email)->first();
-        
-        if($user) {
-            $pass_user = $user['usuario_pass'];
-            $pass_verif = password_verify($pass, $pass_user);
+        if ($validation->withRequest($this->request)->run()) {
+            
+            $usuario_model = new Usuario_model();
 
-            if($pass_verif) {
-                $data = [
-                    'id' => $user['id_usuario'],
-                    'nombre' => $user['usuario_nombre'],
-                    'apellido' => $user['usuario_apellido'],
-                    'perfil' => $user['perfil_id'],
-                    'login' =>  TRUE
-                ];
+            $email = $request->getPost('correo');
+            $pass = $request->getPost('pass');
+            $user = $usuario_model->where('usuario_correo', $email)->first();
 
-                $session->set($data);
+            if ($user) {
+                $pass_user = $user['usuario_pass'];
+                $pass_verif = password_verify($pass, $pass_user);
 
-                switch($session->get('perfil')) {
-                    case '1': 
-                        return redirect()->route('user_admin');
-                        break;
-                    case '2':
-                        return redirect()->route('/'); 
-                        break;   
+                if ($pass_verif) {
+                    $data = [
+                        'id' => $user['id_usuario'],
+                        'nombre' => $user['usuario_nombre'],
+                        'apellido' => $user['usuario_apellido'],
+                        'perfil' => $user['perfil_id'],
+                        'login' =>  TRUE
+                    ];
+
+                    $session->set($data);
+
+                    switch ($session->get('perfil')) {
+                        case '1':
+                            return redirect()->route('user_admin');
+                            break;
+                        case '2':
+                            return redirect()->route('/');
+                            break;
+                    }
+                } else {
+                    $session->setFlashdata('mensajeVerif', 'Correo electronico y/o contraseña incorrectos');
                 }
-
-            }else {
-                $session->setFlashdata('mensajeVerif', 'Correo electronico y/o contraseña incorrectos');
+            } else {
+                $session->setFlashdata('mensajeVerif', 'Usuario no registrado');
             }
-
         }else {
-            $session->setFlashdata('mensajeVerif','Usuario no registrado');
-        } 
+            $data['validation'] = $this->validator;
+            $data['titulo'] = 'Iniciar Sesión';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/nav');
+            echo view('plantillas/formLogin');
+            echo view('plantillas/footer');
+        }
     }
 }
