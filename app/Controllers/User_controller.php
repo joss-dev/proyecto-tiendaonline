@@ -102,6 +102,9 @@ class User_controller extends BaseController
                         'id' => $user['id_usuario'],
                         'nombre' => $user['usuario_nombre'],
                         'apellido' => $user['usuario_apellido'],
+                        'correo' => $user['usuario_correo'],
+                        'dni' => $user['usuario_dni'],
+                        'telefono' => $user['usuario_telefono'],
                         'perfil' => $user['perfil_id'],
                         'login' =>  TRUE
                     ];
