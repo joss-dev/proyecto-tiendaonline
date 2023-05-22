@@ -54,6 +54,9 @@
                     </a>
                     <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre');?></a>
                 </li>
+                <li>
+                <button class="btn btn-outline-danger mt-4"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</i></button>
+                </li>
             </ul>
             <?php } ?>
         </div>
