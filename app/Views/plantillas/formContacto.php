@@ -3,24 +3,24 @@
         <h4 class="fw-bold">Datos de Contacto</h4>
         <ul class="mt-3">
             <li class="mt-4">
-                <h6>Email: <a href="#" class="text-secondary">tecnophone@gmail.com</a></h6>
+                <h6><i class="bi bi-envelope"></i> Email: <a href="#" class="text-secondary">tecnophone@gmail.com</a></h6>
             </li>
             <li class="mt-4">
-                <h6>Telefono: <a href="#" class="text-secondary">3794551245</a></h6>
+                <h6><i class="bi bi-telephone"></i> Telefono: <a href="#" class="text-secondary">3794551245</a></h6>
             </li>
             <li class="mt-4">
-                <h6>Nuestro Local: <a href="https://goo.gl/maps/BWHiZUBJtDnHqtoMA" target="_blank" class="text-secondary">Av. Independencia 2345</a></h6>
+                <h6><i class="bi bi-shop"></i> Nuestro Local: <a href="https://goo.gl/maps/BWHiZUBJtDnHqtoMA" target="_blank" class="text-secondary">Av. Independencia 2345</a></h6>
                 <p>(De lunes a sabados de 8hs a 20hs.)</p>
             </li>
             <h6>Nuestras redes sociales:</h6>
             <li class="mt-4">
-                <h6>Facebook: <a href="https://facebook.com" class="text-secondary" target="_blank">TecnoPhone</a></h6>
+                <h6><i class="bi bi-facebook"></i> Facebook: <a href="https://facebook.com" class="text-secondary" target="_blank">TecnoPhone</a></h6>
             </li>
             <li class="mt-4">
-                <h6>Instagram: <a href="https://instagram.com" class="text-secondary" target="_blank">TecnoPhone</a></h6>
+                <h6><i class="bi bi-instagram"></i> Instagram: <a href="https://instagram.com" class="text-secondary" target="_blank">TecnoPhone</a></h6>
             </li>
             <li class="mt-4">
-                <h6>Whatsapp: <a href="https://web.whatsapp.com/" class="text-secondary" target="_blank">WhatsappTecnoPhone</a></h6>
+                <h6><i class="bi bi-whatsapp"></i> Whatsapp: <a href="https://web.whatsapp.com/" class="text-secondary" target="_blank">WhatsappTecnoPhone</a></h6>
             </li>
         </ul>
     </div>
