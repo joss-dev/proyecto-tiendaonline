@@ -83,3 +83,8 @@ ul {
         display: none;
     }
 }
+
+
+.bg-oscuro {
+    background-color: rgba(0, 0, 0, 0.877);
+}

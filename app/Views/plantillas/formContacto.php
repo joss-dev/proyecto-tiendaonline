@@ -33,7 +33,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         <?php } ?>
-        <form class="m-5" action="<?php echo base_url('consulta') ?>" method="POST">
+        <form class="m-5 needs-validation" action="<?php echo base_url('consulta') ?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputText" for="nombre" class="form-label">Nombre</label>
                 <input type="text" value="<?php echo set_value('nombre'); ?>" name="nombre" class="form-control border border-dark" id="exampleInputText" aria-describedby="emailHelp" placeholder="Ingrese su nombre">
