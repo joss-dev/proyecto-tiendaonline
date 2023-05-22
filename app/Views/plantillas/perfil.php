@@ -5,7 +5,7 @@
         <h1 class="text-center mb-5 py-5">Bienvenido <?= $session->get('nombre'); ?> </h1>
         <div class="vstack gap-3 p-5">
             <h4>Tus datos personales: </h4>
-            <div class="p-2">Nombre: <?= $session->get('nombre'); ?></div>
+            <div class="p-2 border">Nombre: <?= $session->get('nombre'); ?></div>
             <div class="p-2">Apellido: <?= $session->get('apellido'); ?></div>
             <div class="p-2">Correo Electronico: <?= $session->get('correo'); ?></div>
             <div class="p-2">Dni: <?= $session->get('dni'); ?></div>
