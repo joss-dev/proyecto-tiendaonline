@@ -1,5 +1,6 @@
-<div class="container bg-propio p-2 my-5 ">
-        <h2 class="text-center m-5">Nuestros productos</h2>
+<div class="container-fluid bg-oscuro">
+<div class="container bg-propio p-5">
+        <h2 class="text-center">Nuestros productos</h2>
         <ul class="row gy-5">
             <li class="col d-flex justify-content-center">
                 <div class="card text-center" style="width: 18rem;">
@@ -93,3 +94,4 @@
             </li>
         </ul>
     </div>
+</div>
