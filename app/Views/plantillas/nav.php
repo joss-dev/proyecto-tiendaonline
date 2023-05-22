@@ -1,6 +1,6 @@
 <header>
     <!-- barra de navegacion -->
-    
+
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
@@ -11,7 +11,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <?php $session = session();?>
+                <?php $session = session(); ?>
                 <ul class="navbar-nav mx-6 mb-3 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url(''); ?>">Principal</a>
@@ -41,23 +41,23 @@
                     <button class="btn btn-outline-light" type="submit">Buscar</button>
                 </form>
             </div>
-            <?php if(session('login')) { ?>
-            <ul class="d-flex ">
-                <li class="nav-item p-4 ">
-                    <a class="" href="#">
-                        <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
-                    </a>
-                </li>
-                <li class="nav-item pt-4 text-center">
-                    <a class="text-white" href="<?php echo base_url('perfil'); ?>">
-                        <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
-                    </a>
-                    <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre');?></a>
-                </li>
-                <li>
-                <button class="btn btn-outline-danger mt-4"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</i></button>
-                </li>
-            </ul>
+            <?php if (session('login')) { ?>
+                <ul class="d-flex">
+                    <li class="nav-item p-4 ">
+                        <a class="" href="#">
+                            <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
+                        </a>
+                    </li>
+                    <li class="nav-item pt-4 text-center">
+                        <a class="text-white" href="<?php echo base_url('perfil'); ?>">
+                            <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
+                        </a>
+                        <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre'); ?></a>
+                    </li>
+                    <li>
+                        <a href="<?php echo base_url('cerrarSesion');?>" class="btn btn-outline-danger mt-4 mx-2 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>
+                    </li>    
+                </ul>
             <?php } ?>
         </div>
     </nav>
