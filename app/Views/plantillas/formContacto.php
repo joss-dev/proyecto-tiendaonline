@@ -1,4 +1,4 @@
-<div class="container-fluid row bg-oscuro text-white">
+<div class="container-fluid row">
     <div class="col-md-6 text-center mt-5">
         <h4 class="fw-bold">Datos de Contacto</h4>
         <ul class="mt-3">

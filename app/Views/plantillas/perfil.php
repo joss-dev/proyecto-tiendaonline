@@ -1,16 +1,17 @@
 <?php $session = session(); ?>
-
 <?php if (session('login')) { ?>
-    <div class="container-fluid  bg-oscuro text-white">
-        <h1 class="text-center mb-5 py-5">Bienvenido <?= $session->get('nombre'); ?> </h1>
-        <div class="vstack gap-3 p-5">
+    <div class="container-fluid">
+        <h1 class="text-center mb-2 py-3">Bienvenido <?= $session->get('nombre'); ?> </h1>
+        <ul class="vstack gap-3 p-5">
             <h4>Tus datos personales: </h4>
-            <div class="p-2 border">Nombre: <?= $session->get('nombre'); ?></div>
-            <div class="p-2">Apellido: <?= $session->get('apellido'); ?></div>
-            <div class="p-2">Correo Electronico: <?= $session->get('correo'); ?></div>
-            <div class="p-2">Dni: <?= $session->get('dni'); ?></div>
-            <div class="p-2">Telefono: <?= $session->get('telefono'); ?></div>
-        </div>
-        <button class="btn btn-outline-danger my-5"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</i></button>
+            <li class="p-2 border border-1 fondo-sombra"><strong> Nombre : </strong> <?= $session->get('nombre'); ?></li>
+            <li class="p-2 border border-1 fondo-sombra"><strong> Apellido : </strong><?= $session->get('apellido'); ?></li>
+            <li class="p-2 border border-1 fondo-sombra"><strong> Correo : </strong> <?= $session->get('correo'); ?></li>
+            <li class="p-2 border border-1 fondo-sombra"><strong> Dni : </strong> <?= $session->get('dni'); ?></li>
+            <li class="p-2 border border-1 fondo-sombra"><strong> Telefono : </strong><?= $session->get('telefono'); ?></li>
+            <li>
+            <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger my-5"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</i></a>
+            </li>
+        </ul>
     </div>
 <?php } ?>

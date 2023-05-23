@@ -89,3 +89,8 @@ ul {
     /* background-color: rgba(0, 0, 0, 0.877); */
     background-color: rgb(24,25,26);
 }
+
+
+.fondo-sombra {
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
