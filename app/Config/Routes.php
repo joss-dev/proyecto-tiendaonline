@@ -39,6 +39,8 @@ $routes->get('loginUsuario', 'User_controller::login_view');
 $routes->get('registrarse', 'User_controller::registrarse');
 $routes->get('perfil', 'Home::perfil');
 $routes->get('cerrarSesion', 'User_controller::cerrar_sesion');
+$routes->get('formProducto', 'Admin_controller::formProducto');
+
 
 $routes->post('consulta', 'User_controller::registrar_consulta');
 $routes->post('registro', 'User_controller::registrar_usuario');
