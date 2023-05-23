@@ -6,18 +6,18 @@ use CodeIgniter\Model;
 
 class Producto_model extends Model
 {
-    protected $table      = 'marcas';
-    protected $primaryKey = 'id_marca';
+    protected $table      = 'productos';
+    protected $primaryKey = 'id_producto';
 
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false; //estaba en true
 
-    protected $allowedFields = ['marca_nombre'];
+    protected $allowedFields = ['producto_nombre','producto_descripcion', 'producto_precio','producto_stock','producto_marca','producto_imagen'];
 
     // Dates
-    protected $useTimestamps = false;// poner en true
+    protected $useTimestamps = true;// poner en true
     protected $dateFormat    = 'datetime';
     protected $createdField  = 'created_at'; //agregar a la tabla
     protected $updatedField  = 'updated_at';
