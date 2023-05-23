@@ -1,15 +1,18 @@
 <div class="container p-4">
     <h1>Dar de alta productos</h1>
     <?php echo form_open_multipart('cargarProducto') ?> 
-        <div class="col-md-4 m-0">
+        <div class="row">
+        <div class="col-md-6">
             <label for="nombreProducto" class="form-label">Nombre</label>
             <input type="text" name="nombreProducto" placeholder="Nombre del producto" class="form-control" id="inputText4">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-6">
             <label for="">Seleccione la marca</label>
             <select name="marcas" id="">
                 <option value="">Seleccionar Marca</option>
-
+                <?php foreach($marca as $marcas):?> 
+                    <option value="<?php $marca->id_marca?>"><?php $marca->marca_nombre ?></option>
+                <?php endforeach?>
             </select>
         </div>
         <div class="col-12">
@@ -30,6 +33,7 @@
         </div>
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Cargar</button>
+        </div>
         </div>
     <?php form_close(); ?>
 </div>
