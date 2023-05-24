@@ -4,15 +4,21 @@ namespace App\Controllers;
 
 use App\Models\Consulta_model;
 use App\Models\Usuario_model;
+use App\Models\Categoria_model;
+use App\Controllers\Producto_controller;
 
 class Admin_controller extends BaseController
 {
 
     public function formProducto() {
+        $categoriasModel = new Categoria_model();
+
+        $categorias['marcas'] = $categoriasModel->findAll();
+
         $data['titulo'] = 'Subir Producto';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
-        echo view('plantillas/formProducto');
+        echo view('plantillas/formProducto', $categorias);
         echo view('plantillas/footer');
     }
 

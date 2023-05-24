@@ -1,23 +1,23 @@
 <div class="container p-4">
     <h1>Dar de alta productos</h1>
     <?php echo form_open_multipart('cargarProducto') ?> 
-        <div class="row">
+        <div class="row gy-4">
         <div class="col-md-6">
             <label for="nombreProducto" class="form-label">Nombre</label>
             <input type="text" name="nombreProducto" placeholder="Nombre del producto" class="form-control" id="inputText4">
         </div>
         <div class="col-md-6">
-            <label for="">Seleccione la marca</label>
-            <select name="marcas" id="">
+            <label for="marcas" class="mb-2">Seleccione la marca</label>
+            <select name="marcas" class="form-select">
                 <option value="">Seleccionar Marca</option>
-                <?php foreach($marca as $marcas):?> 
-                    <option value="<?php $marca->id_marca?>"><?php $marca->marca_nombre ?></option>
+                <?php foreach($marcas as $marca):?> 
+                    <option class="text-black" value="<?php $marca['id_marca']?>"><?= $marca['marca_nombre'] ?></option>
                 <?php endforeach?>
             </select>
         </div>
         <div class="col-12">
-            <label for="descripcionProducto" class="form-label">Descripcion del producto</label>
-            <input type="text" name="descripcionProducto" placeholder="Descripcion de producto" class="form-control" id="inputText4">
+            <label for="descripcionProducto" class="form-label">Descripción del producto</label>
+            <input type="text" name="descripcionProducto" placeholder="Descripción de producto" class="form-control" id="inputText4">
         </div>
         <div class="col-md-4">
             <label for="precioProducto" class="form-label">Precio del producto</label>
