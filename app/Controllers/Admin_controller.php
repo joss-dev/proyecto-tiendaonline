@@ -6,6 +6,7 @@ use App\Models\Consulta_model;
 use App\Models\Usuario_model;
 use App\Models\Categoria_model;
 use App\Controllers\Producto_controller;
+use App\Models\Producto_model;
 
 class Admin_controller extends BaseController
 {
@@ -33,31 +34,29 @@ class Admin_controller extends BaseController
                 'nombreProducto' => 'required',
                 'marcaProducto' => 'required',
                 'descripcionProducto' => 'required',
-                'precioProducto' => 'required|alpha_numeric_space',
-                'imagenProducto' => 'required|valid_email',
-                'mensaje' => 'required'
+                'precioProducto' => 'required',
+                'imagenProducto' => 'required|is_image',
+                'stockProducto' => 'required|is_natural'
             ];
 
             $validations = $this->validate($rules);
 
             if ($validations) {
                 $data = [
-                    'consulta_nombre' => $request->getPost('nombre'),
-                    'consulta_correo' => $request->getPost('correo'),
-                    'consulta_mensaje' => $request->getPost('mensaje')
+                    'producto_nombre' => $request->getPost('nombreProducto'),
+                    'producto_descripcion' => $request->getPost('descripcionProducto'),
+                    'producto_precio' => $request->getPost('precioProducto'),
+                    'producto_stock' => $request->getPost('stockProducto'),
+                    'producto_marca' => $request->getPost('marcaProducto'),
+                    'producto_imagen' => $request->getPost('imagenProducto')
                 ];
 
-                $registroConsulta = new Consulta_model();
-                $registroConsulta->insert($data);
+                $registroProducto = new Producto_model();
+                $registroProducto->insert($data);
 
-                return redirect()->to('contacto')->with('Mensaje', 'Mensaje enviado correctamente, nos contactaremos a la brevedad.');
+                return redirect()->to('formProducto')->with('MensajeProducto', 'Producto cargado correctamente.');
             } else {
-                $data['validation'] = $this->validator;
-                $data['titulo'] = 'Contacto';
-                echo view('plantillas/encabezado', $data);
-                echo view('plantillas/nav');
-                echo view('plantillas/formContacto');
-                echo view('plantillas/footer');
+                $this->formProducto();
             }
         }
     }
