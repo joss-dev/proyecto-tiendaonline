@@ -35,7 +35,7 @@ class Admin_controller extends BaseController
                 'marcaProducto' => 'required',
                 'descripcionProducto' => 'required',
                 'precioProducto' => 'required',
-                'imagenProducto' => 'required|is_image',
+                'imagenProducto' => 'required|uploaded[imagenProducto]|max_size[imagenProducto, 4096]|is_image[imagenProducto]',
                 'stockProducto' => 'required|is_natural'
             ];
 
