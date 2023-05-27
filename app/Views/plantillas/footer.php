@@ -67,6 +67,7 @@
     </ul>
 </footer>
 <script src="./public/js/bootstrap.bundle.min.js"></script>
+<script src="./public/js/myScript.js"></script>
 </body>
 
 </html>

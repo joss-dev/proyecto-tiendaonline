@@ -46,7 +46,7 @@
         <div class="col-md-4 input-group">
             <label for="precioProducto" class="input-group form-label">Precio del producto</label>
             <span class="input-group-text">$</span>
-            <input type="text" name="precioProducto" placeholder="Precio del producto" value="<?php echo set_value('precioProducto'); ?>" class="form-control" id="inputText4">
+            <input type="text" name="precioProducto" id="precioProducto" placeholder="Precio del producto" value="<?php echo set_value('precioProducto'); ?>" class="form-control" id="inputText4">
             <?php if ($validation->getError('precioProducto')) { ?>
                     <div class='alert alert-danger mt-2'>
                         <?= $error = $validation->getError('precioProducto'); ?>
