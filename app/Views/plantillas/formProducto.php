@@ -55,7 +55,7 @@
         </div>
         <div class="col-md-4">
             <label for="stockProducto" class="form-label">Stock</label>
-            <input type="text" name="stockProducto" placeholder="Stock" value="<?php echo set_value('stockProducto'); ?>" class="form-control" id="inputText4">
+            <input type="number" name="stockProducto" placeholder="Stock" value="<?php echo set_value('stockProducto'); ?>" class="form-control" id="inputText4">
             <?php if ($validation->getError('stockProducto')) { ?>
                     <div class='alert alert-danger mt-2'>
                         <?= $error = $validation->getError('stockProducto'); ?>

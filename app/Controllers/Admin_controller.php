@@ -32,23 +32,27 @@ class Admin_controller extends BaseController
         if ($request->is('post')) {
             $rules = [
                 'nombreProducto' => 'required',
-                'marcaProducto' => 'required',
+                'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
                 'descripcionProducto' => 'required',
                 'precioProducto' => 'required',
-                'imagenProducto' => 'required|uploaded[imagenProducto]|max_size[imagenProducto, 4096]|is_image[imagenProducto]',
+                'imagenProducto' => 'uploaded[imagenProducto]|max_size[imagenProducto, 4096]|is_image[imagenProducto]',
                 'stockProducto' => 'required|is_natural'
             ];
 
             $validations = $this->validate($rules);
 
             if ($validations) {
+                $img = $this->request->getFile('imagenProducto');
+                $nombreAleatorio = $img->getRandomName();
+                $img->move(ROOTPATH.'public/img/ejemplos', $nombreAleatorio);
                 $data = [
                     'producto_nombre' => $request->getPost('nombreProducto'),
                     'producto_descripcion' => $request->getPost('descripcionProducto'),
                     'producto_precio' => $request->getPost('precioProducto'),
                     'producto_stock' => $request->getPost('stockProducto'),
                     'producto_marca' => $request->getPost('marcaProducto'),
-                    'producto_imagen' => $request->getPost('imagenProducto')
+                    'producto_imagen' => $nombreAleatorio,
+                    'producto_estado' => 1
                 ];
 
                 $registroProducto = new Producto_model();
