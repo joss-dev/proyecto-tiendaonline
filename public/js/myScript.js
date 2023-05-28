@@ -17,7 +17,7 @@ montoInput.addEventListener('input', function (event) {
     // Verificar si es un número válido
     if (!isNaN(montoSinFormato)) {
         // Formatear el valor con puntos y comas
-        let montoFormateado = montoSinFormato.toLocaleString();
+        let montoFormateado = montoSinFormato.toLocaleString('es-ES');
 
         // Actualizar el valor en el campo de entrada
         montoInput.value = '' + montoFormateado;

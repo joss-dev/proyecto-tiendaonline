@@ -45,10 +45,14 @@ class Admin_controller extends BaseController
                 $img = $this->request->getFile('imagenProducto');
                 $nombreAleatorio = $img->getRandomName();
                 $img->move(ROOTPATH.'public/img/ejemplos', $nombreAleatorio);
+
+                $precio = $this->request->getPost('precioProducto');
+                $precioSinFormato = str_replace('.', '', $precio);
+
                 $data = [
                     'producto_nombre' => $request->getPost('nombreProducto'),
                     'producto_descripcion' => $request->getPost('descripcionProducto'),
-                    'producto_precio' => $request->getPost('precioProducto'),
+                    'producto_precio' => $precioSinFormato,
                     'producto_stock' => $request->getPost('stockProducto'),
                     'producto_marca' => $request->getPost('marcaProducto'),
                     'producto_imagen' => $nombreAleatorio,

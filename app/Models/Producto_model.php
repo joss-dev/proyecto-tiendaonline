@@ -12,14 +12,14 @@ class Producto_model extends Model
     protected $useAutoIncrement = true;
 
     protected $returnType     = 'array';
-    protected $useSoftDeletes = false; //estaba en true
+    protected $useSoftDeletes = true;
 
     protected $allowedFields = ['producto_nombre','producto_descripcion', 'producto_precio','producto_stock','producto_marca','producto_imagen','producto_estado'];
 
     // Dates
-    protected $useTimestamps = true;// poner en true
+    protected $useTimestamps = true;
     protected $dateFormat    = 'datetime';
-    protected $createdField  = 'created_at'; //agregar a la tabla
+    protected $createdField  = 'created_at'; 
     protected $updatedField  = 'updated_at';
     protected $deletedField  = 'deleted_at';
 
