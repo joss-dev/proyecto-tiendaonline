@@ -206,7 +206,7 @@ class User_controller extends BaseController
             $registroUsuario->insert($data);
 
              $email = $request->getPost('correo');
-             $pass = $request->getPost('pass');
+            //  $pass = $request->getPost('pass');
              $user = $registroUsuario->where('usuario_correo', $email)->first();
 
              $dataLogin = [

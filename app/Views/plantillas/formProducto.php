@@ -1,5 +1,5 @@
 <div class="container p-4">
-    <h1>Dar de alta productos</h1>
+    <h1 class="my-4">Dar de alta productos</h1>
     <?php $validation = \Config\Services::validation(); ?>
         <?php if (session()->getFlashdata('MensajeProducto')) { ?>
             <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>

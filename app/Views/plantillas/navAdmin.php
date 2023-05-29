@@ -11,26 +11,19 @@
                 <?php $session = session(); ?>
                 <ul class="navbar-nav mx-6 mb-3 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url(''); ?>">Principal</a>
+                        <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url('admin'); ?>">Consultas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('productos'); ?>">Productos</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Productos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('contacto'); ?>">Contacto</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Ventas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('terminosYcondiciones'); ?>">Terminos y Usos</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('formProducto'); ?>">Registrar Producto</a>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            La empresa
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-                            <li><a class="dropdown-item" href="<?php echo base_url('quienesSomos'); ?>">Quiénes somos</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('comercializacion'); ?>">Comercialización</a></li>
-                        </ul>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Gestionar Productos</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -40,18 +33,13 @@
             </div>
             <?php if (session('login')) { ?>
                 <ul class="d-flex">
-                    <li class="nav-item p-4 ">
-                        <a class="" href="#">
-                            <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
-                        </a>
-                    </li>
-                    <li class="nav-item pt-4 text-center">
+                    <li class="nav-item pt-4 text-center mx-4">
                         <a class="text-white" href="<?php echo base_url('perfil'); ?>">
                             <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                         </a>
                         <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre'); ?></a>
                     </li>
-                    <li>
+                    <li class="mx-2">
                         <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-2 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>
                     </li>
                 </ul>
