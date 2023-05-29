@@ -24,6 +24,14 @@ class Admin_controller extends BaseController
     }
 
 
+    public function admin_view() {
+        $data['titulo'] = 'Administrador';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/navAdmin');
+        echo view('plantillas/footer');
+    }
+
+
     public function registrar_producto()
     {
 

@@ -113,7 +113,7 @@ class User_controller extends BaseController
 
                     switch ($session->get('perfil')) {
                         case '1':
-                            return redirect()->route('user_admin');
+                            return redirect()->route('admin');
                             break;
                         case '2':
                             return redirect()->route('/');
