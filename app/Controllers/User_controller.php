@@ -10,25 +10,33 @@ class User_controller extends BaseController
 
     public function registrarse()
     {
-        $data['titulo'] = 'Registrarse';
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/nav');
-        echo view('plantillas/formRegistro');
-        echo view('plantillas/footer');
+        if (!session()->login) {
+            $data['titulo'] = 'Registrarse';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/nav');
+            echo view('plantillas/formRegistro');
+            echo view('plantillas/footer');
+        }else {
+            return redirect()->route('/');
+        }
     }
 
     public function login_view()
     {
-        $data['titulo'] = 'Iniciar Sesión';
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/nav');
-        echo view('plantillas/formLogin');
-        echo view('plantillas/footer');
+        if (!session()->login) {
+            $data['titulo'] = 'Iniciar Sesión';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/nav');
+            echo view('plantillas/formLogin');
+            echo view('plantillas/footer');
+        }else {
+            return redirect()->route('/');
+        }
+        
     }
 
     public function registrar_consulta()
     {
-
         $request = \Config\Services::request();
 
         if ($request->is('post')) {
@@ -65,7 +73,7 @@ class User_controller extends BaseController
     public function login_usuario()
     {
         $request = \Config\Services::request();
-        $session = \Config\Services::session();
+        // $session = \Config\Services::session();
         $validation = \Config\Services::validation();
 
         $validation->setRules(
@@ -109,9 +117,9 @@ class User_controller extends BaseController
                         'login' =>  TRUE
                     ];
 
-                    $session->set($data);
+                    session()->set($data);
 
-                    switch ($session->get('perfil')) {
+                    switch (session()->get('perfil')) {
                         case '1':
                             return redirect()->route('admin');
                             break;
@@ -120,11 +128,11 @@ class User_controller extends BaseController
                             break;
                     }
                 } else {
-                    $session->setFlashdata('mensajeVerif', 'Correo electronico y/o contraseña incorrectos');
+                    session()->setFlashdata('mensajeVerif', 'Correo electronico y/o contraseña incorrectos');
                     return redirect()->route('loginUsuario');
                 }
             } else {
-                $session->setFlashdata('mensajeVerif', 'Usuario no registrado');
+                session()->setFlashdata('mensajeVerif', 'Usuario no registrado');
                 return redirect()->route('loginUsuario');
             }
         } else {
@@ -205,19 +213,19 @@ class User_controller extends BaseController
             $registroUsuario = new Usuario_model();
             $registroUsuario->insert($data);
 
-             $email = $request->getPost('correo');
+            $email = $request->getPost('correo');
             //  $pass = $request->getPost('pass');
-             $user = $registroUsuario->where('usuario_correo', $email)->first();
+            $user = $registroUsuario->where('usuario_correo', $email)->first();
 
-             $dataLogin = [
-                 'id' => $user['id_usuario'],
-                 'nombre' => $user['usuario_nombre'],
-                 'apellido' => $user['usuario_apellido'],
-                 'perfil' => $user['perfil_id'],
-                 'login' =>  TRUE
-             ];
+            $dataLogin = [
+                'id' => $user['id_usuario'],
+                'nombre' => $user['usuario_nombre'],
+                'apellido' => $user['usuario_apellido'],
+                'perfil' => $user['perfil_id'],
+                'login' =>  TRUE
+            ];
 
-             $session->set($dataLogin);
+            $session->set($dataLogin);
 
             return redirect()->to('/')->with('Msg', 'Usuario registrado exitosamente!');
         } else {
@@ -230,7 +238,7 @@ class User_controller extends BaseController
         }
     }
 
-    
+
     public function cerrar_sesion()
     {
         $session = \Config\Services::session();

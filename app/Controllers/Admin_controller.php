@@ -11,7 +11,11 @@ use App\Models\Producto_model;
 class Admin_controller extends BaseController
 {
 
-    public function formProducto() {
+    public function formProducto() { 
+        
+        if (!session()->login) {
+            
+        }
         $categoriasModel = new Categoria_model();
 
         $categorias['marcas'] = $categoriasModel->findAll();
