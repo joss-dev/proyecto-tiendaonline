@@ -27,19 +27,3 @@ montoInput.addEventListener('input', function (event) {
 
 
 
-
-
-let precio = document.getElementById('precio');
-
-let montoSinFormato = parseFloat(precio.value.replace(/[$,.]/g, ''));
-
-    // Verificar si es un número válido
-    
-        // Formatear el valor con puntos y comas
-let montoFormateado = montoSinFormato.toLocaleString('es-ES');
-
-        // Actualizar el valor en el campo de entrada
-precio.innerHTML = montoFormateado;
-console.log(montoFormateado)
-
-

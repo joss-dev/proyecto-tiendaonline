@@ -7,7 +7,7 @@
                         <img src="<?php echo base_url('public/img/ejemplos/' . $row['producto_imagen']); ?>" height="300" width="300" class="card-img-top" alt="...">
                         <div class="card-body mt-2">
                             <h5 class="card-title my-3 "><?= $row['producto_nombre']; ?></h5>
-                            <span class="d-block fw-bold" id="precio"><?= $row['producto_precio']; ?></span>
+                            <span class="d-block fw-bold">$ <?= number_format($row['producto_precio'], 0, ',', '.'); ?></span>
                             <a href="" class="btn btn-primary mt-4">Comprar</a>
                         </div>
                     </div>
