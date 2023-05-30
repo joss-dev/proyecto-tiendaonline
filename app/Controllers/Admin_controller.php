@@ -11,28 +11,34 @@ use App\Models\Producto_model;
 class Admin_controller extends BaseController
 {
 
-    public function formProducto() { 
-        
-        if (!session()->login) {
-            
+    public function formProducto()
+    {
+        if (session()->login && session()->perfil == 1) {
+            $categoriasModel = new Categoria_model();
+
+            $categorias['marcas'] = $categoriasModel->findAll();
+
+            $data['titulo'] = 'Subir Producto';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/nav');
+            echo view('plantillas/formProducto', $categorias);
+            echo view('plantillas/footer');
+        } else {
+            return redirect()->route('/');
         }
-        $categoriasModel = new Categoria_model();
-
-        $categorias['marcas'] = $categoriasModel->findAll();
-
-        $data['titulo'] = 'Subir Producto';
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/nav');
-        echo view('plantillas/formProducto', $categorias);
-        echo view('plantillas/footer');
     }
 
 
-    public function admin_view() {
-        $data['titulo'] = 'Administrador';
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/navAdmin');
-        echo view('plantillas/footer');
+    public function admin_view()
+    {
+        if (session()->login && session()->perfil == 1) {
+            $data['titulo'] = 'Administrador';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/navAdmin');
+            echo view('plantillas/footer');
+        } else {
+            return redirect()->route('/');
+        }
     }
 
 
@@ -56,7 +62,7 @@ class Admin_controller extends BaseController
             if ($validations) {
                 $img = $this->request->getFile('imagenProducto');
                 $nombreAleatorio = $img->getRandomName();
-                $img->move(ROOTPATH.'public/img/ejemplos', $nombreAleatorio);
+                $img->move(ROOTPATH . 'public/img/ejemplos', $nombreAleatorio);
 
                 $precio = $this->request->getPost('precioProducto');
                 $precioSinFormato = str_replace('.', '', $precio);
@@ -80,7 +86,4 @@ class Admin_controller extends BaseController
             }
         }
     }
-
 }
-
-?>

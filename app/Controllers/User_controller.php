@@ -241,8 +241,12 @@ class User_controller extends BaseController
 
     public function cerrar_sesion()
     {
-        $session = \Config\Services::session();
-        $session->destroy();
-        return redirect()->route('loginUsuario');
+        if (session()->login) {
+            $session = \Config\Services::session();
+            $session->destroy();
+            return redirect()->route('loginUsuario');
+        }else {
+            return redirect()->route('loginUsuario');
+        }
     }
 }

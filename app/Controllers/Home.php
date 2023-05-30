@@ -17,7 +17,8 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function quienesSomos() {
+    public function quienesSomos()
+    {
         $data['titulo'] = 'Quiénes Somos';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -25,7 +26,8 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function productos() {
+    public function productos()
+    {
         $data['titulo'] = 'Productos';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -33,7 +35,8 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function terminosYcondiciones() {
+    public function terminosYcondiciones()
+    {
         $data['titulo'] = 'Terminos y Condiciones';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -41,7 +44,8 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function contacto() {
+    public function contacto()
+    {
         $data['titulo'] = 'Contacto';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -49,7 +53,8 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function comercializacion() {
+    public function comercializacion()
+    {
         $data['titulo'] = 'Comercialización';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -57,12 +62,16 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function perfil() {
-        $data['titulo'] = 'Perfil';
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/nav');
-        echo view('plantillas/perfil');
-        echo view('plantillas/footer');
+    public function perfil()
+    {
+        if (session()->login) {
+            $data['titulo'] = 'Perfil';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/nav');
+            echo view('plantillas/perfil');
+            echo view('plantillas/footer');
+        }else {
+            return redirect()->route('loginUsuario');
+        }
     }
-
 }
