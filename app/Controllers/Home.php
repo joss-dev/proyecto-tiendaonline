@@ -65,12 +65,20 @@ class Home extends BaseController
     public function perfil()
     {
         if (session()->login) {
-            $data['titulo'] = 'Perfil';
-            echo view('plantillas/encabezado', $data);
-            echo view('plantillas/nav');
-            echo view('plantillas/perfil');
-            echo view('plantillas/footer');
-        }else {
+            if (session()->perfil == 1) {
+                $data['titulo'] = 'Perfil';
+                echo view('plantillas/encabezado', $data);
+                echo view('plantillas/navAdmin');
+                echo view('plantillas/perfil');
+                echo view('plantillas/footer');
+            }else {
+                $data['titulo'] = 'Perfil';
+                echo view('plantillas/encabezado', $data);
+                echo view('plantillas/nav');
+                echo view('plantillas/perfil');
+                echo view('plantillas/footer');
+            }
+        } else {
             return redirect()->route('loginUsuario');
         }
     }

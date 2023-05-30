@@ -20,7 +20,7 @@ class Admin_controller extends BaseController
 
             $data['titulo'] = 'Subir Producto';
             echo view('plantillas/encabezado', $data);
-            echo view('plantillas/nav');
+            echo view('plantillas/navAdmin');
             echo view('plantillas/formProducto', $categorias);
             echo view('plantillas/footer');
         } else {

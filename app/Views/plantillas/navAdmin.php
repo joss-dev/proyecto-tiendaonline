@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
+            <a class="navbar-brand text-white" href="<?php echo base_url('admin'); ?>">
                 <img src="./public/img/icon.png" alt="" width="50" height="60">
                 Tecno Phone
             </a>
