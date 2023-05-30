@@ -28,6 +28,22 @@ class Admin_controller extends BaseController
         }
     }
 
+    public function productosAdmin() {
+        if (session()->login && session()->perfil == 1) {
+            $productos = new Producto_model();
+
+            $data['productos'] = $productos->findAll();
+
+            $data['titulo'] = 'Productos';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/navAdmin');
+            echo view('plantillas/catalogo');
+            echo view('plantillas/footer');
+        } else {
+            return redirect()->route('/');
+        }
+    }
+
 
     public function admin_view()
     {

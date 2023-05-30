@@ -43,15 +43,16 @@
             <?php if (session('login')) { ?>
                 <ul class="d-flex">
                     <li class="nav-item p-4 ">
-                        <a class="" href="#">
-                            <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
+                        <a class="" href="<?php echo base_url('perfil'); ?>">
+                            <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;"></i>
+                            <!-- <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30"> -->
                         </a>
                     </li>
                     <li class="nav-item pt-4 text-center">
-                        <a class="text-white" href="<?php echo base_url('perfil'); ?>">
-                            <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
+                        <a class="text-white " href="<?php echo base_url('perfil'); ?>">
+                            <i class="bi bi-person-circle text-white efecto-opacidad  d-block" style="font-size: 30px;"></i>
                         </a>
-                        <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre'); ?></a>
+                        <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-1 efecto-opacidad text-white"><?= $session->get('nombre'); ?></a>
                     </li>
                     <li>
                         <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-4 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>
@@ -61,12 +62,12 @@
                 <ul class="d-flex">
                     <li class="nav-item p-4">
                         <a class="" href="<?php echo base_url('loginUsuario'); ?>">
-                            <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
+                            <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;"></i>
                         </a>
                     </li>
                     <li class="nav-item p-4">
                         <a class="text-white " href="<?php echo base_url('loginUsuario'); ?>">
-                            <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
+                            <i class="bi bi-person-circle text-white efecto-opacidad  d-block" style="font-size: 30px;"></i>
                         </a>
                     </li>
                 </ul>

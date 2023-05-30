@@ -14,7 +14,7 @@
                         <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url('admin'); ?>">Consultas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('productos'); ?>">Productos</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('productosAdmin'); ?>">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Ventas</a>
@@ -34,10 +34,10 @@
             <?php if (session('login')) { ?>
                 <ul class="d-flex">
                     <li class="nav-item pt-4 text-center mx-4">
-                        <a class="text-white" href="<?php echo base_url('perfil'); ?>">
-                            <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
+                    <a class="text-white " href="<?php echo base_url('perfil'); ?>">
+                            <i class="bi bi-person-circle text-white efecto-opacidad  d-block" style="font-size: 30px;"></i>
                         </a>
-                        <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre'); ?></a>
+                        <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-1 text-white"><?= $session->get('nombre'); ?></a>
                     </li>
                     <li class="mx-2">
                         <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-2 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>

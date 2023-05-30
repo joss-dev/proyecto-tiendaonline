@@ -31,8 +31,6 @@ class Home extends BaseController
     public function productos()
     {
        
-    $productos = new Producto_model();
-
         $productos = new Producto_model();
 
         $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->join('marca', 'marca.id_marca = productos.producto_marca')->findAll();

@@ -2,6 +2,8 @@
 
 namespace Config;
 
+use CodeIgniter\Commands\Utilities\Routes;
+
 // Create a new instance of our RouteCollection class.
 $routes = Services::routes();
 
@@ -42,7 +44,7 @@ $routes->get('cerrarSesion', 'User_controller::cerrar_sesion');
 $routes->get('perfil', 'Home::perfil');
 
 
-
+$routes->get('productosAdmin', 'Admin_controller::productosAdmin');
 $routes->get('formProducto', 'Admin_controller::formProducto');
 $routes->get('admin', 'Admin_controller::admin_view');
 
