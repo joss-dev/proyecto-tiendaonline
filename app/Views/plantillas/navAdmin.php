@@ -14,7 +14,7 @@
                         <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url('admin'); ?>">Consultas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Productos</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('productos'); ?>">Productos</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Ventas</a>

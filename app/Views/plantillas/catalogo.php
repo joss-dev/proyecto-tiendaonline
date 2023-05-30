@@ -1,97 +1,17 @@
-<div class="container-fluid bg-oscuro">
-<div class="container bg-propio p-5">
-        <h2 class="text-center">Nuestros productos</h2>
-        <ul class="row gy-5">
-            <li class="col d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone14.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 14 Pro Max 128GB</h5>
-                        <span class="d-block">$ 450.456</span>
-                        <a href="" class="btn btn-primary my-2">Comprar</a>
+<div class="container-fluid bg-propio p-5">
+    <h2 class="text-center mb-5">Nuestros productos</h2>
+    <ul class="row gy-5">
+            <?php foreach ($productos as $row) { ?>
+                <li class="col d-flex justify-content-center mx-3">
+                    <div class="card text-center p-2" style="width: 18rem;">
+                        <img src="<?php echo base_url('public/img/ejemplos/' . $row['producto_imagen']); ?>" height="300" width="300" class="card-img-top" alt="...">
+                        <div class="card-body mt-2">
+                            <h5 class="card-title"><?= $row['producto_nombre']; ?></h5>
+                            <span class="d-block">$ <?= $row['producto_precio']; ?></span>
+                            <a href="" class="btn btn-primary mt-4">Comprar</a>
+                        </div>
                     </div>
-                </div>
-            </li>
-            <li class="col d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/samsungs23.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Samsung S23 Ultra 128GB</h5>
-                        <span class="d-block">$ 350.422</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="col d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
-                        <span class="d-block">$ 250.800</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="col  mt-4 d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
-                        <span class="d-block">$ 250.800</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="col  mt-4 d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
-                        <span class="d-block">$ 250.800</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="col  mt-4 d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
-                        <span class="d-block">$ 250.800</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="col  mt-4 d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
-                        <span class="d-block">$ 250.800</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="col mt-4 d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
-                        <span class="d-block">$ 250.800</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="col mt-4 d-flex justify-content-center">
-                <div class="card text-center" style="width: 18rem;">
-                    <img src="./public/img/ejemplos/iphone12.jpg" class="card-img-top" width="286" height="286" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Iphone 12 Pro Max 60GB</h5>
-                        <span class="d-block">$ 250.800</span>
-                        <a href="#" class="btn btn-primary my-2">Comprar</a>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+                </li>
+            <?php } ?>
+    </ul>
 </div>

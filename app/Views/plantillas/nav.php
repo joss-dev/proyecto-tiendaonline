@@ -1,6 +1,5 @@
 <header>
     <!-- barra de navegacion -->
-
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
@@ -55,18 +54,18 @@
                         <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-3 text-white"><?= $session->get('nombre'); ?></a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-2 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>
+                        <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-4 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>
                     </li>
                 </ul>
             <?php } else { ?>
                 <ul class="d-flex">
-                    <li class="nav-item p-4 ">
+                    <li class="nav-item p-4">
                         <a class="" href="<?php echo base_url('loginUsuario'); ?>">
                             <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30">
                         </a>
                     </li>
-                    <li class="nav-item p-4 text-center">
-                        <a class="text-white" href="<?php echo base_url('loginUsuario'); ?>">
+                    <li class="nav-item p-4">
+                        <a class="text-white " href="<?php echo base_url('loginUsuario'); ?>">
                             <img class="efecto-opacidad" src="./public/img/icons/usuario.png" alt="" width="30" height="30">
                         </a>
                     </li>

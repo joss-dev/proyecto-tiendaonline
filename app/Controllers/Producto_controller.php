@@ -7,9 +7,9 @@ use App\Models\Categoria_model;
 
 class Producto_controller extends BaseController
 {
-    public function getCategorias() {
+   public function getProductos() {
 
-       
-    }
+
+   }
         
 }
