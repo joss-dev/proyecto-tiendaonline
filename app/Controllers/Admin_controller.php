@@ -2,10 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\Consulta_model;
-use App\Models\Usuario_model;
+
 use App\Models\Categoria_model;
-use App\Controllers\Producto_controller;
 use App\Models\Producto_model;
 
 class Admin_controller extends BaseController
