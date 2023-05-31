@@ -31,7 +31,7 @@
                         <td><?= $row['marca_nombre']; ?></td>
                         <td><img src="<?php echo base_url('public/img/ejemplos/' . $row['producto_imagen']); ?>" width="100px" height="100px" alt=""></td>
                         <td>
-                            <a href="<?php echo base_url('editarProducto');?>" class="btn btn-info">Editar</a>
+                            <a href="<?php echo base_url('Producto_controller/editarProducto/'.$row['id_producto']);?>" class="btn btn-info">Editar</a>
                             <a href="<?php echo base_url('Producto_controller/eliminarProducto/'.$row['id_producto']);?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
@@ -45,7 +45,7 @@
                         <td><?= $row['marca_nombre']; ?></td>
                         <td><img src="<?php echo base_url('public/img/ejemplos/' . $row['producto_imagen']); ?>" width="100px" height="100px" alt=""></td>
                         <td>
-                            <a href="<?php echo base_url('editarProducto');?>" class="btn btn-info">Editar</a>
+                            <a href="<?php echo base_url('Producto_controller/editarProducto/'.$row['id_producto']);?>" class="btn btn-info">Editar</a>
                             <a href="<?php echo base_url('Producto_controller/activarProducto/'.$row['id_producto']);?>" class="btn btn-success">Activar</a>
                         </td>
                     </tr>

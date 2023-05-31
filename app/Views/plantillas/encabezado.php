@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> <?php echo $titulo; ?> </title>
-    <link rel="shortcut icon" href="./public/img/favicon.png">
+    <!-- <link rel="shortcut icon" href="./public/img/favicon.png"> -->
+    <link rel="shortcut icon" href="<?php echo base_url('/public/img/favicon.png');?>">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,9 +19,10 @@
     
 
     <!-- estilos css -->  
-    <link rel="stylesheet" href="./public/css/bootstrap.min.css">
-    <link rel="stylesheet" href="./public/css/myStyle.css">
-    
+    <!-- <link rel="stylesheet" href="./public/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="<?php echo base_url('/public/css/bootstrap.min.css');?>">
+    <!-- <link rel="stylesheet" href="./public/css/myStyle.css"> -->
+    <link rel="stylesheet" href="<?php echo base_url('/public/css/myStyle.css');?>">
     
 
 </head>
