@@ -94,3 +94,22 @@ ul {
 .fondo-sombra {
     box-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
+
+.card {
+    width: 300px;
+    height: 100%;
+}
+  
+.card-image {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
+  
+.card-price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+.card-button {
+    margin-top: 10px;
+}
