@@ -10,7 +10,13 @@ class Producto_controller extends BaseController
 
     public function gestion_view()
     {
+        $productoModel = new Producto_model();
+        $categoria = new Categoria_model();
+
+        $data['categorias'] = $categoria->findAll();
+        $data['producto'] = $productoModel->join('marca', 'marca.id_marca = productos.producto_marca')->findAll();
         $data['titulo'] = 'Gestionar Productos';
+
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');
         echo view('plantillas/gestionProductos');
@@ -59,17 +65,19 @@ class Producto_controller extends BaseController
     }
 
     public function eliminarProducto($id = null) {
-        $data = array('producto_estado' => '0');
+        $data = array('producto_estado' => 0);
         $productoModel = new Producto_model();
         $productoModel->update($id, $data);
-        return redirect()->to('')->with('MensajeProducto', 'Producto actualizado correctamente.');
+        return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
     }
 
-    public function activarProducto($id = null) {
-        $data = array('producto_estado' => '1');
+    public function activarProducto($id) {
+        $data = [
+            'producto_estado' => '1'
+        ];
         $productoModel = new Producto_model();
         $productoModel->update($id, $data);
-        return redirect()->to('')->with('MensajeProducto', 'Producto actualizado correctamente.');
+        return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
     }
 
 }
