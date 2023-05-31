@@ -49,7 +49,9 @@ $routes->get('formProducto', 'Admin_controller::formProducto');
 $routes->get('admin', 'Admin_controller::admin_view');
 $routes->get('gestionProductos', 'Producto_controller::gestion_view');
 $routes->get('Producto_controller/eliminarProducto/(:num)', 'Producto_controller::eliminarProducto/$1');
-$routes->get('Producto_controller/activarProducto/(:num)', 'Producto_controller::activarProducto/$1');
+$routes->get('editarProducto', 'Producto_controller::editarProducto');
+
+
 
 $routes->post('consulta', 'User_controller::registrar_consulta');
 $routes->post('registro', 'User_controller::registrar_usuario');
