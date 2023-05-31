@@ -23,19 +23,19 @@
             <ul class="m-3">
                 <li class="p-2">
                     <a href="#" class="text-white">
-                        <img src="./public/img/icons/icon-email.png" alt="" width="40" height="40">
+                        <img src="<?php echo base_url('/public/img/icons/icon-email.png');?>" alt="" width="40" height="40">
                         tecnophone@gmail.com
                     </a>
                 </li>
                 <li class="p-2">
                     <a href="#" class="text-white">
-                        <img src="./public/img/icons/icon-telefono.png" alt="" width="40" height="40">
+                        <img src="<?php echo base_url('/public/img/icons/icon-telefono.png');?>" alt="" width="40" height="40">
                         3794551245
                     </a>
                 </li>
                 <li class="p-2">
                     <a href="https://goo.gl/maps/BWHiZUBJtDnHqtoMA" class="text-white" target="_blank">
-                        <img src="./public/img/icons/icon-map.png" alt="" width="40" height="40" >
+                        <img src="<?php echo base_url('/public/img/icons/icon-map.png');?>" alt="" width="40" height="40" >
                         Av. Independencia 2345
                     </a>
                 </li>
@@ -46,19 +46,19 @@
             <ul class="m-3">
                 <li class="p-2">
                     <a href="https://facebook.com" class="text-white" target="_blank">
-                        <img src="./public/img/icons/icon-facebook.png" alt="" width="50" height="50">
+                        <img src="<?php echo base_url('/public/img/icons/icon-facebook.png');?>" alt="" width="50" height="50">
                         Facebook
                     </a>
                 </li>
                 <li class="p-2">
                     <a href="https://whatsapp.com" class="text-white" target="_blank">
-                        <img src="./public/img/icons/icon-whatsapp.png" alt="" width="45" height="45">
+                        <img src="<?php echo base_url('/public/img/icons/icon-whatsapp.png');?>" alt="" width="45" height="45">
                         Whatsapp
                     </a>
                 </li>
                 <li class="p-2">
                     <a href="https://instagram.com" class="text-white" target="_blank">
-                        <img src="./public/img/icons/icon-instagram.png" alt="" width="45" height="45">
+                        <img src="<?php echo base_url('/public/img/icons/icon-instagram.png');?>" alt="" width="45" height="45">
                         Instagram
                     </a>
                 </li>
@@ -66,8 +66,8 @@
         </li>
     </ul>
 </footer>
-<script src="./public/js/bootstrap.bundle.min.js"></script>
-<script src="./public/js/myScript.js"></script>
+<script src="<?php echo base_url('/public/js/bootstrap.bundle.min.js');?>"></script>
+<script src="<?php echo base_url('/public/js/myScript.js');?>"></script>
 </body>
 
 </html>

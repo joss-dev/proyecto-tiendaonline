@@ -3,7 +3,7 @@
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
-                <img src="./public/img/icon.png" alt="" width="50" height="60">
+                <img src="<?php echo base_url('/public/img/icon.png');?>" alt="" width="50" height="60">
                 Tecno Phone
             </a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
