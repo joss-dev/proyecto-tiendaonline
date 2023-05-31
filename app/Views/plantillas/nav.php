@@ -45,7 +45,6 @@
                     <li class="nav-item p-4 ">
                         <a class="" href="<?php echo base_url('perfil'); ?>">
                             <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;"></i>
-                            <!-- <img class="efecto-opacidad" src="./public/img/icons/carrito.png" alt="" width="30" height="30"> -->
                         </a>
                     </li>
                     <li class="nav-item pt-4 text-center">
