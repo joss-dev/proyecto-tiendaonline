@@ -23,7 +23,7 @@
                         <a class="nav-link text-white" href="<?php echo base_url('formProducto'); ?>">Registrar Producto</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Gestionar Productos</a>
+                        <a class="nav-link text-white" href="<?php echo base_url('gestionProductos'); ?>">Gestionar Productos</a>
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
