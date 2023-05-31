@@ -43,17 +43,6 @@ class Admin_controller extends BaseController
         }
     }
 
-
-    public function gestion_view()
-    {
-        $data['titulo'] = 'Gestionar Productos';
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/navAdmin');
-        echo view('plantillas/gestionProductos');
-        echo view('plantillas/footer');
-    }
-
-
     public function admin_view()
     {
         if (session()->login && session()->perfil == 1) {

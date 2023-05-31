@@ -47,7 +47,7 @@ $routes->get('perfil', 'Home::perfil');
 $routes->get('productosAdmin', 'Admin_controller::productosAdmin');
 $routes->get('formProducto', 'Admin_controller::formProducto');
 $routes->get('admin', 'Admin_controller::admin_view');
-$routes->get('gestionProductos', 'Admin_controller::gestion_view');
+$routes->get('gestionProductos', 'Producto_controller::gestion_view');
 
 $routes->post('consulta', 'User_controller::registrar_consulta');
 $routes->post('registro', 'User_controller::registrar_usuario');
