@@ -41,53 +41,60 @@ class Producto_controller extends BaseController
     public function actualizarProducto()
     {
         $request = \Config\Services::request();
-        $productoModel = new Producto_model();
 
         $idProducto = $this->request->getPost('id_producto');
+        $precio = $this->request->getPost('precioProducto');
+        $precioSinFormato = str_replace('.', '', $precio);
 
         if ($request->is('post')) {
 
-            
-
-            $rules = [
-                'nombreProducto' => 'required',
-                'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
-                'descripcionProducto' => 'required',
-                'precioProducto' => 'required',
-                'imagenProducto' => 'uploaded[imagenProducto]|max_size[imagenProducto, 4096]|is_image[imagenProducto]',
-                'stockProducto' => 'required|is_natural'
-            ];
-
-            $validations = $this->validate($rules);
-
-            if ($validations) {
-                var_dump("hola");   
-                $img = $this->request->getFile('imagenProducto');
-                $nombreAleatorio = $img->getRandomName();
+            $img = $this->request->getFile('imagenProducto');
+            if($img->isValid()) {
+                $rules = [
+                    'nombreProducto' => 'required',
+                    'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
+                    'descripcionProducto' => 'required',
+                    'precioProducto' => 'required',
+                    'imagenProducto' => 'required',
+                    'stockProducto' => 'required|is_natural'
+                ];
 
                 
+            $nombreAleatorio = $img->getRandomName();
+            $img->move(ROOTPATH . 'public/img/ejemplos', $nombreAleatorio);
+                
+                $data = [
+                    'producto_nombre' => $request->getPost('nombreProducto'),
+                    'producto_descripcion' => $request->getPost('descripcionProducto'),
+                    'producto_precio' => $precioSinFormato,
+                    'producto_stock' => $request->getPost('stockProducto'),
+                    'producto_marca' => $request->getPost('marcaProducto'),
+                    'producto_imagen' => $nombreAleatorio
+                ];
+            }else {
+                $rules = [
+                    'nombreProducto' => 'required',
+                    'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
+                    'descripcionProducto' => 'required',
+                    'precioProducto' => 'required',
+                    'stockProducto' => 'required|is_natural'
+                ];
 
-                $precio = $this->request->getPost('precioProducto');
-                $precioSinFormato = str_replace('.', '', $precio);
+                $data = [
+                    'producto_nombre' => $request->getPost('nombreProducto'),
+                    'producto_descripcion' => $request->getPost('descripcionProducto'),
+                    'producto_precio' => $precioSinFormato,
+                    'producto_stock' => $request->getPost('stockProducto'),
+                    'producto_marca' => $request->getPost('marcaProducto'),
+                ];
+            }
+            
+            $validations = $this->validate($rules);
 
-                if ($productoModel->where('id_producto', $idProducto)->where('producto_imagen', $nombreAleatorio)->first()) {
-                    $data = [
-                        'producto_nombre' => $request->getPost('nombreProducto'),
-                        'producto_descripcion' => $request->getPost('descripcionProducto'),
-                        'producto_precio' => $precioSinFormato,
-                        'producto_stock' => $request->getPost('stockProducto'),
-                        'producto_marca' => $request->getPost('marcaProducto')
-                    ];
-                } else {
-                    $data = [
-                        'producto_nombre' => $request->getPost('nombreProducto'),
-                        'producto_descripcion' => $request->getPost('descripcionProducto'),
-                        'producto_precio' => $precioSinFormato,
-                        'producto_stock' => $request->getPost('stockProducto'),
-                        'producto_marca' => $request->getPost('marcaProducto'),
-                        'producto_imagen' => $nombreAleatorio
-                    ];
-                }
+            var_dump($validations);
+            if ($validations) {  
+
+                $productoModel = new Producto_model();
 
                 $productoModel->update($idProducto, $data);
 
