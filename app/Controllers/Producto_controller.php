@@ -38,12 +38,16 @@ class Producto_controller extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function actualizarProducto($id = null)
+    public function actualizarProducto()
     {
         $request = \Config\Services::request();
-        //validar datos ingresados
-        //ver si cambio la imagen
-        if($request->is('post')) {
+        $productoModel = new Producto_model();
+
+        $idProducto = $this->request->getPost('id_producto');
+
+        if ($request->is('post')) {
+
+            
 
             $rules = [
                 'nombreProducto' => 'required',
@@ -54,35 +58,56 @@ class Producto_controller extends BaseController
                 'stockProducto' => 'required|is_natural'
             ];
 
-            $id = $request->getPost('id');
-            $precio = $this->request->getPost('precioProducto');
-            $precioSinFormato = str_replace('.', '', $precio);
+            $validations = $this->validate($rules);
 
-            $data = [
-                'producto_nombre' => $request->getPost('nombreProducto'),
-                'producto_descripcion' => $request->getPost('descripcionProducto'),
-                'producto_precio' => $precioSinFormato,
-                'producto_stock' => $request->getPost('stockProducto'),
-                'producto_marca' => $request->getPost('marcaProducto'),
-                // 'producto_imagen' => $nombreAleatorio,
-                // 'producto_estado' => 1
-            ];
+            if ($validations) {
+                var_dump("hola");   
+                $img = $this->request->getFile('imagenProducto');
+                $nombreAleatorio = $img->getRandomName();
 
-            $productoModel = new Producto_model();
-            $productoModel->update($id, $data);
+                
 
-            return redirect()->to('')->with('MensajeProducto', 'Producto actualizado correctamente.');
+                $precio = $this->request->getPost('precioProducto');
+                $precioSinFormato = str_replace('.', '', $precio);
+
+                if ($productoModel->where('id_producto', $idProducto)->where('producto_imagen', $nombreAleatorio)->first()) {
+                    $data = [
+                        'producto_nombre' => $request->getPost('nombreProducto'),
+                        'producto_descripcion' => $request->getPost('descripcionProducto'),
+                        'producto_precio' => $precioSinFormato,
+                        'producto_stock' => $request->getPost('stockProducto'),
+                        'producto_marca' => $request->getPost('marcaProducto')
+                    ];
+                } else {
+                    $data = [
+                        'producto_nombre' => $request->getPost('nombreProducto'),
+                        'producto_descripcion' => $request->getPost('descripcionProducto'),
+                        'producto_precio' => $precioSinFormato,
+                        'producto_stock' => $request->getPost('stockProducto'),
+                        'producto_marca' => $request->getPost('marcaProducto'),
+                        'producto_imagen' => $nombreAleatorio
+                    ];
+                }
+
+                $productoModel->update($idProducto, $data);
+
+                return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
+            }
+        }else {
+            $this->editarProducto($idProducto);
         }
     }
-    
-    public function eliminarProducto($id = null) {
+
+    public function eliminarProducto($id = null)
+    {
         $data = array('producto_estado' => 0);
         $productoModel = new Producto_model();
         $productoModel->update($id, $data);
         return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
     }
 
-    public function activarProducto($id) {
+    public function activarProducto($id)
+    {
         $data = [
             'producto_estado' => '1'
         ];
@@ -90,5 +115,4 @@ class Producto_controller extends BaseController
         $productoModel->update($id, $data);
         return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
     }
-
 }

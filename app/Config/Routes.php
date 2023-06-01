@@ -58,6 +58,8 @@ $routes->post('consulta', 'User_controller::registrar_consulta');
 $routes->post('registro', 'User_controller::registrar_usuario');
 $routes->post('login', 'User_controller::login_usuario');
 $routes->post('registrarProducto', 'Admin_controller::registrar_producto');
+$routes->post('/Producto_controller/actualizarProducto', 'Producto_controller::actualizarProducto');
+
 
 /*
  * --------------------------------------------------------------------

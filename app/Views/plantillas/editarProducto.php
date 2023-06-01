@@ -61,13 +61,14 @@
             <label for="imagenProducto" class="form-label d-block">Imagen</label>
             <!-- <img src="<?php echo base_url('public/img/ejemplos/'.$producto['producto_imagen']); ?>" alt=""> -->
             <input class="form-control" name="imagenProducto"  type="file" id="formFile">
+            <img class="m-5" src="<?php echo base_url('/public/img/ejemplos/'. $producto['producto_imagen']); ?>" width="100" height="100" alt="">
             <?php if ($validation->getError('imagenProducto')) { ?>
                     <div class='alert alert-danger mt-2'>
                         <?= $error = $validation->getError('imagenProducto'); ?>
                     </div>
             <?php } ?>
         </div>
-        <?php echo form_hidden('producto_id', $producto['id_producto']);?>
+        <?php echo form_hidden('id_producto', $producto['id_producto']);?>
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Actualizar</button>
         </div>
