@@ -59,7 +59,6 @@
         </div>
         <div class="col-md-6">
             <label for="imagenProducto" class="form-label d-block">Imagen</label>
-            <!-- <img src="<?php echo base_url('public/img/ejemplos/'.$producto['producto_imagen']); ?>" alt=""> -->
             <input class="form-control" name="imagenProducto"  type="file" id="formFile">
             <img class="m-5" src="<?php echo base_url('/public/img/ejemplos/'. $producto['producto_imagen']); ?>" width="100" height="100" alt="">
             <?php if ($validation->getError('imagenProducto')) { ?>

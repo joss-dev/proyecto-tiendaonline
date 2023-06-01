@@ -47,21 +47,24 @@ class Producto_controller extends BaseController
         $precioSinFormato = str_replace('.', '', $precio);
 
         if ($request->is('post')) {
-
-            $img = $this->request->getFile('imagenProducto');
-            if($img->isValid()) {
+            var_dump("entro1");
+            
+            if($this->request->getFile('imagenProducto')->isValid()) {
+                var_dump("entro2");
                 $rules = [
                     'nombreProducto' => 'required',
                     'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
                     'descripcionProducto' => 'required',
                     'precioProducto' => 'required',
-                    'imagenProducto' => 'required',
+                    'imagenProducto' => 'uploaded[imagenProducto]|max_size[imagenProducto, 4096]|is_image[imagenProducto]',
                     'stockProducto' => 'required|is_natural'
                 ];
 
-                
-            $nombreAleatorio = $img->getRandomName();
-            $img->move(ROOTPATH . 'public/img/ejemplos', $nombreAleatorio);
+                $validations = $this->validate($rules);
+
+                $img = $this->request->getFile('imagenProducto');
+                $nombreAleatorio = $img->getRandomName();
+                $img->move(ROOTPATH . 'public/img/ejemplos', $nombreAleatorio);
                 
                 $data = [
                     'producto_nombre' => $request->getPost('nombreProducto'),
@@ -71,7 +74,10 @@ class Producto_controller extends BaseController
                     'producto_marca' => $request->getPost('marcaProducto'),
                     'producto_imagen' => $nombreAleatorio
                 ];
+                
+
             }else {
+
                 $rules = [
                     'nombreProducto' => 'required',
                     'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
@@ -80,6 +86,8 @@ class Producto_controller extends BaseController
                     'stockProducto' => 'required|is_natural'
                 ];
 
+                $validations = $this->validate($rules);
+
                 $data = [
                     'producto_nombre' => $request->getPost('nombreProducto'),
                     'producto_descripcion' => $request->getPost('descripcionProducto'),
@@ -87,21 +95,43 @@ class Producto_controller extends BaseController
                     'producto_stock' => $request->getPost('stockProducto'),
                     'producto_marca' => $request->getPost('marcaProducto'),
                 ];
+                
             }
-            
-            $validations = $this->validate($rules);
 
-            var_dump($validations);
             if ($validations) {  
-
+                
                 $productoModel = new Producto_model();
 
                 $productoModel->update($idProducto, $data);
 
                 return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
+            }else {
+                $data['validation'] = $this->validator;
+                $productoModel = new Producto_model();
+                $categoriaModel = new Categoria_model();
+
+                $data['marcas'] = $categoriaModel->findAll();
+                $data['producto'] = $productoModel->where('id_producto', $idProducto)->first();
+
+                $data['titulo'] = 'Editar Producto';
+                echo view('plantillas/encabezado', $data);
+                echo view('plantillas/navAdmin');
+                echo view('plantillas/editarProducto');
+                echo view('plantillas/footer');
             }
         }else {
-            $this->editarProducto($idProducto);
+            $data['validation'] = $this->validator;
+            $productoModel = new Producto_model();
+            $categoriaModel = new Categoria_model();
+
+            $data['marcas'] = $categoriaModel->findAll();
+            $data['producto'] = $productoModel->where('id_producto', $idProducto)->first();
+
+            $data['titulo'] = 'Editar Producto';
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/navAdmin');
+            echo view('plantillas/editarProducto');
+            echo view('plantillas/footer');
         }
     }
 
