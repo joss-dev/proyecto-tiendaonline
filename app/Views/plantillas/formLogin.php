@@ -28,7 +28,9 @@
                     </div>
                 <?php } ?>
             </div>
+            <div class="text-center">
             <?php echo form_submit('login', 'Iniciar Sesión', "class='btn btn-success mb-4'"); ?>
+            </div>
             <div class="text-center">
                 <h6 class="mb-3">¿ No tienes una cuenta ? Regístrate aqui en simples pasos.</h6>
                 <a class="btn btn-info" href="<?php echo base_url('registrarse'); ?>">Registrarse</a>
