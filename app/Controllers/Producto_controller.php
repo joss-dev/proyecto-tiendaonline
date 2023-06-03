@@ -143,6 +143,18 @@ class Producto_controller extends BaseController
         return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
     }
 
+
+    public function verProducto($id = null) {
+        $productoModel = new Producto_model();
+        $data['producto'] = $productoModel->where('id_producto', $id)->first();
+
+        $data['titulo'] = 'Editar Producto';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/nav');
+        echo view('plantillas/producto');
+        echo view('plantillas/footer');
+    }
+
     public function activarProducto($id)
     {
         $data = [

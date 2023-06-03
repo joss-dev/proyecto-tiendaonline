@@ -52,6 +52,8 @@ $routes->get('Producto_controller/eliminarProducto/(:num)', 'Producto_controller
 $routes->get('Producto_controller/activarProducto/(:num)', 'Producto_controller::activarProducto/$1');
 $routes->get('Producto_controller/editarProducto/(:num)', 'Producto_controller::editarProducto/$1');
 $routes->get('consultasAdmin', 'Admin_controller::getConsultas');
+$routes->get('producto/(:num)', 'Producto_controller::verProducto/$1');
+
 
 
 $routes->post('consulta', 'User_controller::registrar_consulta');
