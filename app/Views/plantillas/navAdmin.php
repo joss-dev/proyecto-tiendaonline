@@ -11,7 +11,7 @@
                 <?php $session = session(); ?>
                 <ul class="navbar-nav mx-6 mb-3 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url('admin'); ?>">Consultas</a>
+                        <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url('consultasAdmin'); ?>">Consultas</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?php echo base_url('productosAdmin'); ?>">Productos</a>

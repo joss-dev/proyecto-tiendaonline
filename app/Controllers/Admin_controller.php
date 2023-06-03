@@ -5,6 +5,8 @@ namespace App\Controllers;
 
 use App\Models\Categoria_model;
 use App\Models\Producto_model;
+use App\Models\Consulta_model;
+use CodeIgniter\CLI\Console;
 
 class Admin_controller extends BaseController
 {
@@ -53,6 +55,17 @@ class Admin_controller extends BaseController
         } else {
             return redirect()->route('/');
         }
+    }
+
+    public function getConsultas() {
+        $consultas = new Consulta_model();
+        $data['consultas'] = $consultas->findAll();
+
+        $data['titulo'] = 'Administrador';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/navAdmin');
+        echo view('plantillas/consultasAdmin');
+        echo view('plantillas/footer');
     }
 
 
