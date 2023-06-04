@@ -12,7 +12,13 @@
                             <?php if (session()->perfil == 1) { ?>
                                 <a href="" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
                             <?php } else { ?>
-                                <a href="<?php echo base_url('agregarProducto'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
+                                <?php echo form_open('add_cart');
+                                echo form_hidden('id', $row['id_producto']);
+                                echo form_hidden('nombre', $row['producto_nombre']);
+                                echo form_hidden('precio', $row['producto_precio']);
+                                ?>
+                                <button class="btn btn-primary card-button mt-4 mx-1">Comprar</button>
+                                <?php echo form_close(); ?>
                             <?php } ?>
                         <?php } else { ?>
                             <a href="<?php echo base_url('loginUsuario'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>

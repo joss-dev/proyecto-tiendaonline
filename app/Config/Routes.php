@@ -57,7 +57,7 @@ $routes->get('consultasAdmin', 'Admin_controller::getConsultas');
 $routes->get('producto/(:num)', 'Producto_controller::verProducto/$1');
 
 
-
+$routes->post('add_cart', 'User_controller::agregarCarrito');
 $routes->post('consulta', 'User_controller::registrar_consulta');
 $routes->post('registro', 'User_controller::registrar_usuario');
 $routes->post('login', 'User_controller::login_usuario');

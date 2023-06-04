@@ -31,11 +31,11 @@
             $i = 1;
             foreach($cart1 as $item) {?>
             <tr class="table-dark">
-                <th scope="row"><?= $i?></th>
+                <th scope="row"><?= $i++?></th>
                 <td><?= $item['name']?></td>
                 <td>$ <?= number_format($item['price'], 0, ',', '.'); ?></td>
                 <td><?= $item['qty']?></td>
-                <td>$ <?= number_format($item['subtotal'], 0, ',', '.'); $total = $item['subtotal'];?></td>
+                <td>$ <?= number_format($item['subtotal'], 0, ',', '.'); $total += $item['subtotal'];?></td>
                 <td><a href="<?php ?>" class="btn btn-danger">Eliminar</a></td>
             </tr>
             <?php } ?>

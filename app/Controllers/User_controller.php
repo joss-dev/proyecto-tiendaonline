@@ -259,13 +259,16 @@ class User_controller extends BaseController
 
     public function agregarCarrito() {
         $cart = \Config\Services::cart();
+        $request = \Config\Services::request();
+
         $data = array(
-            'id' => 2,
-            'name' => "josep",
-            'price' => 12222,
+            'id' => $request->getPost('id'),
+            'name' => $request->getPost('nombre'),
+            'price' => $request->getPost('precio'),
             'qty' => 1,
         );
         $cart->insert($data);
+        return redirect()->route('productos');
     }
 
 }
