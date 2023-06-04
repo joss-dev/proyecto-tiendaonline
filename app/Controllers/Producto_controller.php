@@ -144,15 +144,22 @@ class Producto_controller extends BaseController
     }
 
 
-    public function verProducto($id = null) {
+    public function verProducto($id = null) {      
         $productoModel = new Producto_model();
         $data['producto'] = $productoModel->where('id_producto', $id)->first();
-
-        $data['titulo'] = 'Editar Producto';
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/nav');
-        echo view('plantillas/producto');
-        echo view('plantillas/footer');
+        $data['titulo'] = $data['producto']['producto_nombre'];;
+        
+        if(session()->perfil_id == 1) {
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/navAdmin');
+            echo view('plantillas/producto');
+            echo view('plantillas/footer');
+        }else {
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/navAdmin');
+            echo view('plantillas/producto');
+            echo view('plantillas/footer');
+        }  
     }
 
     public function activarProducto($id)
