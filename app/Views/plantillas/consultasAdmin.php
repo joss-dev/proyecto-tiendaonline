@@ -1,5 +1,5 @@
 <div class="container-fluid bg-oscuro p-0">
-    <h1 class="text-center text-white py-5">Gestion de productos</h1>
+    <h1 class="text-center text-white py-5">Gestion de Consultas</h1>
     <?php if (session()->getFlashdata('MensajeProducto')) { ?>
             <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
                 <?= session()->getFlashdata('MensajeProducto'); ?>
