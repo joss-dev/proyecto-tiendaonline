@@ -16,7 +16,7 @@ class User_controller extends BaseController
             echo view('plantillas/nav');
             echo view('plantillas/formRegistro');
             echo view('plantillas/footer');
-        }else {
+        } else {
             return redirect()->route('/');
         }
     }
@@ -29,10 +29,9 @@ class User_controller extends BaseController
             echo view('plantillas/nav');
             echo view('plantillas/formLogin');
             echo view('plantillas/footer');
-        }else {
+        } else {
             return redirect()->route('/');
         }
-        
     }
 
     public function registrar_consulta()
@@ -245,7 +244,7 @@ class User_controller extends BaseController
             $session = \Config\Services::session();
             $session->destroy();
             return redirect()->route('loginUsuario');
-        }else {
+        } else {
             return redirect()->route('loginUsuario');
         }
     }

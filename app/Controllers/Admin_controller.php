@@ -57,7 +57,8 @@ class Admin_controller extends BaseController
         }
     }
 
-    public function getConsultas() {
+    public function getConsultas()
+    {
         $consultas = new Consulta_model();
         $data['consultas'] = $consultas->findAll();
 

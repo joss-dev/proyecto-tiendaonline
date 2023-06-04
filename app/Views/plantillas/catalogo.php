@@ -8,7 +8,15 @@
                     <div class="card-body mt-2">
                         <h5 class="card-title my-3 "><?= $row['producto_nombre']; ?></h5>
                         <span class="d-block card-price fw-bold">$ <?= number_format($row['producto_precio'], 0, ',', '.'); ?></span>
-                        <a href="" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
+                        <?php if (session()->login) { ?>
+                            <?php if (session()->perfil == 1) { ?>
+                                <a href="" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
+                            <?php } else { ?>
+                                <a href="<?php echo base_url('productos'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
+                            <?php } ?>
+                        <?php } else { ?>
+                            <a href="<?php echo base_url('loginUsuario'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
+                        <?php } ?>
                         <a href="<?php echo base_url('producto/' . $row['id_producto']); ?>" class="btn btn-info card-button mt-4 mx-1">Ver mas</a>
                     </div>
                 </div>
@@ -16,4 +24,3 @@
         <?php } ?>
     </ul>
 </div>
-
