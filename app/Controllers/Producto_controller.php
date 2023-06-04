@@ -156,7 +156,7 @@ class Producto_controller extends BaseController
             echo view('plantillas/footer');
         }else {
             echo view('plantillas/encabezado', $data);
-            echo view('plantillas/navAdmin');
+            echo view('plantillas/nav');
             echo view('plantillas/producto');
             echo view('plantillas/footer');
         }  
