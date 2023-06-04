@@ -23,7 +23,7 @@
                         <?php } else { ?>
                             <a href="<?php echo base_url('loginUsuario'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
                         <?php } ?>
-                        <a href="<?php echo base_url('producto/' . $row['id_producto']); ?>" class="btn btn-info card-button mt-4 mx-1">Ver mas</a>
+                        <a href="<?php echo base_url('producto/' . $row['id_producto']); ?>" class="btn btn-info card-button mt-4 mx-1">Detalles</a>
                     </div>
                 </div>
             </li>
