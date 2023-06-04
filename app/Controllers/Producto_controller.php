@@ -47,10 +47,8 @@ class Producto_controller extends BaseController
         $precioSinFormato = str_replace('.', '', $precio);
 
         if ($request->is('post')) {
-            var_dump("entro1");
             
             if($this->request->getFile('imagenProducto')->isValid()) {
-                var_dump("entro2");
                 $rules = [
                     'nombreProducto' => 'required',
                     'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
