@@ -17,7 +17,7 @@
                                 echo form_hidden('nombre', $row['producto_nombre']);
                                 echo form_hidden('precio', $row['producto_precio']);
                                 ?>
-                                <button class="btn btn-primary card-button mt-4 mx-1">Comprar</button>
+                                <button class="btn btn-primary card-button mt-4 mx-1" onclick="addToCart()">Comprar</button>
                                 <?php echo form_close(); ?>
                             <?php } ?>
                         <?php } else { ?>

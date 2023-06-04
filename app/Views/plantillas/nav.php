@@ -44,7 +44,7 @@
             <?php if (session('login')) { ?>
                 <ul class="d-flex">
                     <li class="nav-item p-4 ">
-                        <a class="" href="<?php echo base_url('carrito'); ?>">
+                        <a href="<?php echo base_url('carrito'); ?>">
                             <i class="bi bi-cart3 position-relative  text-white efecto-opacidad d-block" style="font-size: 30px;">
                             <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
                                 <?= $cart->totalitems(); ?>
