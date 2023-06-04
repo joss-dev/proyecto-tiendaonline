@@ -43,7 +43,7 @@ $routes->get('registrarse', 'User_controller::registrarse');
 $routes->get('cerrarSesion', 'User_controller::cerrar_sesion');
 $routes->get('perfil', 'Home::perfil');
 $routes->get('carrito', 'User_controller::verCarrito');
-
+$routes->get('agregarProducto', 'User_controller::agregarCarrito');
 
 
 $routes->get('productosAdmin', 'Admin_controller::productosAdmin');

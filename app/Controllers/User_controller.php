@@ -256,4 +256,16 @@ class User_controller extends BaseController
         echo view('plantillas/carrito');
         echo view('plantillas/footer');
     }
+
+    public function agregarCarrito() {
+        $cart = \Config\Services::cart();
+        $data = array(
+            'id' => 2,
+            'name' => "josep",
+            'price' => 12222,
+            'qty' => 1,
+        );
+        $cart->insert($data);
+    }
+
 }

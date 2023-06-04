@@ -12,7 +12,7 @@
                             <?php if (session()->perfil == 1) { ?>
                                 <a href="" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
                             <?php } else { ?>
-                                <a href="<?php echo base_url('productos'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
+                                <a href="<?php echo base_url('agregarProducto'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
                             <?php } ?>
                         <?php } else { ?>
                             <a href="<?php echo base_url('loginUsuario'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>

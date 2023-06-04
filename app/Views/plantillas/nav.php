@@ -43,7 +43,7 @@
             <?php if (session('login')) { ?>
                 <ul class="d-flex">
                     <li class="nav-item p-4 ">
-                        <a class="" href="<?php echo base_url('perfil'); ?>">
+                        <a class="" href="<?php echo base_url('carrito'); ?>">
                             <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;"></i>
                         </a>
                     </li>
