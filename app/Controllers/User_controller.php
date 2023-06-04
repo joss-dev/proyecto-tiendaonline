@@ -248,4 +248,12 @@ class User_controller extends BaseController
             return redirect()->route('loginUsuario');
         }
     }
+
+    public function verCarrito() {
+        $data['titulo'] = 'Carrito';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/nav');
+        echo view('plantillas/carrito');
+        echo view('plantillas/footer');
+    }
 }

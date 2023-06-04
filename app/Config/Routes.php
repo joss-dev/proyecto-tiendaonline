@@ -42,6 +42,8 @@ $routes->get('loginUsuario', 'User_controller::login_view');
 $routes->get('registrarse', 'User_controller::registrarse');
 $routes->get('cerrarSesion', 'User_controller::cerrar_sesion');
 $routes->get('perfil', 'Home::perfil');
+$routes->get('carrito', 'User_controller::verCarrito');
+
 
 
 $routes->get('productosAdmin', 'Admin_controller::productosAdmin');
