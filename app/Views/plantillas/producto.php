@@ -18,7 +18,6 @@
                     ?>
                     <button class="btn btn-primary card-button mt-4 mx-1">Comprar</button>
                     <?php echo form_close(); ?>
-                    <a href="<?php echo base_url('productos'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
                 <?php } ?>
             <?php } else { ?>
                 <a href="<?php echo base_url('loginUsuario'); ?>" class="btn btn-primary card-button mt-4 mx-1">Comprar</a>
