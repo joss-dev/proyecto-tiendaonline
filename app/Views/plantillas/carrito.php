@@ -36,7 +36,7 @@
                 <td>$ <?= number_format($item['price'], 0, ',', '.'); ?></td>
                 <td><?= $item['qty']?></td>
                 <td>$ <?= number_format($item['subtotal'], 0, ',', '.'); $total += $item['subtotal'];?></td>
-                <td><a href="<?php ?>" class="btn btn-danger">Eliminar</a></td>
+                <td><a href="<?php echo base_url('eliminar_item/'. $item['rowid']);?>" class="btn btn-danger">Eliminar</a></td>
             </tr>
             <?php } ?>
             <tr>

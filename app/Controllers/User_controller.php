@@ -271,4 +271,10 @@ class User_controller extends BaseController
         return redirect()->route('productos');
     }
 
+    public function eliminarProductoCarrito($idrow = null) {
+        $cart = \Config\Services::cart();
+        $cart->remove($idrow);
+        $this->verCarrito();
+    }
+
 }
