@@ -1,9 +1,10 @@
 <header>
     <!-- barra de navegacion -->
+    <?php $cart = \Config\Services::cart(); ?>
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
-                <img src="<?php echo base_url('/public/img/icon.png');?>" alt="" width="50" height="60">
+                <img src="<?php echo base_url('/public/img/icon.png'); ?>" alt="" width="50" height="60">
                 Tecno Phone
             </a>
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +45,11 @@
                 <ul class="d-flex">
                     <li class="nav-item p-4 ">
                         <a class="" href="<?php echo base_url('carrito'); ?>">
-                            <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;"></i>
+                            <i class="bi bi-cart3 position-relative  text-white efecto-opacidad d-block" style="font-size: 30px;">
+                            <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
+                                <?= $cart->totalitems(); ?>
+                            </span>
+                        </i>
                         </a>
                     </li>
                     <li class="nav-item pt-4 text-center">
@@ -61,7 +66,11 @@
                 <ul class="d-flex">
                     <li class="nav-item p-4">
                         <a class="" href="<?php echo base_url('loginUsuario'); ?>">
-                            <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;"></i>
+                            <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;">
+                            <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
+                                <?= $cart->totalitems(); ?>
+                            </span>
+                        </i>
                         </a>
                     </li>
                     <li class="nav-item p-4">
