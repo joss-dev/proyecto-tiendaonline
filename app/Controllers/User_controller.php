@@ -277,4 +277,10 @@ class User_controller extends BaseController
         return redirect()->route('carrito');
     }
 
+    public function vaciarCarrito() {
+        $cart = \Config\Services::cart();
+        $cart->destroy();
+        return redirect()->route('carrito');
+    }
+
 }

@@ -169,4 +169,6 @@ class Producto_controller extends BaseController
         $productoModel->update($id, $data);
         return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
     }
+
+    
 }

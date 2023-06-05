@@ -55,9 +55,11 @@ $routes->get('Producto_controller/activarProducto/(:num)', 'Producto_controller:
 $routes->get('Producto_controller/editarProducto/(:num)', 'Producto_controller::editarProducto/$1');
 $routes->get('consultasAdmin', 'Admin_controller::getConsultas');
 $routes->get('producto/(:num)', 'Producto_controller::verProducto/$1');
-$routes->get('eliminar_item/(:hash)', 'User_controller::eliminarProductoCarrito/$1');
 
+$routes->get('eliminar_item/(:hash)', 'User_controller::eliminarProductoCarrito/$1');
+$routes->get('vaciarCarrito', 'User_controller::vaciarCarrito');
 $routes->post('add_cart', 'User_controller::agregarCarrito');
+
 $routes->post('consulta', 'User_controller::registrar_consulta');
 $routes->post('registro', 'User_controller::registrar_usuario');
 $routes->post('login', 'User_controller::login_usuario');
