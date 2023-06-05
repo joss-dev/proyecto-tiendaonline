@@ -147,7 +147,7 @@ class Producto_controller extends BaseController
         $data['producto'] = $productoModel->where('id_producto', $id)->first();
         $data['titulo'] = $data['producto']['producto_nombre'];;
         
-        if(session()->perfil_id == 1) {
+        if(session()->perfil == 1) {
             echo view('plantillas/encabezado', $data);
             echo view('plantillas/navAdmin');
             echo view('plantillas/producto');
