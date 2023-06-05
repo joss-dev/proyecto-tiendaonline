@@ -268,13 +268,13 @@ class User_controller extends BaseController
             'qty' => 1,
         );
         $cart->insert($data);
-        return redirect()->route('productos');
+        return redirect()->to('productos')->with('MensajeProducto', 'Producto agregado al carrito!');
     }
 
     public function eliminarProductoCarrito($idrow = null) {
         $cart = \Config\Services::cart();
         $cart->remove($idrow);
-        $this->verCarrito();
+        return redirect()->route('carrito');
     }
 
 }

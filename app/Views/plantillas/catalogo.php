@@ -1,5 +1,11 @@
 <div class="container-fluid bg-propio p-5">
     <h2 class="text-center mb-5">Nuestros productos</h2>
+    <?php if (session()->getFlashdata('MensajeProducto')) { ?>
+        <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
+            <?= session()->getFlashdata('MensajeProducto'); ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php } ?>
     <ul class="row gy-5">
         <?php foreach ($productos as $row) { ?>
             <li class="col d-flex justify-content-center mx-3">

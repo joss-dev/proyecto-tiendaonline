@@ -1,11 +1,11 @@
 <div class="container-fluid bg-oscuro p-0">
     <h1 class="text-center text-white py-5">Gestion de productos</h1>
     <?php if (session()->getFlashdata('MensajeProducto')) { ?>
-            <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
-                <?= session()->getFlashdata('MensajeProducto'); ?>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        <?php } ?>
+        <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
+            <?= session()->getFlashdata('MensajeProducto'); ?>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    <?php } ?>
     <table class="table table-hover mb-0">
         <thead>
             <tr class="table-dark">
@@ -31,8 +31,8 @@
                         <td><?= $row['marca_nombre']; ?></td>
                         <td><img src="<?php echo base_url('public/img/ejemplos/' . $row['producto_imagen']); ?>" width="100px" height="100px" alt=""></td>
                         <td>
-                            <a href="<?php echo base_url('Producto_controller/editarProducto/'.$row['id_producto']);?>" class="btn btn-info">Editar</a>
-                            <a href="<?php echo base_url('Producto_controller/eliminarProducto/'.$row['id_producto']);?>" class="btn btn-danger">Eliminar</a>
+                            <a href="<?php echo base_url('Producto_controller/editarProducto/' . $row['id_producto']); ?>" class="btn btn-info">Editar</a>
+                            <a href="<?php echo base_url('Producto_controller/eliminarProducto/' . $row['id_producto']); ?>" class="btn btn-danger">Eliminar</a>
                         </td>
                     </tr>
                 <?php } else { ?>
@@ -45,8 +45,8 @@
                         <td><?= $row['marca_nombre']; ?></td>
                         <td><img src="<?php echo base_url('public/img/ejemplos/' . $row['producto_imagen']); ?>" width="100px" height="100px" alt=""></td>
                         <td>
-                            <a href="<?php echo base_url('Producto_controller/editarProducto/'.$row['id_producto']);?>" class="btn btn-info">Editar</a>
-                            <a href="<?php echo base_url('Producto_controller/activarProducto/'.$row['id_producto']);?>" class="btn btn-success">Activar</a>
+                            <a href="<?php echo base_url('Producto_controller/editarProducto/' . $row['id_producto']); ?>" class="btn btn-info">Editar</a>
+                            <a href="<?php echo base_url('Producto_controller/activarProducto/' . $row['id_producto']); ?>" class="btn btn-success">Activar</a>
                         </td>
                     </tr>
                 <?php } ?>
