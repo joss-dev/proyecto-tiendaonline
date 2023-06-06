@@ -15,7 +15,8 @@
                 <a href="<?php echo base_url('productos'); ?>" class="btn btn-primary">Ver catalogo</a>
             </div>
         <?php } ?>
-        <?php if ($cart1 = $cart->contents()) { ?>
+        <?php 
+         if ($cart1 = $cart->contents()) { ?>
             <thead>
                 <tr class="table-dark">
                     <th scope="col">N° Item</th>
