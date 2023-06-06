@@ -31,7 +31,7 @@
                 $total = 0;
                 $i = 1;
                 foreach ($cart1 as $item) { ?>
-                    <tr class="table-dark">
+                    <tr class="table-light">
                         <th scope="row"><?= $i++ ?></th>
                         <td><?= $item['name'] ?></td>
                         <td>$ <?= number_format($item['price'], 0, ',', '.'); ?></td>

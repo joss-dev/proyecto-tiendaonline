@@ -31,41 +31,46 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+//views general
 $routes->get('/', 'Home::index');
 $routes->get('quienesSomos', 'Home::quienesSomos');
 $routes->get('productos', 'Home::productos');
 $routes->get('terminosYcondiciones', 'Home::terminosYcondiciones');
 $routes->get('contacto', 'Home::contacto');
 $routes->get('comercializacion', 'Home::comercializacion');
+$routes->get('perfil', 'Home::perfil');
 
+
+//registro y login
 $routes->get('loginUsuario', 'User_controller::login_view');
 $routes->get('registrarse', 'User_controller::registrarse');
+$routes->post('registro', 'User_controller::registrar_usuario');
+$routes->post('login', 'User_controller::login_usuario');
 $routes->get('cerrarSesion', 'User_controller::cerrar_sesion');
-$routes->get('perfil', 'Home::perfil');
-$routes->get('carrito', 'User_controller::verCarrito');
-$routes->get('agregarProducto', 'User_controller::agregarCarrito');
 
-
+//gestion productos
+$routes->get('producto/(:num)', 'Producto_controller::verProducto/$1');
+$routes->post('registrarProducto', 'Admin_controller::registrar_producto');
+$routes->post('/Producto_controller/actualizarProducto', 'Producto_controller::actualizarProducto');
+$routes->get('Producto_controller/eliminarProducto/(:num)', 'Producto_controller::eliminarProducto/$1');
+$routes->get('Producto_controller/activarProducto/(:num)', 'Producto_controller::activarProducto/$1');
+$routes->get('Producto_controller/editarProducto/(:num)', 'Producto_controller::editarProducto/$1');
 $routes->get('productosAdmin', 'Admin_controller::productosAdmin');
 $routes->get('formProducto', 'Admin_controller::formProducto');
 $routes->get('admin', 'Admin_controller::admin_view');
 $routes->get('gestionProductos', 'Producto_controller::gestion_view');
-$routes->get('Producto_controller/eliminarProducto/(:num)', 'Producto_controller::eliminarProducto/$1');
-$routes->get('Producto_controller/activarProducto/(:num)', 'Producto_controller::activarProducto/$1');
-$routes->get('Producto_controller/editarProducto/(:num)', 'Producto_controller::editarProducto/$1');
-$routes->get('consultasAdmin', 'Admin_controller::getConsultas');
-$routes->get('producto/(:num)', 'Producto_controller::verProducto/$1');
 
-$routes->get('eliminar_item/(:hash)', 'User_controller::eliminarProductoCarrito/$1');
-$routes->get('vaciarCarrito', 'User_controller::vaciarCarrito');
-$routes->post('add_cart', 'User_controller::agregarCarrito');
-
+//consultas
 $routes->post('consulta', 'User_controller::registrar_consulta');
-$routes->post('registro', 'User_controller::registrar_usuario');
-$routes->post('login', 'User_controller::login_usuario');
-$routes->post('registrarProducto', 'Admin_controller::registrar_producto');
-$routes->post('/Producto_controller/actualizarProducto', 'Producto_controller::actualizarProducto');
+$routes->get('consultasAdmin', 'Admin_controller::getConsultas');
 
+//carrito
+$routes->get('carrito', 'Carrito_controller::verCarrito');
+$routes->get('agregarProducto', 'Carrito_controller::agregarCarrito');
+$routes->get('vaciarCarrito', 'Carrito_controller::vaciarCarrito');
+$routes->post('add_cart', 'Carrito_controller::agregarCarrito');
+$routes->get('eliminar_item/(:hash)', 'Carrito_controller::eliminarProductoCarrito/$1');
 
 /*
  * --------------------------------------------------------------------
