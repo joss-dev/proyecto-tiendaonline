@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\Producto_model;
 use CodeIgniter\CLI\Console;
 
-class Admin_controller extends BaseController
+class Carrito_controller extends BaseController
 {
 
     public function verCarrito() {

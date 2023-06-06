@@ -31,7 +31,7 @@
         </div>
         <div class="col-12">
             <label for="exampleFormControlTextarea1" for="descripcionProducto" class="form-label">Descripcion del producto</label>
-            <textarea class="form-control border border-dark" value="" name="descripcionProducto" id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Descripción del producto"><?= $producto['producto_descripcion']; ?></textarea>
+            <textarea class="form-control border border-dark" value="" name="descripcionProducto" id="exampleFormControlTextarea1" rows="3" maxlength="1000" placeholder="Descripción del producto"><?= $producto['producto_descripcion']; ?></textarea>
             <?php if ($validation->getError('descripcionProducto')) { ?>
                 <div class='alert alert-danger mt-2'>
                     <?= $error = $validation->getError('descripcionProducto'); ?>
