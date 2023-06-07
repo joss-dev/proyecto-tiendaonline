@@ -2,6 +2,10 @@
 
 namespace App\Controllers;
 
+use App\Models\Venta_model;
+use App\Models\Detalle_venta_model;
+use App\Models\Producto_model;
+
 class Carrito_controller extends BaseController
 {
 
@@ -37,6 +41,47 @@ class Carrito_controller extends BaseController
         $cart = \Config\Services::cart();
         $cart->destroy();
         return redirect()->route('carrito');
+    }
+
+    public function guardarVenta() {
+        $cart = \Config\Services::cart();
+        $venta = new Venta_model();
+        $detalle_venta = new Detalle_venta_model();
+        $productos = new Producto_model();
+
+        $cart1 = $cart->contents();
+
+        foreach($cart1 as $item) {
+            $producto = $productos->where('id_producto', $item['id'])->first();
+            if($producto['producto_stock'] < $item['qty']) {
+                return redirect()->route('carrito')->with('mensajeStock', 'No tenemos stock');
+            }
+        }
+        $data = array(
+            'id_usuario' => session()->id,
+            'venta_fecha' => date('Y-m-d')
+        );
+        $venta_id = $venta->insert($data);
+
+
+        //carga detalle de ventas
+        $cart1 = $cart->contents();
+
+        foreach($cart1 as $item) { 
+            
+            $detalle = array(
+                'id_venta' => $venta_id,
+                'id_producto' => $item['id'],
+                'detalle_cantidad' => $item['qty'],
+                'detalle_precio' => $item['price']
+            ); 
+
+            $productos->where('id_producto', $item['id'])->set('producto_stock', 'producto_stock - ' . $item['qty'], false)->update();
+
+            $detalle_venta->insert($detalle);
+        }
+        $cart->destroy();
+        return redirect()->to('productos/all');
     }
 
 

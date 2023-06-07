@@ -4,12 +4,12 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class Usuario_model extends Model
+class Detalle_venta_model extends Model
 {
     protected $table      = 'detalle_venta';
     protected $primaryKey = 'id_venta';
 
-    protected $useAutoIncrement = true;
+    protected $useAutoIncrement = false;
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false; 

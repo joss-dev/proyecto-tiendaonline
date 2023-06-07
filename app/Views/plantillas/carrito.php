@@ -47,7 +47,7 @@
     </table>
     <div class="py-5">
         <h2 class="text-white d-inline ms-4 me-5 ">Total compra: $ <?= number_format($total, 0, ',', '.'); ?></h2>
-        <a href="<?php echo base_url('carrito'); ?>" class="btn btn-success ms-5">Comprar</a>
+        <a href="<?php echo base_url('comprarCarrito'); ?>" class="btn btn-success ms-5">Comprar</a>
         <a href="<?php echo base_url('vaciarCarrito'); ?>" class="btn btn-danger ms-5">Vaciar carrito</a>            
     </div>
     <?php } ?>

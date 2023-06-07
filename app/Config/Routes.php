@@ -71,6 +71,7 @@ $routes->get('agregarProducto', 'Carrito_controller::agregarCarrito');
 $routes->get('vaciarCarrito', 'Carrito_controller::vaciarCarrito');
 $routes->post('add_cart', 'Carrito_controller::agregarCarrito');
 $routes->get('eliminar_item/(:hash)', 'Carrito_controller::eliminarProductoCarrito/$1');
+$routes->get('comprarCarrito', 'Carrito_controller::guardarVenta');
 
 /*
  * --------------------------------------------------------------------
