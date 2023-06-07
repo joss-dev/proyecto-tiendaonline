@@ -1,6 +1,12 @@
 <header>
     <!-- barra de navegacion -->
     <?php $cart = \Config\Services::cart(); ?>
+    <?php
+
+    use App\Models\Categoria_model; ?>
+    <?php $categoriaModel = new Categoria_model(); ?>
+    <?php $marcas = $categoriaModel->findAll(); ?>
+
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
             <a class="navbar-brand text-white" href="<?php echo base_url(''); ?>">
@@ -16,8 +22,14 @@
                     <li class="nav-item">
                         <a class="nav-link active text-white" aria-current="page" href="<?php echo base_url(''); ?>">Principal</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="<?php echo base_url('productos'); ?>">Productos</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Productos</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" href="<?php echo base_url('productos/all'); ?>">Todos los productos</a></li>
+                            <?php foreach ($marcas as $row) { ?>
+                                <li><a class="dropdown-item" href="<?php echo base_url('productos/' . $row['id_marca']) ?>"><?= $row['marca_nombre'] ?></a></li>
+                            <?php } ?>
+                        </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="<?php echo base_url('contacto'); ?>">Contacto</a>
@@ -46,10 +58,10 @@
                     <li class="nav-item p-4 ">
                         <a href="<?php echo base_url('carrito'); ?>">
                             <i class="bi bi-cart3 position-relative  text-white efecto-opacidad d-block" style="font-size: 30px;">
-                            <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
-                                <?= $cart->totalitems(); ?>
-                            </span>
-                        </i>
+                                <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
+                                    <?= $cart->totalitems(); ?>
+                                </span>
+                            </i>
                         </a>
                     </li>
                     <li class="nav-item pt-4 text-center">
@@ -67,10 +79,10 @@
                     <li class="nav-item p-4">
                         <a class="" href="<?php echo base_url('loginUsuario'); ?>">
                             <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;">
-                            <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
-                                <?= $cart->totalitems(); ?>
-                            </span>
-                        </i>
+                                <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
+                                    <?= $cart->totalitems(); ?>
+                                </span>
+                            </i>
                         </a>
                     </li>
                     <li class="nav-item p-4">

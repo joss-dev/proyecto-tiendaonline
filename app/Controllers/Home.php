@@ -28,13 +28,17 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function productos()
+    public function productos($id=null)
     {
-       
         $productos = new Producto_model();
-
-        $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->findAll();
-        $data['titulo'] = 'Productos';
+        if($id == 'all') {
+            $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->findAll();
+            $data['titulo'] = 'Productos';
+        }else {
+            $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->where('producto_marca', $id)->findAll();
+            $data['titulo'] = "nose";
+        }
+          
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/catalogo');

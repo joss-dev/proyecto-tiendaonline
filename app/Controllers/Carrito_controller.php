@@ -2,9 +2,6 @@
 
 namespace App\Controllers;
 
-use App\Models\Producto_model;
-use CodeIgniter\CLI\Console;
-
 class Carrito_controller extends BaseController
 {
 

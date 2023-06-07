@@ -35,7 +35,7 @@ $routes->set404Override();
 //views general
 $routes->get('/', 'Home::index');
 $routes->get('quienesSomos', 'Home::quienesSomos');
-$routes->get('productos', 'Home::productos');
+$routes->get('productos/(:any)', 'Home::productos/$1');
 $routes->get('terminosYcondiciones', 'Home::terminosYcondiciones');
 $routes->get('contacto', 'Home::contacto');
 $routes->get('comercializacion', 'Home::comercializacion');
