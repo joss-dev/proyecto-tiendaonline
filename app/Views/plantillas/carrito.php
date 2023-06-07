@@ -1,13 +1,35 @@
 <div class="container-fluid bg-oscuro table-responsive p-0">
     <?php $cart = \Config\Services::cart(); ?>
     <h1 class="text-center text-white py-5">Tus compras</h1>
-    
-    <?php if (session()->getFlashdata('MensajeProducto')) { ?>
-        <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
-            <?= session()->getFlashdata('MensajeProducto'); ?>
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
+
+    <?php if (session()->getFlashdata('MensajeCompra')) { ?>
+        <script>
+            window.onload = function() {
+            var modal = document.getElementById('miVentanaModal');
+            modal.style.display = 'block';
+            
+            };
+            function cerrarModal() {
+                var modal = document.getElementById('miVentanaModal');
+                modal.style.display = 'none';
+            }
+        </script>
     <?php } ?>
+
+    <div class="modal" id="miVentanaModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Estimado cliente</h5>
+                        <button onclick="cerrarModal()" type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p><?= session()->getFlashdata('MensajeCompra'); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     <table class="table table-hover mb-0">
         <?php if ($cart->contents() == NULL) { ?>
             <div class="text-center mb-5">
@@ -15,8 +37,8 @@
                 <a href="<?php echo base_url('productos/all'); ?>" class="btn btn-primary">Ver catalogo</a>
             </div>
         <?php } ?>
-        <?php 
-         if ($cart1 = $cart->contents()) { ?>
+        <?php
+        if ($cart1 = $cart->contents()) { ?>
             <thead>
                 <tr class="table-dark">
                     <th scope="col">N° Item</th>
@@ -43,12 +65,12 @@
                     </tr>
                 <?php } ?>
             </tbody>
-        
+
     </table>
     <div class="py-5">
         <h2 class="text-white d-inline ms-4 me-5 ">Total compra: $ <?= number_format($total, 0, ',', '.'); ?></h2>
         <a href="<?php echo base_url('comprarCarrito'); ?>" class="btn btn-success ms-5">Comprar</a>
-        <a href="<?php echo base_url('vaciarCarrito'); ?>" class="btn btn-danger ms-5">Vaciar carrito</a>            
+        <a href="<?php echo base_url('vaciarCarrito'); ?>" class="btn btn-danger ms-5">Vaciar carrito</a>
     </div>
-    <?php } ?>
+<?php } ?>
 </div>

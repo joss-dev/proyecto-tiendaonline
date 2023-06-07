@@ -54,7 +54,7 @@ class Carrito_controller extends BaseController
         foreach($cart1 as $item) {
             $producto = $productos->where('id_producto', $item['id'])->first();
             if($producto['producto_stock'] < $item['qty']) {
-                return redirect()->route('carrito')->with('mensajeStock', 'No tenemos stock');
+                return redirect()->route('carrito')->with('MensajeCompra', 'No tenemos stock suficiente');
             }
         }
         $data = array(
@@ -81,7 +81,7 @@ class Carrito_controller extends BaseController
             $detalle_venta->insert($detalle);
         }
         $cart->destroy();
-        return redirect()->to('productos/all');
+        return redirect()->to('carrito')->with('MensajeCompra', 'Muchas gracias por tu compra!. Puedes econtrar los detalles de su compra en la seccion perfil');
     }
 
 
