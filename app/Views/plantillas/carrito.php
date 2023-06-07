@@ -12,7 +12,7 @@
         <?php if ($cart->contents() == NULL) { ?>
             <div class="text-center mb-5">
                 <h2 class="alert alert-info">El carrito esta vacio</h2>
-                <a href="<?php echo base_url('productos'); ?>" class="btn btn-primary">Ver catalogo</a>
+                <a href="<?php echo base_url('productos/all'); ?>" class="btn btn-primary">Ver catalogo</a>
             </div>
         <?php } ?>
         <?php 
