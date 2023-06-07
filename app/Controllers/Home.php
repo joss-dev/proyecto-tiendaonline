@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\Producto_model;
+use App\Models\Categoria_model;
 
 class Home extends BaseController
 {
@@ -31,14 +32,16 @@ class Home extends BaseController
     public function productos($id=null)
     {
         $productos = new Producto_model();
+        $categoria = new Categoria_model();
         if($id == 'all') {
             $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->findAll();
             $data['titulo'] = 'Productos';
         }else {
             $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->where('producto_marca', $id)->findAll();
-            $data['titulo'] = "nose";
+            $marca = $categoria->where('id_marca', $id)->findAll();
+            $data['titulo'] = $marca[0]['marca_nombre'];
         }
-          
+        
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/catalogo');

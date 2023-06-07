@@ -1,5 +1,5 @@
 <div class="container-fluid bg-propio p-5">
-    <h2 class="text-center mb-5">Nuestros productos</h2>
+    <h2 class="text-center mb-5"><?= $titulo ?> Disponibles</h2>
     <?php if (session()->getFlashdata('MensajeProducto')) { ?>
         <div class='alert alert-success alert-dismissible fade show text-center py-3 my-3' role='alert' id='mensaje'>
             <?= session()->getFlashdata('MensajeProducto'); ?>
