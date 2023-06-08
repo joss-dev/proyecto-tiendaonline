@@ -56,7 +56,6 @@ $routes->post('/Producto_controller/actualizarProducto', 'Producto_controller::a
 $routes->get('Producto_controller/eliminarProducto/(:num)', 'Producto_controller::eliminarProducto/$1');
 $routes->get('Producto_controller/activarProducto/(:num)', 'Producto_controller::activarProducto/$1');
 $routes->get('Producto_controller/editarProducto/(:num)', 'Producto_controller::editarProducto/$1');
-$routes->get('productosAdmin', 'Admin_controller::productosAdmin');
 $routes->get('formProducto', 'Admin_controller::formProducto');
 $routes->get('admin', 'Admin_controller::admin_view');
 $routes->get('gestionProductos', 'Producto_controller::gestion_view');

@@ -29,23 +29,30 @@ class Home extends BaseController
         echo view('plantillas/footer');
     }
 
-    public function productos($id=null)
+    public function productos($id = null)
     {
         $productos = new Producto_model();
         $categoria = new Categoria_model();
-        if($id == 'all') {
+        if ($id == 'all') {
             $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->findAll();
             $data['titulo'] = 'Productos';
-        }else {
+        } else {
             $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->where('producto_marca', $id)->findAll();
             $marca = $categoria->where('id_marca', $id)->findAll();
             $data['titulo'] = $marca[0]['marca_nombre'];
         }
-        
-        echo view('plantillas/encabezado', $data);
-        echo view('plantillas/nav');
-        echo view('plantillas/catalogo');
-        echo view('plantillas/footer');
+
+        if (session()->perfil == 1) {
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/navAdmin');
+            echo view('plantillas/catalogo');
+            echo view('plantillas/footer');
+        } else {
+            echo view('plantillas/encabezado', $data);
+            echo view('plantillas/nav');
+            echo view('plantillas/catalogo');
+            echo view('plantillas/footer');
+        }
     }
 
     public function terminosYcondiciones()
@@ -84,7 +91,7 @@ class Home extends BaseController
                 echo view('plantillas/navAdmin');
                 echo view('plantillas/perfil');
                 echo view('plantillas/footer');
-            }else {
+            } else {
                 $data['titulo'] = 'Perfil';
                 echo view('plantillas/encabezado', $data);
                 echo view('plantillas/nav');
