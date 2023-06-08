@@ -1,4 +1,5 @@
-<div class="container">
+<div class="container text-center">
+    <h1 class="fw-bold mt-5">¿Quienes somos?</h1>
     <div class="row d-flex justify-content-center ">
         <div class="col-12 mt-5  d-flex justify-content-center ">
             <div id="carouselExampleFade" class="carousel slide carousel-fade border border-dark" data-bs-interval="2000" data-bs-ride="carousel" style="max-width: 600px;">
