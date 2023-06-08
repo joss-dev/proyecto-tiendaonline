@@ -6,6 +6,8 @@ namespace App\Controllers;
 use App\Models\Categoria_model;
 use App\Models\Producto_model;
 use App\Models\Consulta_model;
+use App\Models\Detalle_venta_model;
+use App\Models\Venta_model;
 use CodeIgniter\CLI\Console;
 
 class Admin_controller extends BaseController
@@ -28,7 +30,7 @@ class Admin_controller extends BaseController
         }
     }
 
-    
+
 
     public function admin_view()
     {
@@ -100,10 +102,25 @@ class Admin_controller extends BaseController
         }
     }
 
-    public function contestadoConsulta($id = null) {
+    public function contestadoConsulta($id = null)
+    {
         $consulta = new Consulta_model();
         $data = array('consulta_contestado' => 1);
         $consulta->update($id, $data);
         return redirect()->to('consultasAdmin')->with('MensajeConsulta', 'Marcado como contestado');
+    }
+
+    public function listarVentas()
+    {
+        $ventas = new Venta_model();
+        $detalle = new Detalle_venta_model();
+
+        $data['ventas'] = $ventas->join('usuarios', 'usuarios.id_usuario = venta.id_usuario')->findAll();
+
+        $data['titulo'] = 'Ventas';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/navAdmin');
+        echo view('plantillas/ventas');
+        echo view('plantillas/footer');
     }
 }
