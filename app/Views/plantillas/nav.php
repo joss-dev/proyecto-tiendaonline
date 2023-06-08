@@ -1,7 +1,7 @@
 <header>
     <!-- barra de navegacion -->
     <?php $cart = \Config\Services::cart(); ?>
-    
+
 
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
@@ -43,11 +43,20 @@
                             <li><a class="dropdown-item" href="<?php echo base_url('comercializacion'); ?>">Comercialización</a></li>
                         </ul>
                     </li>
+                    <?php if (!session('login')) { ?>
+                        <li class="nav-item mx-4">
+                            <a class="btn btn-outline-light" href="<?php echo base_url('loginUsuario'); ?>">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a class="btn btn-outline-info" href="<?php echo base_url('registrarse'); ?>">Regístrate</a>
+                        </li>
+                    <?php  } ?>
+
                 </ul>
             </div>
             <?php if (session('login')) { ?>
                 <ul class="d-flex">
-                    
+
                     <li class="nav-item p-4 mt-3">
                         <a href="<?php echo base_url('carrito'); ?>">
                             <i class="bi bi-cart3 position-relative  text-white efecto-opacidad d-block" style="font-size: 30px;">
@@ -58,8 +67,8 @@
                         </a>
                     </li>
                     <li class="nav-item p-4 text-center ">
-                        <a href="<?php echo base_url('compras')?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
-                        <a href="<?php echo base_url('compras')?>" class="text-white efecto-opacidad">Mis compras</a>
+                        <a href="<?php echo base_url('compras') ?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
+                        <a href="<?php echo base_url('compras') ?>" class="text-white efecto-opacidad">Mis compras</a>
                     </li>
                     <li class="nav-item pt-4 text-center">
                         <a class="text-white " href="<?php echo base_url('perfil'); ?>">
@@ -83,8 +92,8 @@
                         </a>
                     </li>
                     <li class="nav-item p-4 text-center ">
-                        <a href="<?php echo base_url('loginUsuario')?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
-                        <a href="<?php echo base_url('loginUsuario')?>" class="text-white efecto-opacidad">Mis compras</a>
+                        <a href="<?php echo base_url('loginUsuario') ?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
+                        <a href="<?php echo base_url('loginUsuario') ?>" class="text-white efecto-opacidad">Mis compras</a>
                     </li>
                     <li class="nav-item p-4 mt-2">
                         <a class="text-white " href="<?php echo base_url('loginUsuario'); ?>">
