@@ -11,7 +11,7 @@ class Home extends BaseController
     {
         $productos = new Producto_model();
         $data['ultimos'] = $productos->orderBy('created_at', 'desc')->limit(3)->find();
-
+        $data['baratos'] = $productos->orderBy('producto_precio', 'asc')->limit(3)->find();
         $data['titulo'] = 'Home';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');

@@ -1,5 +1,5 @@
 <div class="container bg-propio p-2 my-5 border border-secondary">
-        <h2 class="text-center m-5">Nuevos Ingresos</h2>
+        <h2 class="text-center m-5">Ultimos Ingresos</h2>
         <ul class="row gy-5">
         <?php foreach ($ultimos as $row) { ?>
             <li class="col d-flex justify-content-center mx-3">
