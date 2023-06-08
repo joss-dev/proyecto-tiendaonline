@@ -44,14 +44,11 @@
                         </ul>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control mx-4" type="search" placeholder="Buscar" aria-label="Buscar">
-                    <button class="btn btn-outline-light" type="submit">Buscar</button>
-                </form>
             </div>
             <?php if (session('login')) { ?>
                 <ul class="d-flex">
-                    <li class="nav-item p-4 ">
+                    
+                    <li class="nav-item p-4 mt-3">
                         <a href="<?php echo base_url('carrito'); ?>">
                             <i class="bi bi-cart3 position-relative  text-white efecto-opacidad d-block" style="font-size: 30px;">
                                 <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
@@ -60,19 +57,23 @@
                             </i>
                         </a>
                     </li>
+                    <li class="nav-item p-4 text-center ">
+                        <a href="<?php echo base_url('compras')?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
+                        <a href="<?php echo base_url('compras')?>" class="text-white efecto-opacidad">Tus compras</a>
+                    </li>
                     <li class="nav-item pt-4 text-center">
                         <a class="text-white " href="<?php echo base_url('perfil'); ?>">
                             <i class="bi bi-person-circle text-white efecto-opacidad  d-block" style="font-size: 30px;"></i>
                         </a>
                         <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-1 efecto-opacidad text-white"><?= $session->get('nombre'); ?></a>
                     </li>
-                    <li>
-                        <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-4 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>
+                    <li class="mt-3">
+                        <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-4 display-none"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</i></a>
                     </li>
                 </ul>
             <?php } else { ?>
                 <ul class="d-flex">
-                    <li class="nav-item p-4">
+                    <li class="nav-item p-4 mt-3">
                         <a class="" href="<?php echo base_url('loginUsuario'); ?>">
                             <i class="bi bi-cart3  text-white efecto-opacidad d-block" style="font-size: 30px;">
                                 <span class="position-absolute translate-middle badge text-dark rounded-pill bg-light" style="font-size: 0.5em;">
@@ -81,7 +82,11 @@
                             </i>
                         </a>
                     </li>
-                    <li class="nav-item p-4">
+                    <li class="nav-item p-4 text-center ">
+                        <a href="<?php echo base_url('loginUsuario')?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
+                        <a href="<?php echo base_url('loginUsuario')?>" class="text-white efecto-opacidad">Tus compras</a>
+                    </li>
+                    <li class="nav-item p-4 mt-2">
                         <a class="text-white " href="<?php echo base_url('loginUsuario'); ?>">
                             <i class="bi bi-person-circle text-white efecto-opacidad  d-block" style="font-size: 30px;"></i>
                         </a>
