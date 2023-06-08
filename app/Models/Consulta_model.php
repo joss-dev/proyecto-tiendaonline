@@ -14,7 +14,7 @@ class Consulta_model extends Model
     protected $returnType     = 'array';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['consulta_nombre', 'consulta_correo', 'consulta_mensaje'];
+    protected $allowedFields = ['consulta_nombre', 'consulta_correo', 'consulta_mensaje', 'consulta_contestado'];
 
     // Dates
     protected $useTimestamps = false;// poner en true

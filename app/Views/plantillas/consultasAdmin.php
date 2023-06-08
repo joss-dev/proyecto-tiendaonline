@@ -18,15 +18,29 @@
         </thead>
         <tbody class="table-group-divider">
             <?php foreach ($consultas as $row) { ?>
-                <tr class="table-dark">
-                    <th scope="row"><?= $row['id_consulta']; ?></th>
-                    <td><?= $row['consulta_nombre']; ?></td>
-                    <td><?= $row['consulta_correo']; ?></td>
-                    <td><?= $row['consulta_mensaje']; ?></td>
-                    <td>
-                        <a href="<?php echo base_url('/' . $row['id_consulta']); ?>" class="btn btn-info">Respondido</a>
-                    </td>
-                </tr>
+                <?php if ($row['consulta_contestado'] == 1) { ?>
+                    <tr class="table-success">
+                        <th scope="row"><?= $row['id_consulta']; ?></th>
+                        <td><?= $row['consulta_nombre']; ?></td>
+                        <td><?= $row['consulta_correo']; ?></td>
+                        <td><?= $row['consulta_mensaje']; ?></td>
+                        <td>Ya respondido</td>
+                    </tr>
+                <?php } else { ?>
+                    <tr class="table-dark">
+                        <th scope="row"><?= $row['id_consulta']; ?></th>
+                        <td><?= $row['consulta_nombre']; ?></td>
+                        <td><?= $row['consulta_correo']; ?></td>
+                        <td><?= $row['consulta_mensaje']; ?></td>
+
+
+                        <td>
+                            <a href="<?php echo base_url('consulta/' . $row['id_consulta']); ?>" class="btn btn-info">Marcar como respondido</a>
+                        </td>
+                    </tr>
+
+                <?php } ?>
+
             <?php } ?>
         </tbody>
     </table>

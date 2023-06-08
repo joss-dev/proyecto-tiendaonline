@@ -114,4 +114,11 @@ class Admin_controller extends BaseController
             }
         }
     }
+
+    public function contestadoConsulta($id = null) {
+        $consulta = new Consulta_model();
+        $data = array('consulta_contestado' => 1);
+        $consulta->update($id, $data);
+        return redirect()->to('consultasAdmin')->with('MensajeConsulta', 'Marcado como contestado');
+    }
 }

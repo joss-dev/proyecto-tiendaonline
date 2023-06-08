@@ -64,6 +64,7 @@ $routes->get('gestionProductos', 'Producto_controller::gestion_view');
 //consultas
 $routes->post('consulta', 'User_controller::registrar_consulta');
 $routes->get('consultasAdmin', 'Admin_controller::getConsultas');
+$routes->get('consulta/(:num)', 'Admin_controller::contestadoConsulta/$1');
 
 //carrito
 $routes->get('carrito', 'Carrito_controller::verCarrito');
