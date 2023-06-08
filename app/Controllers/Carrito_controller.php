@@ -64,7 +64,7 @@ class Carrito_controller extends BaseController
         $venta_id = $venta->insert($data);
 
 
-        //carga detalle de ventas
+        
         $cart1 = $cart->contents();
 
         foreach($cart1 as $item) { 
@@ -81,7 +81,7 @@ class Carrito_controller extends BaseController
             $detalle_venta->insert($detalle);
         }
         $cart->destroy();
-        return redirect()->to('carrito')->with('MensajeCompra', 'Muchas gracias por tu compra!. Puedes econtrar los detalles de su compra en la seccion perfil');
+        return redirect()->to('carrito')->with('MensajeCompra', 'Muchas gracias por tu compra!. Puedes encontrar los detalles de su compra en la seccion perfil');
     }
 
 

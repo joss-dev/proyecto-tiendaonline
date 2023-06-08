@@ -25,7 +25,7 @@
         </div>
         <div class="mt-5 p-3 border border-2 rounded-4  ">
             <p>Descripción del producto : </p>
-            <p> <?= $producto['producto_descripcion'] ?></p>
+            <p> <?= nl2br($producto['producto_descripcion'])  ?></p>
         </div>
     </div>
 </div>
