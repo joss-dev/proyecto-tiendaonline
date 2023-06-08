@@ -43,23 +43,25 @@ class Carrito_controller extends BaseController
         return redirect()->route('carrito');
     }
 
-    public function guardarVenta() {
+    public function guardarVenta($montoTotal = null) {
         $cart = \Config\Services::cart();
         $venta = new Venta_model();
         $detalle_venta = new Detalle_venta_model();
         $productos = new Producto_model();
 
         $cart1 = $cart->contents();
-
         foreach($cart1 as $item) {
             $producto = $productos->where('id_producto', $item['id'])->first();
             if($producto['producto_stock'] < $item['qty']) {
                 return redirect()->route('carrito')->with('MensajeCompra', 'No tenemos stock suficiente');
             }
         }
+
         $data = array(
             'id_usuario' => session()->id,
-            'venta_fecha' => date('Y-m-d')
+            'venta_fecha' => date('Y-m-d'),
+            'venta_total' => $montoTotal
+            
         );
         $venta_id = $venta->insert($data);
 

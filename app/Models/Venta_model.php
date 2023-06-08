@@ -13,7 +13,7 @@ class Venta_model extends Model
 
     protected $returnType     = 'array';
     protected $useSoftDeletes = false; 
-    protected $allowedFields = ['id_usuario', 'venta_fecha'];
+    protected $allowedFields = ['id_usuario', 'venta_fecha', 'venta_total'];
 
     // Dates
     protected $useTimestamps = false;// 

@@ -123,4 +123,19 @@ class Admin_controller extends BaseController
         echo view('plantillas/ventas');
         echo view('plantillas/footer');
     }
+
+    public function verDetalle($id = null) {
+        $detalle = new Detalle_venta_model();
+        $venta = new Venta_model();
+
+        $data['venta'] = $venta->where('id_venta', $id)->join('usuarios', 'usuarios.id_usuario = venta.id_usuario')->first();
+
+        $data['detalle'] = $detalle->where('detalle_venta.id_venta', $id)->join('venta', 'venta.id_venta = detalle_venta.id_venta')->join('productos', 'productos.id_producto = detalle_venta.id_producto')->findAll();
+        
+        $data['titulo'] = 'Detalle de venta';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/navAdmin');
+        echo view('plantillas/detalleVenta');
+        echo view('plantillas/footer');
+    }
 }

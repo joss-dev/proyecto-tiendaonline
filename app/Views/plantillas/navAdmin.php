@@ -28,7 +28,7 @@ use App\Models\Categoria_model; ?>
                         </ul>
                     </li>
                 <li class="nav-item">
-                    <a class="nav-link text-white" href="<?php echo base_url('admin'); ?>">Ventas</a>
+                    <a class="nav-link text-white" href="<?php echo base_url('ventas'); ?>">Ventas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="<?php echo base_url('formProducto'); ?>">Registrar Producto</a>
