@@ -32,21 +32,17 @@
                     <a class="nav-link text-white" href="<?php echo base_url('gestionProductos'); ?>">Gestionar Productos</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control mx-4" type="search" placeholder="Buscar" aria-label="Buscar">
-                <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form>
         </div>
         <?php if (session('login')) { ?>
             <ul class="d-flex">
-                <li class="nav-item pt-4 text-center mx-4">
+                <li class="nav-item pt-4 text-center mx-5">
                     <a class="text-white " href="<?php echo base_url('perfil'); ?>">
                         <i class="bi bi-person-circle text-white efecto-opacidad  d-block" style="font-size: 30px;"></i>
                     </a>
                     <a href="<?php echo base_url('perfil'); ?>" class="d-block pt-1 text-white"><?= $session->get('nombre'); ?></a>
                 </li>
-                <li class="mx-2">
-                    <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-2 display-none"><i class="bi bi-box-arrow-right"></i> Salir</i></a>
+                <li class="mx-2 mt-3">
+                    <a href="<?php echo base_url('cerrarSesion'); ?>" class="btn btn-outline-danger mt-4 mx-2 display-none"><i class="bi bi-box-arrow-right"></i> Cerrar Sesión</i></a>
                 </li>
             </ul>
         <?php } else { ?>

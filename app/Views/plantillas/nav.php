@@ -59,7 +59,7 @@
                     </li>
                     <li class="nav-item p-4 text-center ">
                         <a href="<?php echo base_url('compras')?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
-                        <a href="<?php echo base_url('compras')?>" class="text-white efecto-opacidad">Tus compras</a>
+                        <a href="<?php echo base_url('compras')?>" class="text-white efecto-opacidad">Mis compras</a>
                     </li>
                     <li class="nav-item pt-4 text-center">
                         <a class="text-white " href="<?php echo base_url('perfil'); ?>">
@@ -84,7 +84,7 @@
                     </li>
                     <li class="nav-item p-4 text-center ">
                         <a href="<?php echo base_url('loginUsuario')?>"><i class="bi bi-bag-check text-white efecto-opacidad d-block" style="font-size: 30px;"></i></a>
-                        <a href="<?php echo base_url('loginUsuario')?>" class="text-white efecto-opacidad">Tus compras</a>
+                        <a href="<?php echo base_url('loginUsuario')?>" class="text-white efecto-opacidad">Mis compras</a>
                     </li>
                     <li class="nav-item p-4 mt-2">
                         <a class="text-white " href="<?php echo base_url('loginUsuario'); ?>">
