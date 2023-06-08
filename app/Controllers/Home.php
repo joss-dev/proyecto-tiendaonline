@@ -9,13 +9,16 @@ class Home extends BaseController
 {
     public function index()
     {
+        $productos = new Producto_model();
+        $data['ultimos'] = $productos->orderBy('created_at', 'desc')->limit(3)->find();
+
         $data['titulo'] = 'Home';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
         echo view('plantillas/marcasPrincipales');
         echo view('plantillas/bienvenida');
-        echo view('plantillas/sectionDestacados');
         echo view('plantillas/sectionNuevos');
+        echo view('plantillas/sectionDestacados');
         echo view('plantillas/maps');
         echo view('plantillas/footer');
     }
