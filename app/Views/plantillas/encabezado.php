@@ -16,7 +16,7 @@
    
     <!-- libreria numeral.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
-    
+    <link rel="stylesheet" href="<?php echo base_url('/public/css/bootstrap-icons/font/bootstrap-icons.css');?>"></link>
    
     <!-- estilos css -->  
     <!-- <link rel="stylesheet" href="./public/css/bootstrap.min.css"> -->
