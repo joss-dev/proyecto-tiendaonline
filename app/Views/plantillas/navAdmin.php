@@ -1,8 +1,3 @@
-<?php
-
-use App\Models\Categoria_model; ?>
-<?php $categoriaModel = new Categoria_model(); ?>
-<?php $marcas = $categoriaModel->findAll(); ?>
 <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
     <div class="container-fluid">
         <a class="navbar-brand text-white" href="<?php echo base_url('admin'); ?>">

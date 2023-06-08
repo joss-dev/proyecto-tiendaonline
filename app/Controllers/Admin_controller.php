@@ -19,7 +19,7 @@ class Admin_controller extends BaseController
             $categoriasModel = new Categoria_model();
 
             $categorias['marcas'] = $categoriasModel->findAll();
-
+            $data['marcas'] = $categoriasModel->findAll();
             $data['titulo'] = 'Subir Producto';
             echo view('plantillas/encabezado', $data);
             echo view('plantillas/navAdmin');
@@ -34,6 +34,9 @@ class Admin_controller extends BaseController
 
     public function admin_view()
     {
+        $categoriasModel = new Categoria_model();
+
+        $data['marcas'] = $categoriasModel->findAll();
         if (session()->login && session()->perfil == 1) {
             $data['titulo'] = 'Administrador';
             echo view('plantillas/encabezado', $data);
@@ -48,7 +51,9 @@ class Admin_controller extends BaseController
     {
         $consultas = new Consulta_model();
         $data['consultas'] = $consultas->findAll();
+        $categoriasModel = new Categoria_model();
 
+        $data['marcas'] = $categoriasModel->findAll();
         $data['titulo'] = 'Administrador';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');
@@ -116,7 +121,9 @@ class Admin_controller extends BaseController
         $detalle = new Detalle_venta_model();
 
         $data['ventas'] = $ventas->join('usuarios', 'usuarios.id_usuario = venta.id_usuario')->findAll();
+        $categoriasModel = new Categoria_model();
 
+        $data['marcas'] = $categoriasModel->findAll();
         $data['titulo'] = 'Ventas';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');
@@ -131,7 +138,9 @@ class Admin_controller extends BaseController
         $data['venta'] = $venta->where('id_venta', $id)->join('usuarios', 'usuarios.id_usuario = venta.id_usuario')->first();
 
         $data['detalle'] = $detalle->where('detalle_venta.id_venta', $id)->join('venta', 'venta.id_venta = detalle_venta.id_venta')->join('productos', 'productos.id_producto = detalle_venta.id_producto')->findAll();
-        
+        $categoriasModel = new Categoria_model();
+
+        $data['marcas'] = $categoriasModel->findAll();
         $data['titulo'] = 'Detalle de venta';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');

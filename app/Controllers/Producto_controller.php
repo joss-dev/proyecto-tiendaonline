@@ -11,12 +11,13 @@ class Producto_controller extends BaseController
     public function gestion_view()
     {
         $productoModel = new Producto_model();
-        $categoria = new Categoria_model();
+        $categoriaModel = new Categoria_model();
 
-        $data['categorias'] = $categoria->findAll();
+        $data['categorias'] = $categoriaModel->findAll();
         $data['producto'] = $productoModel->join('marca', 'marca.id_marca = productos.producto_marca')->findAll();
         $data['titulo'] = 'Gestionar Productos';
 
+        $data['marcas'] = $categoriaModel->findAll(); 
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');
         echo view('plantillas/gestionProductos');
@@ -30,7 +31,7 @@ class Producto_controller extends BaseController
 
         $data['marcas'] = $categoriaModel->findAll();
         $data['producto'] = $productoModel->where('id_producto', $id)->first();
-
+        $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Editar Producto';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');

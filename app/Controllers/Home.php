@@ -14,8 +14,8 @@ class Home extends BaseController
         $data['baratos'] = $productos->orderBy('producto_precio', 'asc')->limit(3)->find();
        
 
-    $categoriaModel = new Categoria_model();
-    $data['marcas'] = $categoriaModel->findAll(); 
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Home';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -29,6 +29,8 @@ class Home extends BaseController
 
     public function quienesSomos()
     {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Quiénes Somos';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -39,17 +41,16 @@ class Home extends BaseController
     public function productos($id = null)
     {
         $productos = new Producto_model();
-        $categoria = new Categoria_model();
+        $categoriaModel = new Categoria_model();
         if ($id == 'all') {
             $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->findAll();
             $data['titulo'] = 'Productos';
         } else {
             $data['productos'] = $productos->where('producto_estado', 1)->where('producto_stock >', 0)->where('producto_marca', $id)->findAll();
-            $marca = $categoria->where('id_marca', $id)->findAll();
+            $marca = $categoriaModel->where('id_marca', $id)->findAll();
             $data['titulo'] = $marca[0]['marca_nombre'];
         }
 
-        $categoriaModel = new Categoria_model();
         $data['marcas'] = $categoriaModel->findAll(); 
 
         if (session()->perfil == 1) {
@@ -67,6 +68,8 @@ class Home extends BaseController
 
     public function terminosYcondiciones()
     {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Terminos y Condiciones';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -76,6 +79,8 @@ class Home extends BaseController
 
     public function contacto()
     {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Contacto';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -85,6 +90,8 @@ class Home extends BaseController
 
     public function comercializacion()
     {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Comercialización';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -94,6 +101,8 @@ class Home extends BaseController
 
     public function perfil()
     {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         if (session()->login) {
             if (session()->perfil == 1) {
                 $data['titulo'] = 'Perfil';

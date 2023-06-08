@@ -4,12 +4,15 @@ namespace App\Controllers;
 
 use App\Models\Consulta_model;
 use App\Models\Usuario_model;
+use App\Models\Categoria_model;
 
 class User_controller extends BaseController
 {
 
     public function registrarse()
     {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         if (!session()->login) {
             $data['titulo'] = 'Registrarse';
             echo view('plantillas/encabezado', $data);
@@ -23,6 +26,8 @@ class User_controller extends BaseController
 
     public function login_view()
     {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         if (!session()->login) {
             $data['titulo'] = 'Iniciar Sesión';
             echo view('plantillas/encabezado', $data);
@@ -36,6 +41,7 @@ class User_controller extends BaseController
 
     public function registrar_consulta()
     {
+
         $request = \Config\Services::request();
 
         if ($request->is('post')) {
@@ -59,6 +65,8 @@ class User_controller extends BaseController
 
                 return redirect()->to('contacto')->with('Mensaje', 'Mensaje enviado correctamente, nos contactaremos a la brevedad.');
             } else {
+                $categoriaModel = new Categoria_model();
+                $data['marcas'] = $categoriaModel->findAll(); 
                 $data['validation'] = $this->validator;
                 $data['titulo'] = 'Contacto';
                 echo view('plantillas/encabezado', $data);
@@ -135,6 +143,8 @@ class User_controller extends BaseController
                 return redirect()->route('loginUsuario');
             }
         } else {
+            $categoriaModel = new Categoria_model();
+            $data['marcas'] = $categoriaModel->findAll(); 
             $data['validation'] = $this->validator;
             $data['titulo'] = 'Iniciar Sesión';
             echo view('plantillas/encabezado', $data);
@@ -227,6 +237,8 @@ class User_controller extends BaseController
 
             return redirect()->to('/')->with('Msg', 'Usuario registrado exitosamente!');
         } else {
+            $categoriaModel = new Categoria_model();
+            $data['marcas'] = $categoriaModel->findAll(); 
             $data['validation'] = $this->validator;
             $data['titulo'] = 'Registrarse';
             echo view('plantillas/encabezado', $data);

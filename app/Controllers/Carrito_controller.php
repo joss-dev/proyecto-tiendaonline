@@ -5,11 +5,14 @@ namespace App\Controllers;
 use App\Models\Venta_model;
 use App\Models\Detalle_venta_model;
 use App\Models\Producto_model;
+use App\Models\Categoria_model;
 
 class Carrito_controller extends BaseController
 {
 
     public function verCarrito() {
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Carrito';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
