@@ -12,6 +12,10 @@ class Home extends BaseController
         $productos = new Producto_model();
         $data['ultimos'] = $productos->orderBy('created_at', 'desc')->limit(3)->find();
         $data['baratos'] = $productos->orderBy('producto_precio', 'asc')->limit(3)->find();
+       
+
+    $categoriaModel = new Categoria_model();
+    $data['marcas'] = $categoriaModel->findAll(); 
         $data['titulo'] = 'Home';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/nav');
@@ -44,6 +48,9 @@ class Home extends BaseController
             $marca = $categoria->where('id_marca', $id)->findAll();
             $data['titulo'] = $marca[0]['marca_nombre'];
         }
+
+        $categoriaModel = new Categoria_model();
+        $data['marcas'] = $categoriaModel->findAll(); 
 
         if (session()->perfil == 1) {
             echo view('plantillas/encabezado', $data);

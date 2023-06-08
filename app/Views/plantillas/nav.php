@@ -1,11 +1,7 @@
 <header>
     <!-- barra de navegacion -->
     <?php $cart = \Config\Services::cart(); ?>
-    <?php
-
-    use App\Models\Categoria_model; ?>
-    <?php $categoriaModel = new Categoria_model(); ?>
-    <?php $marcas = $categoriaModel->findAll(); ?>
+    
 
     <nav class="navbar navbar-light navbar-expand-lg" style="background-color: #03001c;">
         <div class="container-fluid">
