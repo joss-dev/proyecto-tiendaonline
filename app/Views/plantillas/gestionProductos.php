@@ -39,7 +39,7 @@
                     <tr class="table-danger">
                         <th scope="row"><?= $row['id_producto']; ?></th>
                         <td><?= $row['producto_nombre']; ?></td>
-                        <td><?= $row['producto_descripcion']; ?></td>
+                        <td><?= substr($row['producto_descripcion'], 0, 20) . "..."; ?></td>
                         <td>$ <?= number_format($row['producto_precio'], 0, ',', '.'); ?></td>
                         <td><?= $row['producto_stock']; ?></td>
                         <td><?= $row['marca_nombre']; ?></td>
