@@ -36,7 +36,7 @@
             <!-- <label for="descripcionProducto" class="form-label">Descripción del producto</label>
             <input type="text" name="descripcionProducto" placeholder="Descripción de producto" class="form-control" id="inputText4"> -->
             <label for="exampleFormControlTextarea1" for="descripcionProducto" class="form-label">Descripcion del producto</label>
-            <textarea class="form-control border border-dark" value="<?php echo set_value('descripcionProducto'); ?>" name="descripcionProducto" id="exampleFormControlTextarea1" rows="3" maxlength="50" placeholder="Descripción del producto"></textarea>
+            <textarea class="form-control border border-dark" value="<?php echo set_value('descripcionProducto'); ?>" name="descripcionProducto" id="exampleFormControlTextarea1" rows="3" maxlength="1000" placeholder="Descripción del producto"></textarea>
             <?php if ($validation->getError('descripcionProducto')) { ?>
                     <div class='alert alert-danger mt-2'>
                         <?= $error = $validation->getError('descripcionProducto'); ?>

@@ -71,10 +71,10 @@
         <?php } ?>
     </div>
     </div>
-    <div class="text-center"><?php echo form_submit('Registrarme', 'Registrarme', "class='btn btn-outline-success mb-4 mt-3'"); ?></div>
+    <div class="text-center"><?php echo form_submit('Registrarme', 'Registrarme', "class='btn btn-info mb-4 mt-3'"); ?></div>
     <div class="text-center">
         <h6 class="mb-3 mt-2">¿ Ya tienes una cuenta ? Inicia sesión aqui.</h6>
-        <a class="btn btn-info" href="<?php echo base_url('loginUsuario'); ?>">Iniciar Sesión</a>
+        <a class="btn btn-outline-success" href="<?php echo base_url('loginUsuario'); ?>">Iniciar Sesión</a>
     </div>
 </div>
 <?php form_close(); ?>
