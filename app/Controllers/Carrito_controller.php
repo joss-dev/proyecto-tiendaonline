@@ -86,7 +86,7 @@ class Carrito_controller extends BaseController
             $detalle_venta->insert($detalle);
         }
         $cart->destroy();
-        return redirect()->to('carrito')->with('MensajeCompra', 'Muchas gracias por tu compra!. Puedes encontrar los detalles de su compra en la seccion perfil');
+        return redirect()->to('carrito')->with('MensajeCompra', 'Muchas gracias por tu compra!. Puedes encontrar los detalles de su compra en la seccion Mis compras');
     }
 
 
