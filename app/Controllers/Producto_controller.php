@@ -17,7 +17,7 @@ class Producto_controller extends BaseController
         $data['producto'] = $productoModel->join('marca', 'marca.id_marca = productos.producto_marca')->findAll();
         $data['titulo'] = 'Gestionar Productos';
 
-        $data['marcas'] = $categoriaModel->findAll(); 
+        $data['marcas'] = $categoriaModel->findAll();
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');
         echo view('plantillas/gestionProductos');
@@ -31,7 +31,7 @@ class Producto_controller extends BaseController
 
         $data['marcas'] = $categoriaModel->findAll();
         $data['producto'] = $productoModel->where('id_producto', $id)->first();
-        $data['marcas'] = $categoriaModel->findAll(); 
+        $data['marcas'] = $categoriaModel->findAll();
         $data['titulo'] = 'Editar Producto';
         echo view('plantillas/encabezado', $data);
         echo view('plantillas/navAdmin');
@@ -48,8 +48,8 @@ class Producto_controller extends BaseController
         $precioSinFormato = str_replace('.', '', $precio);
 
         if ($request->is('post')) {
-            
-            if($this->request->getFile('imagenProducto')->isValid()) {
+
+            if ($this->request->getFile('imagenProducto')->isValid()) {
                 $rules = [
                     'nombreProducto' => 'required',
                     'marcaProducto' => 'required|is_not_unique[marca.id_marca]',
@@ -64,7 +64,7 @@ class Producto_controller extends BaseController
                 $img = $this->request->getFile('imagenProducto');
                 $nombreAleatorio = $img->getRandomName();
                 $img->move(ROOTPATH . 'public/img/ejemplos', $nombreAleatorio);
-                
+
                 $data = [
                     'producto_nombre' => $request->getPost('nombreProducto'),
                     'producto_descripcion' => $request->getPost('descripcionProducto'),
@@ -73,9 +73,7 @@ class Producto_controller extends BaseController
                     'producto_marca' => $request->getPost('marcaProducto'),
                     'producto_imagen' => $nombreAleatorio
                 ];
-                
-
-            }else {
+            } else {
 
                 $rules = [
                     'nombreProducto' => 'required',
@@ -94,17 +92,16 @@ class Producto_controller extends BaseController
                     'producto_stock' => $request->getPost('stockProducto'),
                     'producto_marca' => $request->getPost('marcaProducto'),
                 ];
-                
             }
 
-            if ($validations) {  
-                
+            if ($validations) {
+
                 $productoModel = new Producto_model();
 
                 $productoModel->update($idProducto, $data);
 
                 return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
-            }else {
+            } else {
                 $data['validation'] = $this->validator;
                 $productoModel = new Producto_model();
                 $categoriaModel = new Categoria_model();
@@ -118,7 +115,7 @@ class Producto_controller extends BaseController
                 echo view('plantillas/editarProducto');
                 echo view('plantillas/footer');
             }
-        }else {
+        } else {
             $data['validation'] = $this->validator;
             $productoModel = new Producto_model();
             $categoriaModel = new Categoria_model();
@@ -143,22 +140,28 @@ class Producto_controller extends BaseController
     }
 
 
-    public function verProducto($id = null) {      
+    public function verProducto($id = null)
+    {
         $productoModel = new Producto_model();
         $data['producto'] = $productoModel->where('id_producto', $id)->first();
         $data['titulo'] = $data['producto']['producto_nombre'];;
-        
-        if(session()->perfil == 1) {
+
+        $categoriaModel = new Categoria_model();
+
+        $data['marcas'] = $categoriaModel->findAll();
+
+
+        if (session()->perfil == 1) {
             echo view('plantillas/encabezado', $data);
             echo view('plantillas/navAdmin');
             echo view('plantillas/producto');
             echo view('plantillas/footer');
-        }else {
+        } else {
             echo view('plantillas/encabezado', $data);
             echo view('plantillas/nav');
             echo view('plantillas/producto');
             echo view('plantillas/footer');
-        }  
+        }
     }
 
     public function activarProducto($id)
@@ -170,6 +173,4 @@ class Producto_controller extends BaseController
         $productoModel->update($id, $data);
         return redirect()->to('gestionProductos')->with('MensajeProducto', 'Producto actualizado correctamente.');
     }
-
-    
 }
