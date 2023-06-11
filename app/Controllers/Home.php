@@ -10,8 +10,8 @@ class Home extends BaseController
     public function index()
     {
         $productos = new Producto_model();
-        $data['ultimos'] = $productos->orderBy('created_at', 'desc')->limit(3)->find();
-        $data['baratos'] = $productos->orderBy('producto_precio', 'asc')->limit(3)->find();
+        $data['ultimos'] = $productos->where('producto_estado', 1)->orderBy('created_at', 'desc')->limit(3)->find();
+        $data['baratos'] = $productos->where('producto_estado', 1)->orderBy('producto_precio', 'asc')->limit(3)->find();
        
 
         $categoriaModel = new Categoria_model();
