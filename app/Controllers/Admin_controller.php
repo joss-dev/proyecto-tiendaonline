@@ -118,7 +118,7 @@ class Admin_controller extends BaseController
     public function listarVentas()
     {
         $ventas = new Venta_model();
-        $detalle = new Detalle_venta_model();
+        
 
         $data['ventas'] = $ventas->join('usuarios', 'usuarios.id_usuario = venta.id_usuario')->findAll();
         $categoriasModel = new Categoria_model();

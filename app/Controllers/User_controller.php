@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Models\Consulta_model;
 use App\Models\Usuario_model;
 use App\Models\Categoria_model;
+use App\Models\Detalle_venta_model;
+use App\Models\Venta_model;
 
 class User_controller extends BaseController
 {
@@ -258,6 +260,23 @@ class User_controller extends BaseController
         } else {
             return redirect()->route('loginUsuario');
         }
+    }
+
+    public function misCompras($id) {
+        $venta = new Venta_model();
+        $detalle = new Detalle_venta_model();
+        $categoriasModel = new Categoria_model();
+
+        $data['venta'] = $venta->where('id_usuario', $id)->join('detalle_venta', 'detalle_venta.id_venta = venta.id_venta')->join('productos', 'productos.id_producto = detalle_venta.id_producto')->findAll();
+       
+
+        $data['marcas'] = $categoriasModel->findAll();
+        $data['titulo'] = 'Mis compras';
+        echo view('plantillas/encabezado', $data);
+        echo view('plantillas/nav');
+        echo view('plantillas/misCompras');
+        echo view('plantillas/footer');
+
     }
 
 

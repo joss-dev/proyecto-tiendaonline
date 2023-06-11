@@ -40,6 +40,7 @@ $routes->get('terminosYcondiciones', 'Home::terminosYcondiciones');
 $routes->get('contacto', 'Home::contacto');
 $routes->get('comercializacion', 'Home::comercializacion');
 $routes->get('perfil', 'Home::perfil');
+$routes->get('misCompras/(:num)', 'User_controller::misCompras/$1');
 
 
 //registro y login
