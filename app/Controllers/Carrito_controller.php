@@ -31,7 +31,7 @@ class Carrito_controller extends BaseController
             'qty' => 1,
         );
         $cart->insert($data);      
-        return redirect()->to('productos/all')->with('MensajeProducto', 'Producto agregado al carrito!');
+        return redirect()->to('carrito')->with('MensajeProducto', 'Producto agregado al carrito!');
     }
 
     public function eliminarProductoCarrito($idrow = null) {
