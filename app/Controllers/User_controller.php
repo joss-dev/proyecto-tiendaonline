@@ -97,7 +97,7 @@ class User_controller extends BaseController
                 ],
                 "pass" => [
                     "required" => "La contraseña es obligatoria.",
-                    "min_length" => "La contraseña contiene al menos 8 caracteres."
+                    "min_length" => "La contraseña es incorrecta"
                 ],
             ]
         );
